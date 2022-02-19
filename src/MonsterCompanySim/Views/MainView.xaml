@@ -1,0 +1,72 @@
+﻿<Window x:Class="MonsterCompanySim.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MonsterCompanySim.Views" xmlns:controls="clr-namespace:MonsterCompanySim.Views.Controls" xmlns:viewmodels="clr-namespace:MonsterCompanySim.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
+        mc:Ignorable="d"
+        Title="モンカニ計算機" Height="600" Width="1000">
+    <TabControl>
+        <TabItem Header="計算機">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:BattlerSelector DataContext="{Binding Enemy1VM.Value}"/>
+                        <controls:BattlerSelector DataContext="{Binding Enemy2VM.Value}"/>
+                        <controls:BattlerSelector DataContext="{Binding Enemy3VM.Value}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:BattlerSelector DataContext="{Binding Ally1VM.Value}"/>
+                        <controls:BattlerSelector DataContext="{Binding Ally2VM.Value}"/>
+                        <controls:BattlerSelector DataContext="{Binding Ally3VM.Value}"/>
+                    </StackPanel>
+                    <CheckBox IsChecked="{Binding IsBoost.Value}">ブースト</CheckBox>
+                    <Button Command="{Binding CalcOneBattleCommand}" Content="勝率計算(ターゲット指定)"/>
+                    <Button Command="{Binding CalcWinRateCommand}" Content="勝率計算(ターゲットランダム)"/>
+                    <Button Command="{Binding CalcRequireCommand}" Content="要求Lv概算"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="20">部:</TextBlock>
+                        <TextBox Text="{Binding SearchPart.Value}" Width="20"/>
+                        <TextBlock Width="50">　Lv上限:</TextBlock>
+                        <TextBox Text="{Binding SearchLevel.Value}" Width="100"/>
+                        <Button Command="{Binding SearchCommand}" Content="編成検索"/>
+                    </StackPanel>
+                </StackPanel>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                        
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="{Binding ResultText.Value}">
+                    </TextBox>
+                    <DataGrid Grid.Column="1" ItemsSource="{Binding Results.Value, Mode=OneWay}" IsReadOnly="true" AutoGenerateColumns="False" SelectedItem="{Binding DetailSet.Value}">
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="編成に反映する" Command="{Binding SetAllyCommand}"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="左" Binding="{Binding Ally1, Mode=OneWay}" />
+                            <DataGridTextColumn Header="中" Binding="{Binding Ally2, Mode=OneWay}" />
+                            <DataGridTextColumn Header="右" Binding="{Binding Ally3, Mode=OneWay}" />
+                            <DataGridTextColumn Header="要求レベル" Binding="{Binding MinLevel, Mode=OneWay}" />
+                            <DataGridTextColumn Header="勝率(1=100%)" Binding="{Binding WinRate, Mode=OneWay}" />
+                            <DataGridTextColumn Header="消費エナジー" Binding="{Binding SumEng, Mode=OneWay}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="ライセンス・謝辞">
+            <TextBox TextWrapping="Wrap" Text="{Binding License.Value, Mode=OneWay}" IsReadOnly="True">
+            </TextBox>
+        </TabItem>
+    </TabControl>
+</Window>

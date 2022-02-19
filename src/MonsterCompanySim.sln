@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterCompanySim", "MonsterCompanySim\MonsterCompanySim.csproj", "{5F9F060D-DDFD-4551-AD54-AEC464142D76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterCompanySimModel", "MonsterCompanySimModel\MonsterCompanySimModel.csproj", "{D4DCA5E4-7D47-46AA-B3DB-52E5F3DB5C3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F9F060D-DDFD-4551-AD54-AEC464142D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9F060D-DDFD-4551-AD54-AEC464142D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9F060D-DDFD-4551-AD54-AEC464142D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9F060D-DDFD-4551-AD54-AEC464142D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4DCA5E4-7D47-46AA-B3DB-52E5F3DB5C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4DCA5E4-7D47-46AA-B3DB-52E5F3DB5C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4DCA5E4-7D47-46AA-B3DB-52E5F3DB5C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4DCA5E4-7D47-46AA-B3DB-52E5F3DB5C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEA4D34D-5A96-4083-B226-D4D2913A519C}
+	EndGlobalSection
+EndGlobal
