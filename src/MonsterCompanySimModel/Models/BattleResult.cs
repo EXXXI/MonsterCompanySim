@@ -19,7 +19,7 @@ namespace MonsterCompanySimModel.Models
         {
             get
             {
-                double minDamageValue = 4294967296;
+                double minDamageValue = 42949672960000;
                 Damage? minDamage = null;
                 foreach (var damage in EnemyDamages)
                 {

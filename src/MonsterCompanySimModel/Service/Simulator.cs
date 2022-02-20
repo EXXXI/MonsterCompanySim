@@ -382,25 +382,30 @@ namespace MonsterCompanySimModel.Service
 
         }
 
-        private List<Damage> Attack(Battler? Attacker, Battler? Defender)
+        private List<Damage> Attack(Battler? attacker, Battler? defender)
         {
-            if (Attacker == null)
+            if (attacker == null)
             {
                 List<Damage> noList = new();
                 noList.Add(new Damage());
                 return noList;
             }
-            if (Defender == null)
+            if (defender == null)
             {
-                throw new ArgumentNullException(nameof(Defender));
+                throw new ArgumentNullException(nameof(defender));
             }
 
-            CalcAttackSkills(Attacker, Defender);
-            CalcDefenceSkills(Attacker, Defender);
-            CalcElement(Attacker, Defender);
+            attacker.OnceDefCritState = CriticalState.normal;
+            attacker.OnceAtkCritState = CriticalState.normal;
+            defender.OnceDefCritState = CriticalState.normal;
+            defender.OnceAtkCritState = CriticalState.normal;
 
-            double crit = CalcCritical(Attacker, Defender);
-            double damageValue = CalcDamage(Attacker);
+            CalcAttackSkills(attacker, defender);
+            CalcDefenceSkills(attacker, defender);
+            CalcElement(attacker, defender);
+
+            double crit = CalcCritical(attacker, defender);
+            double damageValue = CalcDamage(attacker);
 
             List<Damage> damages = new();
             damages.Add(new Damage(crit, damageValue * 1.5));
@@ -734,7 +739,7 @@ namespace MonsterCompanySimModel.Service
                     case SkillType.タイプCT確定:
                         if (defender.Employee.Type == skill.Type && attacker.AtkCritState != CriticalState.noCrit)
                         {
-                            attacker.AtkCritState = CriticalState.Crit;
+                            attacker.OnceAtkCritState = CriticalState.Crit;
                         }
                         break;
                     default:
@@ -753,7 +758,7 @@ namespace MonsterCompanySimModel.Service
                         if (attacker.Employee.Type == skill.Type && !defender.IsReduced)
                         {
                             attacker.Modifier *= skill.Modifier;
-                            defender.DefCritState = CriticalState.noCrit;
+                            defender.OnceDefCritState = CriticalState.noCrit;
                             defender.IsReduced = true;
                         }
                         break;
@@ -886,13 +891,14 @@ namespace MonsterCompanySimModel.Service
         private double CalcCritical(Battler attacker, Battler defender)
         {
             // 回避最優先
-            if (defender.DefCritState == CriticalState.noCrit)
+            if (defender.DefCritState == CriticalState.noCrit || defender.OnceDefCritState == CriticalState.noCrit)
             {
                 return 0;
             }
 
             // 確定スキル時
-            if (attacker.AtkCritState == CriticalState.Crit || defender.DefCritState == CriticalState.Crit)
+            if (attacker.AtkCritState == CriticalState.Crit || defender.DefCritState == CriticalState.Crit ||
+                attacker.OnceAtkCritState == CriticalState.Crit || defender.OnceDefCritState == CriticalState.Crit)
             {
                 return 1;
             }
