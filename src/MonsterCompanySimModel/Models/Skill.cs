@@ -14,6 +14,7 @@ namespace MonsterCompanySimModel.Models
         public EmployeeType Type { get; set; }
         public Element Element { get; set; }
         public List<int> Buddys { get; set; } = new List<int>();
+        public int BuddyEvolState { get; set; }
 
     }
 }

@@ -654,12 +654,41 @@ namespace MonsterCompanySimModel.Service
                     bool isEffective = true;
                     foreach (var buddy in skill.Buddys)
                     {
-                        if(right?.Employee.Id != buddy && left?.Employee.Id != buddy)
+                        if (right?.Employee.Id != buddy && left?.Employee.Id != buddy)
                         {
                             isEffective = false;
                         }
                     }
                     if (isEffective)
+                    {
+                        self.Modifier *= skill.Modifier;
+                        if (skill.Range == Models.Range.全体)
+                        {
+                            foreach (var buddy in skill.Buddys)
+                            {
+                                if (right?.Employee.Id == buddy)
+                                {
+                                    right.Modifier *= skill.Modifier;
+                                }
+                                if (left?.Employee.Id == buddy)
+                                {
+                                    left.Modifier *= skill.Modifier;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case SkillType.特定社員強化_進化指定:
+                    bool isEffectiveEvol = true;
+                    foreach (var buddy in skill.Buddys)
+                    {
+                        if ((right?.Employee.Id != buddy || right?.Employee.EvolState != skill.BuddyEvolState) &&
+                            (left?.Employee.Id != buddy || left?.Employee.EvolState != skill.BuddyEvolState))
+                        {
+                            isEffectiveEvol = false;
+                        }
+                    }
+                    if (isEffectiveEvol)
                     {
                         self.Modifier *= skill.Modifier;
                         if (skill.Range == Models.Range.全体)
