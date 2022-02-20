@@ -140,7 +140,7 @@ namespace MonsterCompanySimModel.Service
                                 Ally1 = ally1,
                                 Ally2 = ally2,
                                 Ally3 = ally3,
-                                MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost) ?? 0,
+                                //MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost) ?? 0,
                                 WinRate = battleResult.WinRate,
                                 SumEng = (battler1?.Eng ?? 0) + (battler2?.Eng ?? 0) + (battler3?.Eng ?? 0)
                             };
@@ -148,6 +148,19 @@ namespace MonsterCompanySimModel.Service
                             resultList.Add(result);
                         }
                     }
+                }
+            }
+
+            // 要求レベル計算
+            // TODO:閾値定数化
+            if (resultList.Count < 200)
+            {
+                foreach (var result in resultList)
+                {
+                    Battler? battler1 = result.Ally1 == null ? null : new Battler(result.Ally1) { Level = level };
+                    Battler? battler2 = result.Ally2 == null ? null : new Battler(result.Ally2) { Level = level };
+                    Battler? battler3 = result.Ally3 == null ? null : new Battler(result.Ally3) { Level = level };
+                    result.MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost) ?? 0;
                 }
             }
 

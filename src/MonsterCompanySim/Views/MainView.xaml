@@ -14,13 +14,20 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="30">敵</TextBlock>
                         <controls:BattlerSelector DataContext="{Binding Enemy1VM.Value}"/>
                         <controls:BattlerSelector DataContext="{Binding Enemy2VM.Value}"/>
                         <controls:BattlerSelector DataContext="{Binding Enemy3VM.Value}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="30">味方</TextBlock>
                         <controls:BattlerSelector DataContext="{Binding Ally1VM.Value}"/>
                         <controls:BattlerSelector DataContext="{Binding Ally2VM.Value}"/>
                         <controls:BattlerSelector DataContext="{Binding Ally3VM.Value}"/>
@@ -37,30 +44,23 @@
                         <Button Command="{Binding SearchCommand}" Content="編成検索"/>
                     </StackPanel>
                 </StackPanel>
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="*"/>
-                        
-                    </Grid.ColumnDefinitions>
-                    <TextBox Text="{Binding ResultText.Value}">
+                <TextBox Grid.Column="1" Text="{Binding ResultText.Value}">
                     </TextBox>
-                    <DataGrid Grid.Column="1" ItemsSource="{Binding Results.Value, Mode=OneWay}" IsReadOnly="true" AutoGenerateColumns="False" SelectedItem="{Binding DetailSet.Value}">
-                        <DataGrid.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="編成に反映する" Command="{Binding SetAllyCommand}"/>
-                            </ContextMenu>
-                        </DataGrid.ContextMenu>
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="左" Binding="{Binding Ally1, Mode=OneWay}" />
-                            <DataGridTextColumn Header="中" Binding="{Binding Ally2, Mode=OneWay}" />
-                            <DataGridTextColumn Header="右" Binding="{Binding Ally3, Mode=OneWay}" />
-                            <DataGridTextColumn Header="要求レベル" Binding="{Binding MinLevel, Mode=OneWay}" />
-                            <DataGridTextColumn Header="勝率(1=100%)" Binding="{Binding WinRate, Mode=OneWay}" />
-                            <DataGridTextColumn Header="消費エナジー" Binding="{Binding SumEng, Mode=OneWay}" />
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
+                <DataGrid Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Results.Value, Mode=OneWay}" IsReadOnly="true" AutoGenerateColumns="False" SelectedItem="{Binding DetailSet.Value}">
+                    <DataGrid.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="編成に反映する" Command="{Binding SetAllyCommand}"/>
+                        </ContextMenu>
+                    </DataGrid.ContextMenu>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="左" Binding="{Binding Ally1, Mode=OneWay}" />
+                        <DataGridTextColumn Header="中" Binding="{Binding Ally2, Mode=OneWay}" />
+                        <DataGridTextColumn Header="右" Binding="{Binding Ally3, Mode=OneWay}" />
+                        <DataGridTextColumn Header="要求レベル" Binding="{Binding MinLevel, Mode=OneWay}" />
+                        <DataGridTextColumn Header="勝率(1=100%)" Binding="{Binding WinRate, Mode=OneWay}" />
+                        <DataGridTextColumn Header="消費エナジー" Binding="{Binding SumEng, Mode=OneWay}" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
         </TabItem>
 

@@ -56,6 +56,8 @@ namespace MonsterCompanySim.ViewModels
             IsFree = IsBusy.Select(x => !x).ToReadOnlyReactivePropertySlim();
             SearchCommand = IsFree.ToAsyncReactiveCommand().WithSubscribe(async () => await Search());
 
+            ResultText.Value = "ここに計算結果などが表示されます\n編成検索の結果は下部の表に表示されます";
+
             // ライセンス表示
             StringBuilder sb = new();
             sb.Append("■このシミュのライセンス\n");
@@ -82,6 +84,10 @@ namespace MonsterCompanySim.ViewModels
 
         private void SetAlly()
         {
+            if (DetailSet.Value == null)
+            {
+                return;
+            }
             Ally1VM.Value.SetEmployee(DetailSet.Value.Ally1);
             Ally2VM.Value.SetEmployee(DetailSet.Value.Ally2);
             Ally3VM.Value.SetEmployee(DetailSet.Value.Ally3);
@@ -93,6 +99,12 @@ namespace MonsterCompanySim.ViewModels
             Battler? enemy2 = Enemy2VM.Value.Battler;
             Battler? enemy3 = Enemy3VM.Value.Battler;
 
+            if (enemy1 == null && enemy2 == null && enemy3 == null)
+            {
+                ResultText.Value = "★敵社員を入力してください";
+                return;
+            }
+
             int level = Parse(SearchLevel.Value);
             int part = Parse(SearchPart.Value);
 
@@ -101,10 +113,13 @@ namespace MonsterCompanySim.ViewModels
             Results.Value = results;
 
             StringBuilder sb = new();
-
             sb.AppendLine("■検索条件 LV:" + level + ", 部:" + part);
-
             sb.AppendLine("■検索結果 " + results.Count + "件");
+            // TODO:定数化
+            if (results.Count > 200)
+            {
+                sb.AppendLine("★件数が多すぎるため、要求レベルの計算は行いません");
+            }
 
             ResultText.Value = sb.ToString();
         }
@@ -117,6 +132,26 @@ namespace MonsterCompanySim.ViewModels
             Battler? enemy1 = Enemy1VM.Value.Battler;
             Battler? enemy2 = Enemy2VM.Value.Battler;
             Battler? enemy3 = Enemy3VM.Value.Battler;
+
+            if (ally1 == null && ally2 == null && ally3 == null)
+            {
+                ResultText.Value = "★味方社員を入力してください";
+                return;
+            }
+            if (enemy1 == null && enemy2 == null && enemy3 == null)
+            {
+                ResultText.Value = "★敵社員を入力してください";
+                return;
+            }
+            bool isValidTargets = this.IsValidTargets(
+                ally1, ally2, ally3, enemy1, enemy2, enemy3,
+                Ally1VM.Value.SelectedTarget.Value, Ally2VM.Value.SelectedTarget.Value, Ally3VM.Value.SelectedTarget.Value,
+                Enemy1VM.Value.SelectedTarget.Value, Enemy2VM.Value.SelectedTarget.Value, Enemy3VM.Value.SelectedTarget.Value);
+            if (!isValidTargets)
+            {
+                ResultText.Value = "★ターゲットは社員がいる場所を入力してください";
+                return;
+            }
 
 
             BattleResult result = simulator.Battle(
@@ -146,6 +181,17 @@ namespace MonsterCompanySim.ViewModels
             Battler? enemy2 = Enemy2VM.Value.Battler;
             Battler? enemy3 = Enemy3VM.Value.Battler;
 
+            if (ally1 == null && ally2 == null && ally3 == null)
+            {
+                ResultText.Value = "★味方社員を入力してください";
+                return;
+            }
+            if (enemy1 == null && enemy2 == null && enemy3 == null)
+            {
+                ResultText.Value = "★敵社員を入力してください";
+                return;
+            }
+
             int? level = simulator.CalcRequireLevel(ally1, ally2, ally3, enemy1, enemy2, enemy3, IsBoost.Value);
 
             StringBuilder sb = new();
@@ -170,6 +216,17 @@ namespace MonsterCompanySim.ViewModels
             Battler? enemy1 = Enemy1VM.Value.Battler;
             Battler? enemy2 = Enemy2VM.Value.Battler;
             Battler? enemy3 = Enemy3VM.Value.Battler;
+
+            if (ally1 == null && ally2 == null && ally3 == null)
+            {
+                ResultText.Value = "★味方社員を入力してください";
+                return;
+            }
+            if (enemy1 == null && enemy2 == null && enemy3 == null)
+            {
+                ResultText.Value = "★敵社員を入力してください";
+                return;
+            }
 
             BattleResult result = simulator.FullBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, IsBoost.Value);
 
@@ -197,6 +254,50 @@ namespace MonsterCompanySim.ViewModels
         private int Parse(string value)
         {
             return Parse(value, 0);
+        }
+
+        private bool IsValidTargets(Battler? ally1, Battler? ally2, Battler? ally3, Battler? enemy1, Battler? enemy2, Battler? enemy3, int a1, int a2, int a3, int e1, int e2, int e3)
+        {
+            if (ally1 != null && !IsValidTarget(enemy1, enemy2, enemy3, a1))
+            {
+                return false;
+            }
+            if (ally2 != null && !IsValidTarget(enemy1, enemy2, enemy3, a2))
+            {
+                return false;
+            }
+            if (ally3 != null && !IsValidTarget(enemy1, enemy2, enemy3, a3))
+            {
+                return false;
+            }
+            if (enemy1 != null && !IsValidTarget(ally1, ally2, ally3, e1))
+            {
+                return false;
+            }
+            if (enemy2 != null && !IsValidTarget(ally1, ally2, ally3, e2))
+            {
+                return false;
+            }
+            if (enemy3 != null && !IsValidTarget(ally1, ally2, ally3, e3))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool IsValidTarget(Battler? battler1, Battler? battler2, Battler? battler3, int target)
+        {
+            switch (target)
+            {
+                case 1:
+                    return battler1 != null;
+                case 2:
+                    return battler2 != null;
+                case 3:
+                    return battler3 != null;
+                default:
+                    return false;
+            }
         }
     }
 }
