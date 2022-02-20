@@ -12,6 +12,8 @@ namespace MonsterCompanySimModel.Models
         public double Modifier { get; set; } = 1;
         public CriticalState AtkCritState { get; set; }
         public CriticalState DefCritState { get; set; }
+        public CriticalState OnceAtkCritState { get; set; }
+        public CriticalState OnceDefCritState { get; set; }
         public int FixedTarget { get; set; } = 0;
         public long Level { get; set; }
         public bool IsReduced { get; set; } = false;

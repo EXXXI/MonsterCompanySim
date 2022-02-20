@@ -140,7 +140,7 @@ namespace MonsterCompanySimModel.Service
                                 Ally1 = ally1,
                                 Ally2 = ally2,
                                 Ally3 = ally3,
-                                MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost) ?? 0,
+                                //MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost) ?? 0,
                                 WinRate = battleResult.WinRate,
                                 SumEng = (battler1?.Eng ?? 0) + (battler2?.Eng ?? 0) + (battler3?.Eng ?? 0)
                             };
@@ -148,6 +148,19 @@ namespace MonsterCompanySimModel.Service
                             resultList.Add(result);
                         }
                     }
+                }
+            }
+
+            // 要求レベル計算
+            // TODO:閾値定数化
+            if (resultList.Count < 200)
+            {
+                foreach (var result in resultList)
+                {
+                    Battler? battler1 = result.Ally1 == null ? null : new Battler(result.Ally1) { Level = level };
+                    Battler? battler2 = result.Ally2 == null ? null : new Battler(result.Ally2) { Level = level };
+                    Battler? battler3 = result.Ally3 == null ? null : new Battler(result.Ally3) { Level = level };
+                    result.MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost) ?? 0;
                 }
             }
 
@@ -369,25 +382,30 @@ namespace MonsterCompanySimModel.Service
 
         }
 
-        private List<Damage> Attack(Battler? Attacker, Battler? Defender)
+        private List<Damage> Attack(Battler? attacker, Battler? defender)
         {
-            if (Attacker == null)
+            if (attacker == null)
             {
                 List<Damage> noList = new();
                 noList.Add(new Damage());
                 return noList;
             }
-            if (Defender == null)
+            if (defender == null)
             {
-                throw new ArgumentNullException(nameof(Defender));
+                throw new ArgumentNullException(nameof(defender));
             }
 
-            CalcAttackSkills(Attacker, Defender);
-            CalcDefenceSkills(Attacker, Defender);
-            CalcElement(Attacker, Defender);
+            attacker.OnceDefCritState = CriticalState.normal;
+            attacker.OnceAtkCritState = CriticalState.normal;
+            defender.OnceDefCritState = CriticalState.normal;
+            defender.OnceAtkCritState = CriticalState.normal;
 
-            double crit = CalcCritical(Attacker, Defender);
-            double damageValue = CalcDamage(Attacker);
+            CalcAttackSkills(attacker, defender);
+            CalcDefenceSkills(attacker, defender);
+            CalcElement(attacker, defender);
+
+            double crit = CalcCritical(attacker, defender);
+            double damageValue = CalcDamage(attacker);
 
             List<Damage> damages = new();
             damages.Add(new Damage(crit, damageValue * 1.5));
@@ -654,12 +672,41 @@ namespace MonsterCompanySimModel.Service
                     bool isEffective = true;
                     foreach (var buddy in skill.Buddys)
                     {
-                        if(right?.Employee.Id != buddy && left?.Employee.Id != buddy)
+                        if (right?.Employee.Id != buddy && left?.Employee.Id != buddy)
                         {
                             isEffective = false;
                         }
                     }
                     if (isEffective)
+                    {
+                        self.Modifier *= skill.Modifier;
+                        if (skill.Range == Models.Range.全体)
+                        {
+                            foreach (var buddy in skill.Buddys)
+                            {
+                                if (right?.Employee.Id == buddy)
+                                {
+                                    right.Modifier *= skill.Modifier;
+                                }
+                                if (left?.Employee.Id == buddy)
+                                {
+                                    left.Modifier *= skill.Modifier;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case SkillType.特定社員強化_進化指定:
+                    bool isEffectiveEvol = true;
+                    foreach (var buddy in skill.Buddys)
+                    {
+                        if ((right?.Employee.Id != buddy || right?.Employee.EvolState != skill.BuddyEvolState) &&
+                            (left?.Employee.Id != buddy || left?.Employee.EvolState != skill.BuddyEvolState))
+                        {
+                            isEffectiveEvol = false;
+                        }
+                    }
+                    if (isEffectiveEvol)
                     {
                         self.Modifier *= skill.Modifier;
                         if (skill.Range == Models.Range.全体)
@@ -692,7 +739,7 @@ namespace MonsterCompanySimModel.Service
                     case SkillType.タイプCT確定:
                         if (defender.Employee.Type == skill.Type && attacker.AtkCritState != CriticalState.noCrit)
                         {
-                            attacker.AtkCritState = CriticalState.Crit;
+                            attacker.OnceAtkCritState = CriticalState.Crit;
                         }
                         break;
                     default:
@@ -711,7 +758,7 @@ namespace MonsterCompanySimModel.Service
                         if (attacker.Employee.Type == skill.Type && !defender.IsReduced)
                         {
                             attacker.Modifier *= skill.Modifier;
-                            defender.DefCritState = CriticalState.noCrit;
+                            defender.OnceDefCritState = CriticalState.noCrit;
                             defender.IsReduced = true;
                         }
                         break;
@@ -844,13 +891,14 @@ namespace MonsterCompanySimModel.Service
         private double CalcCritical(Battler attacker, Battler defender)
         {
             // 回避最優先
-            if (defender.DefCritState == CriticalState.noCrit)
+            if (defender.DefCritState == CriticalState.noCrit || defender.OnceDefCritState == CriticalState.noCrit)
             {
                 return 0;
             }
 
             // 確定スキル時
-            if (attacker.AtkCritState == CriticalState.Crit || defender.DefCritState == CriticalState.Crit)
+            if (attacker.AtkCritState == CriticalState.Crit || defender.DefCritState == CriticalState.Crit ||
+                attacker.OnceAtkCritState == CriticalState.Crit || defender.OnceDefCritState == CriticalState.Crit)
             {
                 return 1;
             }
