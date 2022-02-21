@@ -64,6 +64,31 @@
             </Grid>
         </TabItem>
 
+        <TabItem Header="検索対象設定">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <ScrollViewer>
+                    <StackPanel>
+                        <ItemsControl ItemsSource="{Binding TargetVMs.Value, Mode=OneWay}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <controls:TargetSelector/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+                <StackPanel Grid.Column="1">
+                    <Button Command="{Binding AllExcludeCommand}" Content="全社員を除外する(未実装)"/>
+                    <Button Command="{Binding AllIncludeCommand}" Content="全社員を対象にする(未実装)"/>
+                    <Button Command="{Binding RecommendationCommand}" Content="おすすめ設定(未実装)"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
         <TabItem Header="ライセンス・謝辞">
             <TextBox TextWrapping="Wrap" Text="{Binding License.Value, Mode=OneWay}" IsReadOnly="True">
             </TextBox>

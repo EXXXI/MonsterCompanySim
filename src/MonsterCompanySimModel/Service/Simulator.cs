@@ -80,6 +80,7 @@ namespace MonsterCompanySimModel.Service
         public void LoadData()
         {
             Masters.LoadEmployee();
+            Masters.LoadIncludeEmployees();
         }
 
         // 重い
@@ -88,8 +89,8 @@ namespace MonsterCompanySimModel.Service
             List<SearchResult> resultList = new();
 
 
-            // 社員無し入りリスト
-            List<Employee?> emps = new(Masters.UpperLREmployees) { null };
+            // 社員無し入り検索対象リスト
+            List<Employee?> emps = new(Masters.SearchTargets) { null };
 
             foreach (var ally1 in emps)
             {

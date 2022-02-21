@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="MonsterCompanySim.Views.Controls.TargetSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonsterCompanySim.Views.Controls" xmlns:controls="clr-namespace:MonsterCompanySim.ViewModels.Controls" d:DataContext="{d:DesignInstance Type=controls:TargetSelectorViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Orientation="Horizontal">
+        <TextBlock Width="150" Text="{Binding Employee.Value}"/>
+        <RadioButton Content="検索対象に入れる　" IsChecked="{Binding IsTarget.Value}"/>
+        <RadioButton Content="検索対象に入れない" IsChecked="True"/>
+    </StackPanel>
+</UserControl>

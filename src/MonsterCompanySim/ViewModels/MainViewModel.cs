@@ -22,6 +22,7 @@ namespace MonsterCompanySim.ViewModels
         public ReactivePropertySlim<BattlerSelectorViewModel> Ally1VM { get; } = new();
         public ReactivePropertySlim<BattlerSelectorViewModel> Ally2VM { get; } = new();
         public ReactivePropertySlim<BattlerSelectorViewModel> Ally3VM { get; } = new();
+        public ReactivePropertySlim<List<TargetSelectorViewModel>> TargetVMs { get; } = new();
         public ReactivePropertySlim<string> ResultText { get; } = new();
         public ReactivePropertySlim<string> TargetText { get; } = new();
         public ReactivePropertySlim<string> SearchPart { get; } = new();
@@ -48,6 +49,12 @@ namespace MonsterCompanySim.ViewModels
             Enemy1VM.Value = new BattlerSelectorViewModel();
             Enemy2VM.Value = new BattlerSelectorViewModel();
             Enemy3VM.Value = new BattlerSelectorViewModel();
+            List<TargetSelectorViewModel> targetVMs = new();
+            foreach (var emp in Masters.Employees)
+            {
+                targetVMs.Add(new TargetSelectorViewModel(emp));
+            }
+            TargetVMs.Value = targetVMs;
             CalcWinRateCommand.Subscribe(_ => CalcWinRate());
             CalcRequireCommand.Subscribe(_ => CalcRequire());
             CalcOneBattleCommand.Subscribe(_ => CalcOneBattle());
