@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MonsterCompanySim.Views.Controls" xmlns:controls="clr-namespace:MonsterCompanySim.ViewModels.Controls" d:DataContext="{d:DesignInstance Type=controls:BattlerSelectorViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="200">
+             d:DesignHeight="100" d:DesignWidth="150">
     <StackPanel Width="150">
         <ComboBox ItemsSource="{Binding Employees.Value, Mode=OneWay}" SelectedItem="{Binding SelectedEmployee.Value}">
         </ComboBox>
@@ -17,21 +17,20 @@
             <ComboBox Width="40" ItemsSource="{Binding Targets.Value, Mode=OneWay}" SelectedItem="{Binding SelectedTarget.Value}">
             </ComboBox>
         </StackPanel>
-        
         <StackPanel Orientation="Horizontal">
             <TextBlock Width="30">戦闘:</TextBlock>
-            <TextBlock Width="120" Text="{Binding Atk.Value, Mode=OneWay}">
-            </TextBlock>
+            <TextBlock Width="80" Text="{Binding Atk.Value, Mode=OneWay}"/>
+            <TextBlock Width="40" TextAlignment="Center">スキル</TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Width="30">器用:</TextBlock>
-            <TextBlock Width="120" Text="{Binding Dex.Value, Mode=OneWay}">
-            </TextBlock>
+            <TextBlock Width="80" Text="{Binding Dex.Value, Mode=OneWay}"/>
+            <TextBlock Width="40" TextAlignment="Center">無効</TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Width="30">消費:</TextBlock>
-            <TextBlock Width="120" Text="{Binding Eng.Value, Mode=OneWay}">
-            </TextBlock>
+            <TextBlock Width="80" Text="{Binding Eng.Value, Mode=OneWay}"/>
+            <CheckBox IsChecked="{Binding IsSkillDisabled.Value}" HorizontalAlignment="Center" Margin="12,0,0,0" />
         </StackPanel>
     </StackPanel>
 </UserControl>

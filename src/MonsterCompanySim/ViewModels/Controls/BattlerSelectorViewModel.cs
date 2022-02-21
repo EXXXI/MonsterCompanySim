@@ -28,6 +28,7 @@ namespace MonsterCompanySim.ViewModels.Controls
         public ReactivePropertySlim<long> Atk { get; } = new();
         public ReactivePropertySlim<long> Dex { get; } = new();
         public ReactivePropertySlim<long> Eng { get; } = new();
+        public ReactivePropertySlim<bool> IsSkillDisabled { get; } = new(false);
 
         public BattlerSelectorViewModel()
         {
@@ -73,7 +74,7 @@ namespace MonsterCompanySim.ViewModels.Controls
                 {
                     return null;
                 }
-                return new Battler(SelectedEmployee.Value) { Level = LevelParse(Level.Value) };
+                return new Battler(SelectedEmployee.Value) { Level = LevelParse(Level.Value), IsSkillDisabled = this.IsSkillDisabled.Value };
             }
         }
 
