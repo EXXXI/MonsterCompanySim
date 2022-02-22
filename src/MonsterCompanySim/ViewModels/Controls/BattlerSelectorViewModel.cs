@@ -29,12 +29,21 @@ namespace MonsterCompanySim.ViewModels.Controls
         public ReactivePropertySlim<long> Dex { get; } = new();
         public ReactivePropertySlim<long> Eng { get; } = new();
         public ReactivePropertySlim<bool> IsSkillDisabled { get; } = new(false);
+        public ReactivePropertySlim<bool> IsEnemy { get; } = new(false);
 
-        public BattlerSelectorViewModel()
+        public BattlerSelectorViewModel(bool isEnemy)
         {
-            // TODO: 敵差分
             List<Employee> emps = new() { new Employee() { Name = NoEmployeeName } };
-            foreach (var emp in Masters.Employees)
+            List<Employee> master;
+            if (isEnemy)
+            {
+                master = Masters.EnemyEmployees;
+            }
+            else
+            {
+                master = Masters.Employees;
+            }
+            foreach (var emp in master)
             {
                 emps.Add(emp);
             }
@@ -43,10 +52,17 @@ namespace MonsterCompanySim.ViewModels.Controls
             Level.Value = "99999";
             Targets.Value = new List<int>() { 1, 2, 3 };
             SelectedTarget.Value = 1;
+            IsEnemy.Value = isEnemy;
 
             SelectedEmployee.Subscribe(_ => CalcStatus());
             Level.Subscribe(_ => CalcStatus());
         }
+
+        public BattlerSelectorViewModel() : this(false)
+        {
+
+        }
+
 
         private void CalcStatus()
         {

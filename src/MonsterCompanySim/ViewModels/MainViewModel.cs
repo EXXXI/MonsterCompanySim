@@ -46,9 +46,9 @@ namespace MonsterCompanySim.ViewModels
             Ally1VM.Value = new BattlerSelectorViewModel();
             Ally2VM.Value = new BattlerSelectorViewModel();
             Ally3VM.Value = new BattlerSelectorViewModel();
-            Enemy1VM.Value = new BattlerSelectorViewModel();
-            Enemy2VM.Value = new BattlerSelectorViewModel();
-            Enemy3VM.Value = new BattlerSelectorViewModel();
+            Enemy1VM.Value = new BattlerSelectorViewModel(true);
+            Enemy2VM.Value = new BattlerSelectorViewModel(true);
+            Enemy3VM.Value = new BattlerSelectorViewModel(true);
             List<TargetSelectorViewModel> targetVMs = new();
             foreach (var emp in Masters.Employees)
             {
@@ -294,17 +294,13 @@ namespace MonsterCompanySim.ViewModels
 
         private bool IsValidTarget(Battler? battler1, Battler? battler2, Battler? battler3, int target)
         {
-            switch (target)
+            return target switch
             {
-                case 1:
-                    return battler1 != null;
-                case 2:
-                    return battler2 != null;
-                case 3:
-                    return battler3 != null;
-                default:
-                    return false;
-            }
+                1 => battler1 != null,
+                2 => battler2 != null,
+                3 => battler3 != null,
+                _ => false,
+            };
         }
     }
 }

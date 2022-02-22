@@ -6,6 +6,10 @@
              xmlns:local="clr-namespace:MonsterCompanySim.Views.Controls" xmlns:controls="clr-namespace:MonsterCompanySim.ViewModels.Controls" d:DataContext="{d:DesignInstance Type=controls:BattlerSelectorViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="150">
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter" />
+    </UserControl.Resources>
     <StackPanel Width="150">
         <ComboBox ItemsSource="{Binding Employees.Value, Mode=OneWay}" SelectedItem="{Binding SelectedEmployee.Value}">
         </ComboBox>
@@ -20,17 +24,17 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Width="30">戦闘:</TextBlock>
             <TextBlock Width="80" Text="{Binding Atk.Value, Mode=OneWay}"/>
-            <TextBlock Width="40" TextAlignment="Center">スキル</TextBlock>
+            <TextBlock Width="40" TextAlignment="Center" Visibility="{Binding IsEnemy.Value, Converter={StaticResource BoolVisibilityConverter}}">スキル</TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Width="30">器用:</TextBlock>
             <TextBlock Width="80" Text="{Binding Dex.Value, Mode=OneWay}"/>
-            <TextBlock Width="40" TextAlignment="Center">無効</TextBlock>
+            <TextBlock Width="40" TextAlignment="Center" Visibility="{Binding IsEnemy.Value, Converter={StaticResource BoolVisibilityConverter}}">無効</TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Width="30">消費:</TextBlock>
             <TextBlock Width="80" Text="{Binding Eng.Value, Mode=OneWay}"/>
-            <CheckBox IsChecked="{Binding IsSkillDisabled.Value}" HorizontalAlignment="Center" Margin="12,0,0,0" />
+            <CheckBox IsChecked="{Binding IsSkillDisabled.Value}" HorizontalAlignment="Center" Margin="12,0,0,0" Visibility="{Binding IsEnemy.Value, Converter={StaticResource BoolVisibilityConverter}}"/>
         </StackPanel>
     </StackPanel>
 </UserControl>

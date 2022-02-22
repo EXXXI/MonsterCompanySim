@@ -81,6 +81,7 @@ namespace MonsterCompanySimModel.Service
         {
             Masters.LoadEmployee();
             Masters.LoadIncludeEmployees();
+            Masters.LoadEnemyEmployee();
         }
 
         // 重い

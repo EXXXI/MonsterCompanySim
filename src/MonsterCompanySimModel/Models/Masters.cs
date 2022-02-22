@@ -13,6 +13,8 @@ namespace MonsterCompanySimModel.Models
     {
         static public List<Employee> Employees { get; set; } = new List<Employee>();
         static public List<Employee> EnemyEmployees { get; set; } = new List<Employee>();
+        static private List<SimpleEmployee> IncludeEmployees { get; set; } = new List<SimpleEmployee>();
+
         static public List<Employee> SearchTargets 
         {
             get
@@ -30,9 +32,6 @@ namespace MonsterCompanySimModel.Models
         }
 
 
-
-        static private List<SimpleEmployee> IncludeEmployees { get; set; } = new List<SimpleEmployee>();
-
         static public void LoadEmployee()
         {
             JsonSerializerOptions options = new();
@@ -40,9 +39,45 @@ namespace MonsterCompanySimModel.Models
             options.Converters.Add(new JsonStringEnumConverter());
 
             string json = File.ReadAllText("data/Employees.json");
-#pragma warning disable CS8601 // Null 参照代入の可能性があります。
-            Employees = JsonSerializer.Deserialize<List<Employee>>(json, options);
-#pragma warning restore CS8601 // Null 参照代入の可能性があります。
+            List<Employee>? employees = JsonSerializer.Deserialize<List<Employee>>(json, options);
+            if (employees == null)
+            {
+                throw new FileFormatException("data/Employees.json");
+            }
+            Employees = employees;
+        }
+
+        static public void LoadEnemyEmployee()
+        {
+            JsonSerializerOptions options = new();
+            options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
+            options.Converters.Add(new JsonStringEnumConverter());
+
+            string json = File.ReadAllText("data/EnemyEmployees.json");
+            List<Employee>? diffEmployees = JsonSerializer.Deserialize<List<Employee>>(json, options);
+            if (diffEmployees == null)
+            {
+                throw new FileFormatException("data/EnemyEmployees.json");
+            }
+            List<Employee> enemyEmployees = new();
+            foreach (var emp in Employees)
+            {
+                bool hasDiff = false;
+                foreach (var diffEmp in diffEmployees)
+                {
+                    if (emp.Id == diffEmp.Id && emp.EvolState == diffEmp.EvolState)
+                    {
+                        hasDiff = true;
+                        enemyEmployees.Add(diffEmp);
+                        break;
+                    }
+                }
+                if (!hasDiff)
+                {
+                    enemyEmployees.Add(emp);
+                }
+            }
+            EnemyEmployees = enemyEmployees;
         }
 
         static public void LoadIncludeEmployees()
@@ -52,9 +87,12 @@ namespace MonsterCompanySimModel.Models
             options.Converters.Add(new JsonStringEnumConverter());
 
             string json = File.ReadAllText("data/Includes.json");
-#pragma warning disable CS8601 // Null 参照代入の可能性があります。
-            IncludeEmployees = JsonSerializer.Deserialize<List<SimpleEmployee>>(json, options);
-#pragma warning restore CS8601 // Null 参照代入の可能性があります。
+            List<SimpleEmployee>? includeEmployees = JsonSerializer.Deserialize<List<SimpleEmployee>>(json, options);
+            if (includeEmployees == null)
+            {
+                throw new FileFormatException("data/Includes.json");
+            }
+            IncludeEmployees = includeEmployees;
         }
 
         static public void SaveIncludeEmployees()
