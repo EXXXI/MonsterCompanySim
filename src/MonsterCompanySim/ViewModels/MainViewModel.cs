@@ -38,7 +38,11 @@ namespace MonsterCompanySim.ViewModels
         public ReactiveCommand CalcOneBattleCommand { get; } = new ReactiveCommand();
         public AsyncReactiveCommand SearchCommand { get; }
         public ReactiveCommand SetAllyCommand { get; } = new ReactiveCommand();
-        
+        public ReactiveCommand AllExcludeCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand AllIncludeCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand RecommendationCommand { get; } = new ReactiveCommand();
+
+
 
         public MainViewModel()
         {
@@ -59,6 +63,9 @@ namespace MonsterCompanySim.ViewModels
             CalcRequireCommand.Subscribe(_ => CalcRequire());
             CalcOneBattleCommand.Subscribe(_ => CalcOneBattle());
             SetAllyCommand.Subscribe(_ => SetAlly());
+            AllExcludeCommand.Subscribe(_ => AllExclude());
+            AllIncludeCommand.Subscribe(_ => AllInclude());
+            RecommendationCommand.Subscribe(_ => Recommendation());
 
             IsFree = IsBusy.Select(x => !x).ToReadOnlyReactivePropertySlim();
             SearchCommand = IsFree.ToAsyncReactiveCommand().WithSubscribe(async () => await Search());
@@ -248,6 +255,43 @@ namespace MonsterCompanySim.ViewModels
 
             ResultText.Value = sb.ToString();
 
+        }
+
+        private void Recommendation()
+        {
+            foreach (var vm in TargetVMs.Value)
+            {
+                if (vm.Employee.Value.Rarity >= EmployeeRarity.LXR ||
+                    vm.Employee.Value.Id == 33 ||
+                    vm.Employee.Value.Id == 41 ||
+                    vm.Employee.Value.Id == 62 ||
+                    vm.Employee.Value.Id == 63 ||
+                    vm.Employee.Value.Id == 65 ||
+                    vm.Employee.Value.Id == 72)
+                {
+                    vm.IsTarget.Value = true;
+                }
+                else
+                {
+                    vm.IsTarget.Value = false;
+                }
+            }
+        }
+
+        private void AllInclude()
+        {
+            foreach (var vm in TargetVMs.Value)
+            {
+                vm.IsTarget.Value = true;
+            }
+        }
+
+        private void AllExclude()
+        {
+            foreach (var vm in TargetVMs.Value)
+            {
+                vm.IsTarget.Value = false;
+            }
         }
 
         private int Parse(string value, int def)

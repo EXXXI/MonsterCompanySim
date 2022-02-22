@@ -83,9 +83,9 @@
                     </StackPanel>
                 </ScrollViewer>
                 <StackPanel Grid.Column="1">
-                    <Button Command="{Binding AllExcludeCommand}" Content="全社員を除外する(未実装)"/>
-                    <Button Command="{Binding AllIncludeCommand}" Content="全社員を対象にする(未実装)"/>
-                    <Button Command="{Binding RecommendationCommand}" Content="おすすめ設定(未実装)"/>
+                    <Button Command="{Binding AllExcludeCommand}" Content="全社員を除外する"/>
+                    <Button Command="{Binding AllIncludeCommand}" Content="全社員を対象にする"/>
+                    <Button Command="{Binding RecommendationCommand}" Content="おすすめ設定(LXR以上+アルアナ+属性2.5倍勢)"/>
                 </StackPanel>
             </Grid>
         </TabItem>
