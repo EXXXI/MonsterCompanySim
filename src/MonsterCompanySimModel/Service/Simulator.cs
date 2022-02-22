@@ -80,6 +80,8 @@ namespace MonsterCompanySimModel.Service
         public void LoadData()
         {
             Masters.LoadEmployee();
+            Masters.LoadIncludeEmployees();
+            Masters.LoadEnemyEmployee();
         }
 
         // 重い
@@ -88,8 +90,8 @@ namespace MonsterCompanySimModel.Service
             List<SearchResult> resultList = new();
 
 
-            // 社員無し入りリスト
-            List<Employee?> emps = new(Masters.UpperLREmployees) { null };
+            // 社員無し入り検索対象リスト
+            List<Employee?> emps = new(Masters.SearchTargets) { null };
 
             foreach (var ally1 in emps)
             {
@@ -450,7 +452,7 @@ namespace MonsterCompanySimModel.Service
             for (int i = 0; i < we.Count; i++)
             {
                 Battler? skillOwner = we[i];
-                if (skillOwner?.Employee.HasSkill(SkillType.全員引き付け) != null)
+                if (skillOwner?.Employee.HasSkill(SkillType.全員引き付け) != null && !skillOwner.IsSkillDisabled)
                 {
                     foreach (var opponent in opponents)
                     {
@@ -468,11 +470,11 @@ namespace MonsterCompanySimModel.Service
             for (int i = 0; i < we.Count; i++)
             {
                 Battler? skillOwner = we[i];
-                if (skillOwner?.Employee.HasSkill(SkillType.正面攻撃) != null)
+                if (skillOwner?.Employee.HasSkill(SkillType.正面攻撃) != null && !skillOwner.IsSkillDisabled)
                 {
                     skillOwner.FixedTarget = Front(i, opponents) + 1;
                 }
-                if (skillOwner?.Employee.HasSkill(SkillType.正面引き付け) != null)
+                if (skillOwner?.Employee.HasSkill(SkillType.正面引き付け) != null && !skillOwner.IsSkillDisabled)
                 {
                     Battler? opponent = opponents[Front(i, opponents)];
                     if (opponent == null)
@@ -516,7 +518,7 @@ namespace MonsterCompanySimModel.Service
 
         private void CalcNormalSkills(Battler? self, Battler? right, Battler? left)
         {
-            if (self == null)
+            if (self == null || self.IsSkillDisabled)
             {
                 return;
             }
@@ -732,6 +734,11 @@ namespace MonsterCompanySimModel.Service
 
         private void CalcAttackSkills(Battler attacker, Battler defender)
         {
+            if (attacker.IsSkillDisabled)
+            {
+                return;
+            }
+
             foreach (var skill in attacker.Employee.Skills)
             {
                 switch (skill.SkillType)
@@ -750,6 +757,11 @@ namespace MonsterCompanySimModel.Service
 
         private void CalcDefenceSkills(Battler attacker, Battler defender)
         {
+            if (defender.IsSkillDisabled)
+            {
+                return;
+            }
+
             foreach (var skill in defender.Employee.Skills)
             {
                 switch (skill.SkillType)
@@ -771,29 +783,35 @@ namespace MonsterCompanySimModel.Service
         private void CalcElement(Battler attacker, Battler defender)
         {
             // タイプキラー時は属性無視
-            foreach (var skill in attacker.Employee.Skills)
+            if (!attacker.IsSkillDisabled)
             {
-                switch (skill.SkillType)
+                foreach (var skill in attacker.Employee.Skills)
                 {
-                    case SkillType.タイプキラー:
-                        if (defender.Employee.Type == skill.Type)
-                        {
-                            attacker.Modifier *= skill.Modifier;
-                            return;
-                        }
-                        break;
-                    default:
-                        break;
+                    switch (skill.SkillType)
+                    {
+                        case SkillType.タイプキラー:
+                            if (defender.Employee.Type == skill.Type)
+                            {
+                                attacker.Modifier *= skill.Modifier;
+                                return;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
 
             // 属性軽減スキル最優先
-            Skill? reduceSkill = defender.Employee.HasSkill(SkillType.属性軽減);
-            if (reduceSkill != null && reduceSkill.Element == attacker.Employee.Element && !defender.IsReduced)
+            if (!defender.IsSkillDisabled)
             {
-                attacker.Modifier *= reduceSkill.Modifier;
-                defender.IsReduced = true;
-                return;
+                Skill? reduceSkill = defender.Employee.HasSkill(SkillType.属性軽減);
+                if (reduceSkill != null && reduceSkill.Element == attacker.Employee.Element && !defender.IsReduced)
+                {
+                    attacker.Modifier *= reduceSkill.Modifier;
+                    defender.IsReduced = true;
+                    return;
+                }
             }
 
             // 普通の計算
@@ -847,31 +865,37 @@ namespace MonsterCompanySimModel.Service
             }
 
             // キラー計算
-            if (normal && attacker.Employee.HasSkill(SkillType.同族キラー) != null)
+            if (!attacker.IsSkillDisabled)
             {
-                normal = false;
-                effective = true;
-            }
-            if (attacker.Employee.HasSkill(SkillType.オールキラー) != null)
-            {
-                reduce = false;
-                normal = false;
-                effective = true;
+                if (normal && attacker.Employee.HasSkill(SkillType.同族キラー) != null)
+                {
+                    normal = false;
+                    effective = true;
+                }
+                if (attacker.Employee.HasSkill(SkillType.オールキラー) != null)
+                {
+                    reduce = false;
+                    normal = false;
+                    effective = true;
+                }
             }
 
             // 軽減計算
-            if (effective && defender.Employee.HasSkill(SkillType.弱点無効) != null)
+            if (!defender.IsSkillDisabled)
             {
-                effective = false;
-                normal = true;
+                if (effective && defender.Employee.HasSkill(SkillType.弱点無効) != null)
+                {
+                    effective = false;
+                    normal = true;
 
-            }
-            if (defender.Employee.HasSkill(SkillType.全属性軽減) != null)
-            {
-                effective = false;
-                normal = false;
-                reduce = true;
+                }
+                if (defender.Employee.HasSkill(SkillType.全属性軽減) != null)
+                {
+                    effective = false;
+                    normal = false;
+                    reduce = true;
 
+                }
             }
 
             // 結果を反映

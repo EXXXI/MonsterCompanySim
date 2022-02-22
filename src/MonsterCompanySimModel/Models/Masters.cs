@@ -13,14 +13,24 @@ namespace MonsterCompanySimModel.Models
     {
         static public List<Employee> Employees { get; set; } = new List<Employee>();
         static public List<Employee> EnemyEmployees { get; set; } = new List<Employee>();
+        static private List<SimpleEmployee> IncludeEmployees { get; set; } = new List<SimpleEmployee>();
 
-        public static List<Employee> UpperLREmployees
+        static public List<Employee> SearchTargets 
         {
             get
             {
-                return new List<Employee>(Employees.Where(o => o.Rarity >= EmployeeRarity.LR));
+                List<Employee> searchTargets = new();
+                foreach (var emp in Employees)
+                {
+                    if (IsTarget(emp))
+                    {
+                        searchTargets.Add(emp);
+                    }
+                }
+                return searchTargets;
             }
         }
+
 
         static public void LoadEmployee()
         {
@@ -29,9 +39,109 @@ namespace MonsterCompanySimModel.Models
             options.Converters.Add(new JsonStringEnumConverter());
 
             string json = File.ReadAllText("data/Employees.json");
-#pragma warning disable CS8601 // Null 参照代入の可能性があります。
-            Employees = JsonSerializer.Deserialize<List<Employee>>(json, options);
-#pragma warning restore CS8601 // Null 参照代入の可能性があります。
+            List<Employee>? employees = JsonSerializer.Deserialize<List<Employee>>(json, options);
+            if (employees == null)
+            {
+                throw new FileFormatException("data/Employees.json");
+            }
+            Employees = employees;
+        }
+
+        static public void LoadEnemyEmployee()
+        {
+            JsonSerializerOptions options = new();
+            options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
+            options.Converters.Add(new JsonStringEnumConverter());
+
+            string json = File.ReadAllText("data/EnemyEmployees.json");
+            List<Employee>? diffEmployees = JsonSerializer.Deserialize<List<Employee>>(json, options);
+            if (diffEmployees == null)
+            {
+                throw new FileFormatException("data/EnemyEmployees.json");
+            }
+            List<Employee> enemyEmployees = new();
+            foreach (var emp in Employees)
+            {
+                bool hasDiff = false;
+                foreach (var diffEmp in diffEmployees)
+                {
+                    if (emp.Id == diffEmp.Id && emp.EvolState == diffEmp.EvolState)
+                    {
+                        hasDiff = true;
+                        enemyEmployees.Add(diffEmp);
+                        break;
+                    }
+                }
+                if (!hasDiff)
+                {
+                    enemyEmployees.Add(emp);
+                }
+            }
+            EnemyEmployees = enemyEmployees;
+        }
+
+        static public void LoadIncludeEmployees()
+        {
+            JsonSerializerOptions options = new();
+            options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
+            options.Converters.Add(new JsonStringEnumConverter());
+
+            string json = File.ReadAllText("data/Includes.json");
+            List<SimpleEmployee>? includeEmployees = JsonSerializer.Deserialize<List<SimpleEmployee>>(json, options);
+            if (includeEmployees == null)
+            {
+                throw new FileFormatException("data/Includes.json");
+            }
+            IncludeEmployees = includeEmployees;
+        }
+
+        static public void SaveIncludeEmployees()
+        {
+            JsonSerializerOptions options = new();
+            options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
+            options.Converters.Add(new JsonStringEnumConverter());
+
+            string json = JsonSerializer.Serialize(IncludeEmployees);
+            File.WriteAllText("data/Includes.json",json);
+        }
+
+        static public void AddTarget(Employee emp)
+        {
+            foreach (var target in IncludeEmployees)
+            {
+                if (emp.Id == target.Id && emp.EvolState == target.EvolState)
+                {
+                    return;
+                }
+            }
+            IncludeEmployees.Add(new SimpleEmployee() { Id = emp.Id, EvolState = emp.EvolState });
+            SaveIncludeEmployees();
+        }
+
+        static public void DeleteTarget(Employee emp)
+        {
+            foreach (var target in IncludeEmployees)
+            {
+                if (emp.Id == target.Id && emp.EvolState == target.EvolState)
+                {
+
+                    IncludeEmployees.Remove(target);
+                    SaveIncludeEmployees();
+                    return;
+                }
+            }
+        }
+
+        public static bool IsTarget(Employee emp)
+        {
+            foreach (var target in IncludeEmployees)
+            {
+                if (emp.Id == target.Id && emp.EvolState == target.EvolState)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         // Debug用
@@ -57,5 +167,7 @@ namespace MonsterCompanySimModel.Models
             }
             return null;
         }
+
+
     }
 }

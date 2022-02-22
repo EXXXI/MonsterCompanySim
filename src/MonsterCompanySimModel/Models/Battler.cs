@@ -18,6 +18,7 @@ namespace MonsterCompanySimModel.Models
         public long Level { get; set; }
         public bool IsReduced { get; set; } = false;
         public bool IsBoost { get; set; } = false;
+        public bool IsSkillDisabled { get; set; } = false;
 
         public long Atk
         {

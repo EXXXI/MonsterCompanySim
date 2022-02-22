@@ -1258,9 +1258,9 @@
     "Rarity": "LRplus",
     "Part": 1,
     "GuerrillaModifier": 0.1,
-    "Atk": 1295,
+    "Atk": 1190,
     "Dex": 1440,
-    "Eng": 18800
+    "Eng": 9800
   },
   {
     "Id": 72,
@@ -1281,8 +1281,8 @@
     "Part": 1,
     "GuerrillaModifier": 0.1,
     "Atk": 1295,
-    "Dex": 1440,
-    "Eng": 18800
+    "Dex": 1160,
+    "Eng": 16800
   },
   {
     "Id": 72,
@@ -1364,8 +1364,8 @@
     "Rarity": "LXR",
     "Part": 1,
     "GuerrillaModifier": 0.1,
-    "Atk": 1050,
-    "Dex": 940,
+    "Atk": 1070,
+    "Dex": 970,
     "Eng": 16000
   },
   {
@@ -1390,8 +1390,8 @@
     "Rarity": "LXR",
     "Part": 1,
     "GuerrillaModifier": 0.1,
-    "Atk": 1050,
-    "Dex": 940,
+    "Atk": 1100,
+    "Dex": 990,
     "Eng": 16000
   },
   {
@@ -1414,9 +1414,9 @@
     "Rarity": "LXR",
     "Part": 1,
     "GuerrillaModifier": 0.1,
-    "Atk": 1056,
-    "Dex": 1010,
-    "Eng": 34000
+    "Atk": 1020,
+    "Dex": 970,
+    "Eng": 32000
   },
   {
     "Id": 75,
@@ -1463,8 +1463,8 @@
     "Rarity": "LXR",
     "Part": 1,
     "GuerrillaModifier": 0.1,
-    "Atk": 990,
-    "Dex": 1060,
+    "Atk": 880,
+    "Dex": 940,
     "Eng": 9500
   },
   {
@@ -1545,8 +1545,8 @@
     "Rarity": "LXR",
     "Part": 1,
     "GuerrillaModifier": 0.1,
-    "Atk": 975,
-    "Dex": 5150,
+    "Atk": 875,
+    "Dex": 4800,
     "Eng": 2450
   },
   {
@@ -1638,7 +1638,7 @@
     "Rarity": "HV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1010,
+    "Atk": 1120,
     "Dex": 980,
     "Eng": 24000
   },
@@ -1956,7 +1956,7 @@
     "Rarity": "HXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1590,
+    "Atk": 1490,
     "Dex": 700,
     "Eng": 47000
   },
@@ -2058,8 +2058,8 @@
     "Rarity": "HXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 820,
-    "Dex": 3940,
+    "Atk": 1020,
+    "Dex": 4150,
     "Eng": 17500
   },
   {
@@ -2088,7 +2088,7 @@
     "Rarity": "HXVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1400,
+    "Atk": 1540,
     "Dex": 870,
     "Eng": 22500
   },
@@ -2142,8 +2142,8 @@
     "Rarity": "HXVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1400,
-    "Dex": 870,
+    "Atk": 1650,
+    "Dex": 990,
     "Eng": 22500
   },
   {
@@ -2209,7 +2209,7 @@
     "Rarity": "HXVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1590,
+    "Atk": 1750,
     "Dex": 280,
     "Eng": 124000
   },
@@ -2232,8 +2232,8 @@
     "Rarity": "HXVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1480,
-    "Dex": 4900,
+    "Atk": 1380,
+    "Dex": 3900,
     "Eng": 350
   },
   {

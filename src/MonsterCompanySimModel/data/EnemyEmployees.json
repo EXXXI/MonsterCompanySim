@@ -1,0 +1,169 @@
+﻿[
+  {
+    "Id": 9,
+    "Name": "泣き虫エルフ",
+    "Element": "水",
+    "Type": "なし",
+    "Rarity": "Nplus",
+    "Part": 1,
+    "GuerrillaModifier": 0.1,
+    "Atk": 11,
+    "Dex": 14,
+    "Eng": 4
+  },
+  {
+    "Id": 21,
+    "Name": "ボンファイター",
+    "Skills": [
+      {
+        "SkillType": "弱点無効"
+      }
+    ],
+    "Element": "水",
+    "Type": "なし",
+    "Rarity": "Rplus",
+    "Part": 1,
+    "GuerrillaModifier": 0.1,
+    "Atk": 31,
+    "Dex": 34,
+    "Eng": 15
+  },
+  {
+    "Id": 22,
+    "Name": "雪の子",
+    "Skills": [
+      {
+        "SkillType": "正面引き付け",
+        "Range": "自分"
+      }
+    ],
+    "Element": "水",
+    "Type": "なし",
+    "Rarity": "Rplus",
+    "Part": 1,
+    "GuerrillaModifier": 0.1,
+    "Atk": 33,
+    "Dex": 31,
+    "Eng": 17
+  },
+  {
+    "Id": 33,
+    "Name": "ワンダーギャル",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 1.5
+      }
+    ],
+    "Element": "水",
+    "Type": "なし",
+    "Rarity": "SRplus",
+    "Part": 1,
+    "GuerrillaModifier": 0.1,
+    "Atk": 38,
+    "Dex": 67,
+    "Eng": 158
+  },
+  {
+    "Id": 41,
+    "Name": "テングガール",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "木",
+        "Range": "全体",
+        "Modifier": 1.5
+      }
+    ],
+    "Element": "木",
+    "Type": "なし",
+    "Rarity": "SSR",
+    "Part": 1,
+    "GuerrillaModifier": 0.1,
+    "Atk": 56,
+    "Dex": 113,
+    "Eng": 350
+  },
+  {
+    "Id": 47,
+    "Name": "邪王クロコ",
+    "Skills": [
+      {
+        "SkillType": "CT確定",
+        "Range": "自分"
+      },
+      {
+        "SkillType": "被CT確定"
+      }
+    ],
+    "Element": "木",
+    "Type": "なし",
+    "Rarity": "SSRplus",
+    "Part": 1,
+    "GuerrillaModifier": 0.1,
+    "Atk": 161,
+    "Dex": 140,
+    "Eng": 512
+  },
+  {
+    "Id": 48,
+    "Name": "天真シロナ",
+    "Skills": [
+      {
+        "SkillType": "正面攻撃",
+        "Range": "自分"
+      }
+    ],
+    "Element": "木",
+    "Type": "なし",
+    "Rarity": "SSRplus",
+    "Part": 1,
+    "GuerrillaModifier": 0.1,
+    "Atk": 155,
+    "Dex": 174,
+    "Eng": 368
+  },
+  {
+    "Id": 63,
+    "Name": "ノーワーカー",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "木",
+        "Range": "全体",
+        "Modifier": 2.5
+      }
+    ],
+    "Element": "水",
+    "Type": "なし",
+    "Rarity": "LR",
+    "Part": 1,
+    "GuerrillaModifier": 0.1,
+    "Atk": 348,
+    "Dex": 624,
+    "Eng": 3700
+  },
+  {
+    "Id": 72,
+    "Name": "アルカアナザー",
+    "Skills": [
+      {
+        "SkillType": "CT確定",
+        "Range": "自分"
+      },
+      {
+        "SkillType": "オールキラー"
+      }
+    ],
+    "Element": "木",
+    "Type": "なし",
+    "Rarity": "LRplus",
+    "Part": 1,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1080,
+    "Dex": 1440,
+    "Eng": 9800
+  }
+]

@@ -22,6 +22,7 @@ namespace MonsterCompanySim.ViewModels
         public ReactivePropertySlim<BattlerSelectorViewModel> Ally1VM { get; } = new();
         public ReactivePropertySlim<BattlerSelectorViewModel> Ally2VM { get; } = new();
         public ReactivePropertySlim<BattlerSelectorViewModel> Ally3VM { get; } = new();
+        public ReactivePropertySlim<List<TargetSelectorViewModel>> TargetVMs { get; } = new();
         public ReactivePropertySlim<string> ResultText { get; } = new();
         public ReactivePropertySlim<string> TargetText { get; } = new();
         public ReactivePropertySlim<string> SearchPart { get; } = new();
@@ -37,7 +38,11 @@ namespace MonsterCompanySim.ViewModels
         public ReactiveCommand CalcOneBattleCommand { get; } = new ReactiveCommand();
         public AsyncReactiveCommand SearchCommand { get; }
         public ReactiveCommand SetAllyCommand { get; } = new ReactiveCommand();
-        
+        public ReactiveCommand AllExcludeCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand AllIncludeCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand RecommendationCommand { get; } = new ReactiveCommand();
+
+
 
         public MainViewModel()
         {
@@ -45,13 +50,22 @@ namespace MonsterCompanySim.ViewModels
             Ally1VM.Value = new BattlerSelectorViewModel();
             Ally2VM.Value = new BattlerSelectorViewModel();
             Ally3VM.Value = new BattlerSelectorViewModel();
-            Enemy1VM.Value = new BattlerSelectorViewModel();
-            Enemy2VM.Value = new BattlerSelectorViewModel();
-            Enemy3VM.Value = new BattlerSelectorViewModel();
+            Enemy1VM.Value = new BattlerSelectorViewModel(true);
+            Enemy2VM.Value = new BattlerSelectorViewModel(true);
+            Enemy3VM.Value = new BattlerSelectorViewModel(true);
+            List<TargetSelectorViewModel> targetVMs = new();
+            foreach (var emp in Masters.Employees)
+            {
+                targetVMs.Add(new TargetSelectorViewModel(emp));
+            }
+            TargetVMs.Value = targetVMs;
             CalcWinRateCommand.Subscribe(_ => CalcWinRate());
             CalcRequireCommand.Subscribe(_ => CalcRequire());
             CalcOneBattleCommand.Subscribe(_ => CalcOneBattle());
             SetAllyCommand.Subscribe(_ => SetAlly());
+            AllExcludeCommand.Subscribe(_ => AllExclude());
+            AllIncludeCommand.Subscribe(_ => AllInclude());
+            RecommendationCommand.Subscribe(_ => Recommendation());
 
             IsFree = IsBusy.Select(x => !x).ToReadOnlyReactivePropertySlim();
             SearchCommand = IsFree.ToAsyncReactiveCommand().WithSubscribe(async () => await Search());
@@ -243,6 +257,43 @@ namespace MonsterCompanySim.ViewModels
 
         }
 
+        private void Recommendation()
+        {
+            foreach (var vm in TargetVMs.Value)
+            {
+                if (vm.Employee.Value.Rarity >= EmployeeRarity.LXR ||
+                    vm.Employee.Value.Id == 33 ||
+                    vm.Employee.Value.Id == 41 ||
+                    vm.Employee.Value.Id == 62 ||
+                    vm.Employee.Value.Id == 63 ||
+                    vm.Employee.Value.Id == 65 ||
+                    vm.Employee.Value.Id == 72)
+                {
+                    vm.IsTarget.Value = true;
+                }
+                else
+                {
+                    vm.IsTarget.Value = false;
+                }
+            }
+        }
+
+        private void AllInclude()
+        {
+            foreach (var vm in TargetVMs.Value)
+            {
+                vm.IsTarget.Value = true;
+            }
+        }
+
+        private void AllExclude()
+        {
+            foreach (var vm in TargetVMs.Value)
+            {
+                vm.IsTarget.Value = false;
+            }
+        }
+
         private int Parse(string value, int def)
         {
             if (int.TryParse(value, out int parsed))
@@ -287,17 +338,13 @@ namespace MonsterCompanySim.ViewModels
 
         private bool IsValidTarget(Battler? battler1, Battler? battler2, Battler? battler3, int target)
         {
-            switch (target)
+            return target switch
             {
-                case 1:
-                    return battler1 != null;
-                case 2:
-                    return battler2 != null;
-                case 3:
-                    return battler3 != null;
-                default:
-                    return false;
-            }
+                1 => battler1 != null,
+                2 => battler2 != null,
+                3 => battler3 != null,
+                _ => false,
+            };
         }
     }
 }
