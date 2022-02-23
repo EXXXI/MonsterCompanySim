@@ -7,76 +7,22 @@ using System.Threading.Tasks;
 
 namespace MonsterCompanySimModel.Service
 {
+    /// <summary>
+    /// シミュ本体
+    /// </summary>
     public class Simulator
     {
+        /// <summary>
+        /// 開発用
+        /// </summary>
         public void Debug()
         {
-            /*
-            LoadData();
 
-            var another = new Battler(Masters.GetEmployee(72, 2));
-            another.Level = 109999;
-            var little = new Battler(Masters.GetEmployee(105));
-            little.Level = 99999;
-            var nowork = new Battler(Masters.GetEmployee(63));
-            nowork.Level = 79999;
-            var other1 = new Battler(Masters.GetEmployee(66));
-            other1.Level = 4838700;
-            var other2 = new Battler(Masters.GetEmployee(66));
-            other2.Level = 4838700;
-            var other3 = new Battler(Masters.GetEmployee(66));
-            other3.Level = 4838700;
-            var black = new Battler(Masters.Employees[0]);
-            black.Level = 1;
-
-            var aaa = Battle(
-                null, another, null,
-                black, null,null,
-                3,1, 2,2, 1, 1,true);
-            var bbb = Battle(
-                another, little, nowork,
-                other1, other2, other3,
-                3, 1, 2, 1, 1, 1, true);
-
-            var ccc = FullBattle(
-                another, little, nowork,
-                other1, other2, other3, true);
-
-            var ddd = CalcRequireLevel(
-                another, little, nowork,
-                other1, other2, other3, true);
-
-            int a = 4;
-            */
-            /*
-            var en1 = new Battler(Masters.GetEmployee(99));
-            en1.Level = 6775535;
-            var en2 = new Battler(Masters.GetEmployee(103));
-            en2.Level = 4211815;
-            Battler en3 = null;
-            var al1 = new Battler(Masters.GetEmployee(81));
-            al1.Level = 109999;
-            var al2 = new Battler(Masters.GetEmployee(87));
-            al2.Level = 109999;
-            Battler al3 = new Battler(Masters.GetEmployee(99));
-            al3.Level = 109999;
-
-            var bbb = Battle(
-                al1, al2, al3,
-                en1, en2, en3,
-                2, 2, 2, 1, 2, 1, true);
-
-            int a = 4;
-            */
-            /*
-            var white1 = new Battler(Masters.GetEmployee(48));
-            white1.Level = 30912896;
-            var white2 = new Battler(Masters.GetEmployee(48));
-            white2.Level = 30912896;
-            Search(white1, white2, null, true, 119999, 1);
-            */
         }
 
+        /// <summary>
+        /// データロード
+        /// </summary>
         public void LoadData()
         {
             Masters.LoadEmployee();
@@ -84,21 +30,32 @@ namespace MonsterCompanySimModel.Service
             Masters.LoadEnemyEmployee();
         }
 
-        // 重い
+        /// <summary>
+        /// 編成検索
+        /// </summary>
+        /// <param name="enemy1">敵1</param>
+        /// <param name="enemy2">敵2</param>
+        /// <param name="enemy3">敵3</param>
+        /// <param name="boost">ブースト有無(ブーストありでtrue)</param>
+        /// <param name="level">味方レベル</param>
+        /// <param name="part">部制限</param>
+        /// <returns>編成検索結果リスト</returns>
         public List<SearchResult> Search(Battler? enemy1, Battler? enemy2, Battler? enemy3, bool boost, int level,int part)
         {
+            // 結果用List
             List<SearchResult> resultList = new();
 
-
-            // 社員無し入り検索対象リスト
+            // 社員無し(null)入り検索対象リスト
             List<Employee?> emps = new(Masters.SearchTargets) { null };
 
+            // 総当たり
             foreach (var ally1 in emps)
             {
                 foreach (var ally2 in emps)
                 {
                     foreach (var ally3 in emps)
                     {
+                        // 同一社員不可
                         if ((ally1 != null && ally1?.Id == ally2?.Id) ||
                             (ally2 != null && ally2?.Id == ally3?.Id) ||
                             (ally3 != null && ally3?.Id == ally1?.Id) ||
@@ -107,6 +64,7 @@ namespace MonsterCompanySimModel.Service
                             continue;
                         }
 
+                        // 部制限
                         bool otherPart = false;
                         if (ally1 != null && ally1.Part != part)
                         {
@@ -128,13 +86,15 @@ namespace MonsterCompanySimModel.Service
                             }
                         }
 
+                        // 戦闘データ生成
                         Battler? battler1 = ally1 == null ? null : new Battler(ally1) { Level = level };
                         Battler? battler2 = ally2 == null ? null : new Battler(ally2) { Level = level };
                         Battler? battler3 = ally3 == null ? null : new Battler(ally3) { Level = level };
 
-
+                        // 勝率計算
                         BattleResult battleResult = FullBattle(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost);
 
+                        // 結果確認
                         if (battleResult.WinRate > 0)
                         {
                             SearchResult result = new()
@@ -142,11 +102,9 @@ namespace MonsterCompanySimModel.Service
                                 Ally1 = ally1,
                                 Ally2 = ally2,
                                 Ally3 = ally3,
-                                //MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost) ?? 0,
                                 WinRate = battleResult.WinRate,
                                 SumEng = (battler1?.Eng ?? 0) + (battler2?.Eng ?? 0) + (battler3?.Eng ?? 0)
                             };
-
                             resultList.Add(result);
                         }
                     }
@@ -159,21 +117,31 @@ namespace MonsterCompanySimModel.Service
             {
                 foreach (var result in resultList)
                 {
+                    // 戦闘データ再生成
                     Battler? battler1 = result.Ally1 == null ? null : new Battler(result.Ally1) { Level = level };
                     Battler? battler2 = result.Ally2 == null ? null : new Battler(result.Ally2) { Level = level };
                     Battler? battler3 = result.Ally3 == null ? null : new Battler(result.Ally3) { Level = level };
+
+                    // 要求レベル計算
                     result.MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost) ?? 0;
                 }
             }
 
+            // 返却
             return resultList;
         }
 
-
-
-
-
-
+        /// <summary>
+        /// 要求レベル計算
+        /// </summary>
+        /// <param name="ally1">味方1</param>
+        /// <param name="ally2">味方2</param>
+        /// <param name="ally3">味方3</param>
+        /// <param name="enemy1">敵1</param>
+        /// <param name="enemy2">敵2</param>
+        /// <param name="enemy3">敵3</param>
+        /// <param name="boost">ブースト有無(ブーストありでtrue)</param>
+        /// <returns>要求レベル(勝てない場合null)</returns>
         public int? CalcRequireLevel(
             Battler? ally1, Battler? ally2, Battler? ally3,
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
@@ -182,10 +150,11 @@ namespace MonsterCompanySimModel.Service
             // TODO:定数化
             int max = 139999;
             int min = 1;
-
+            
             bool won = false;
             while (max != min)
             {
+                // 半分ずつ絞る
                 int level = (max + min) / 2;
                 if (ally1 != null)
                 {
@@ -199,7 +168,11 @@ namespace MonsterCompanySimModel.Service
                 {
                     ally3.Level = level;
                 }
+
+                // 勝率計算
                 BattleResult battleResult = FullBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, boost);
+
+                // 結果確認
                 if (battleResult.WinRate > 0)
                 {
                     won = true;
@@ -211,26 +184,40 @@ namespace MonsterCompanySimModel.Service
                 }
             }
 
+            // 勝てていたら要求レベルを返す
             if (won)
             {
                 return max;
             }
+
+            // 勝ち目がなければnullを返す
             return null;
         }
 
 
 
-
+        /// <summary>
+        /// 戦闘シミュレート(ターゲットランダム)
+        /// </summary>
+        /// <param name="ally1">味方1</param>
+        /// <param name="ally2">味方2</param>
+        /// <param name="ally3">味方3</param>
+        /// <param name="enemy1">敵1</param>
+        /// <param name="enemy2">敵2</param>
+        /// <param name="enemy3">敵3</param>
+        /// <param name="boost">ブースト有無(ブーストありでtrue)</param>
+        /// <returns>戦闘結果</returns>
         public BattleResult FullBattle(
             Battler? ally1, Battler? ally2, Battler? ally3,
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
             bool boost
             )
         {
+            // 整理
             List<Battler?> allys = new() { ally1, ally2, ally3 };
             List<Battler?> enemys = new() { enemy1, enemy2, enemy3 };
 
-            // リセット
+            // タゲ計算をリセット
             foreach (var ally in allys)
             {
                 if (ally != null)
@@ -246,15 +233,15 @@ namespace MonsterCompanySimModel.Service
                 }
             }
 
-            // 正面タゲ計算
+            // 正面関連スキル計算
             CalcFrontSkill(allys, enemys);
             CalcFrontSkill(enemys, allys);
 
-            // 全引き付け計算
+            // 全引き付けスキル計算
             CalcDecoySkill(allys, enemys);
             CalcDecoySkill(enemys, allys);
 
-            // 戦闘
+            // 味方戦闘
             List<Damage> allyDamages = new();
             int allyTargetCount = 0;
             foreach (var a1 in CalcTargets(ally1, enemys))
@@ -273,7 +260,7 @@ namespace MonsterCompanySimModel.Service
                 damage.Probability /= allyTargetCount; 
             }
 
-
+            // 敵戦闘
             List<Damage> enemyDamages = new();
             int enemyTargetCount = 0;
             foreach (var e1 in CalcTargets(enemy1, allys))
@@ -292,14 +279,32 @@ namespace MonsterCompanySimModel.Service
                 damage.Probability /= enemyTargetCount;
             }
 
+            // 結果まとめ
             BattleResult result = new();
             result.AllyDamages = allyDamages;
             result.EnemyDamages = enemyDamages;
 
+            // 返却
             return result;
-
         }
 
+        /// <summary>
+        /// 戦闘シミュレート(ターゲット指定)
+        /// </summary>
+        /// <param name="ally1">味方1</param>
+        /// <param name="ally2">味方2</param>
+        /// <param name="ally3">味方3</param>
+        /// <param name="enemy1">敵1</param>
+        /// <param name="enemy2">敵2</param>
+        /// <param name="enemy3">敵3</param>
+        /// <param name="allyTarget1">味方1ターゲット</param>
+        /// <param name="allyTarget2">味方2ターゲット</param>
+        /// <param name="allyTarget3">味方3ターゲット</param>
+        /// <param name="enemyTarget1">敵1ターゲット</param>
+        /// <param name="enemyTarget2">敵2ターゲット</param>
+        /// <param name="enemyTarget3">敵3ターゲット</param>
+        /// <param name="boost">ブースト有無(ブーストありでtrue)</param>
+        /// <returns>戦闘結果</returns>
         public BattleResult Battle(
             Battler? ally1, Battler? ally2, Battler? ally3,
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
@@ -308,14 +313,33 @@ namespace MonsterCompanySimModel.Service
             bool boost
             )
         {
+            // 戦闘結果クラス
             BattleResult result = new();
+
+            // 味方戦闘
             result.AllyDamages = AllyBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, allyTarget1, allyTarget2, allyTarget3, boost);
+
+            // 敵戦闘
             result.EnemyDamages = EnemyBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, enemyTarget1, enemyTarget2, enemyTarget3, boost);
 
+            // 返却
             return result;
-
         }
 
+        /// <summary>
+        /// 敵戦闘
+        /// </summary>
+        /// <param name="ally1">味方1</param>
+        /// <param name="ally2">味方2</param>
+        /// <param name="ally3">味方3</param>
+        /// <param name="enemy1">敵1</param>
+        /// <param name="enemy2">敵2</param>
+        /// <param name="enemy3">敵3</param>
+        /// <param name="enemyTarget1">敵1ターゲット</param>
+        /// <param name="enemyTarget2">敵2ターゲット</param>
+        /// <param name="enemyTarget3">敵3ターゲット</param>
+        /// <param name="boost">ブースト有無(ブーストありでtrue)</param>
+        /// <returns>ダメージ情報</returns>
         private List<Damage> EnemyBattle(
             Battler? ally1, Battler? ally2, Battler? ally3,
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
@@ -323,6 +347,7 @@ namespace MonsterCompanySimModel.Service
             bool boost
             )
         {
+            // 戦闘用の情報を初期化
             ally1?.ResetAttackProperty(boost);
             ally2?.ResetAttackProperty(boost);
             ally3?.ResetAttackProperty(boost);
@@ -330,8 +355,10 @@ namespace MonsterCompanySimModel.Service
             enemy2?.ResetAttackProperty();
             enemy3?.ResetAttackProperty();
 
+            // 戦闘結果クラスを利用
             BattleResult result = new();
 
+            // 相手に依存しないスキルを計算
             CalcNormalSkills(ally1, ally2, ally3);
             CalcNormalSkills(ally2, ally3, ally1);
             CalcNormalSkills(ally3, ally1, ally2);
@@ -339,6 +366,7 @@ namespace MonsterCompanySimModel.Service
             CalcNormalSkills(enemy2, enemy3, enemy1);
             CalcNormalSkills(enemy3, enemy1, enemy2);
 
+            // 攻撃してダメージ情報を格納
             result.CombineEnemyDamages(Attack(enemy1, TargetBattler(enemyTarget1, ally1, ally2, ally3)),
                 enemy1?.Employee?.Name + "→" + TargetBattler(enemyTarget1, ally1, ally2, ally3)?.Employee?.Name);
             result.CombineEnemyDamages(Attack(enemy2, TargetBattler(enemyTarget2, ally1, ally2, ally3)),
@@ -346,10 +374,27 @@ namespace MonsterCompanySimModel.Service
             result.CombineEnemyDamages(Attack(enemy3, TargetBattler(enemyTarget3, ally1, ally2, ally3)),
                 enemy3?.Employee?.Name + "→" + TargetBattler(enemyTarget3, ally1, ally2, ally3)?.Employee?.Name);
 
+            // ダメージ情報返却
             return result.EnemyDamages;
-
         }
 
+        /// <summary>
+        /// 味方戦闘
+        /// </summary>
+        /// <param name="ally1">味方1</param>
+        /// <param name="ally2">味方2</param>
+        /// <param name="ally3">味方3</param>
+        /// <param name="enemy1">敵1</param>
+        /// <param name="enemy2">敵2</param>
+        /// <param name="enemy3">敵3</param>
+        /// <param name="allyTarget1">味方1ターゲット</param>
+        /// <param name="allyTarget2">味方2ターゲット</param>
+        /// <param name="allyTarget3">味方3ターゲット</param>
+        /// <param name="enemyTarget1">敵1ターゲット</param>
+        /// <param name="enemyTarget2">敵2ターゲット</param>
+        /// <param name="enemyTarget3">敵3ターゲット</param>
+        /// <param name="boost">ブースト有無(ブーストありでtrue)</param>
+        /// <returns>ダメージ情報</returns>
         private List<Damage> AllyBattle(
             Battler? ally1, Battler? ally2, Battler? ally3,
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
@@ -357,6 +402,7 @@ namespace MonsterCompanySimModel.Service
             bool boost
             )
         {
+            // 戦闘用の情報を初期化
             ally1?.ResetAttackProperty(boost);
             ally2?.ResetAttackProperty(boost);
             ally3?.ResetAttackProperty(boost);
@@ -364,8 +410,10 @@ namespace MonsterCompanySimModel.Service
             enemy2?.ResetAttackProperty();
             enemy3?.ResetAttackProperty();
 
+            // 戦闘結果クラスを利用
             BattleResult result = new();
 
+            // 相手に依存しないスキルを計算
             CalcNormalSkills(ally1, ally2, ally3);
             CalcNormalSkills(ally2, ally3, ally1);
             CalcNormalSkills(ally3, ally1, ally2);
@@ -373,70 +421,94 @@ namespace MonsterCompanySimModel.Service
             CalcNormalSkills(enemy2, enemy3, enemy1);
             CalcNormalSkills(enemy3, enemy1, enemy2);
 
+            // 攻撃してダメージ情報を格納
             result.CombineAllyDamages(Attack(ally1, TargetBattler(allyTarget1, enemy1, enemy2, enemy3)),
                 ally1?.Employee?.Name + "→" + TargetBattler(allyTarget1, enemy1, enemy2, enemy3)?.Employee?.Name);
             result.CombineAllyDamages(Attack(ally2, TargetBattler(allyTarget2, enemy1, enemy2, enemy3)),
                 ally2?.Employee?.Name + "→" + TargetBattler(allyTarget2, enemy1, enemy2, enemy3)?.Employee?.Name);
             result.CombineAllyDamages(Attack(ally3, TargetBattler(allyTarget3, enemy1, enemy2, enemy3)),
                 ally3?.Employee?.Name + "→" + TargetBattler(allyTarget3, enemy1, enemy2, enemy3)?.Employee?.Name);
-
+           
+            // ダメージ情報返却
             return result.AllyDamages;
-
         }
 
+        /// <summary>
+        /// 攻撃シミュレート
+        /// </summary>
+        /// <param name="attacker">攻撃側社員</param>
+        /// <param name="defender">防御側社員</param>
+        /// <returns>ダメージ情報</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         private List<Damage> Attack(Battler? attacker, Battler? defender)
         {
             if (attacker == null)
             {
+                // 攻撃側nullは0ダメージ
                 List<Damage> noList = new();
                 noList.Add(new Damage());
                 return noList;
             }
             if (defender == null)
             {
+                // 防御側nullはバグ
                 throw new ArgumentNullException(nameof(defender));
             }
 
+            // 一時的なクリティカル補正を初期化(タイプキラー・タイプ軽減)
             attacker.OnceDefCritState = CriticalState.normal;
             attacker.OnceAtkCritState = CriticalState.normal;
             defender.OnceDefCritState = CriticalState.normal;
             defender.OnceAtkCritState = CriticalState.normal;
 
+            // 攻撃側の相手依存スキル計算
             CalcAttackSkills(attacker, defender);
+
+            // 防御側の相手依存スキル計算
             CalcDefenceSkills(attacker, defender);
+
+            // 属性・属性関連スキル計算
             CalcElement(attacker, defender);
 
+            // クリティカル率計算
             double crit = CalcCritical(attacker, defender);
+
+            // ダメージ値計算
             double damageValue = CalcDamage(attacker);
 
+            // ダメージ情報をセット
             List<Damage> damages = new();
             damages.Add(new Damage(crit, damageValue * 1.5));
             damages.Add(new Damage(1 - crit, damageValue));
 
+            // 返却
             return damages;
-
         }
 
-
-
+        /// <summary>
+        /// ターゲット計算
+        /// </summary>
+        /// <param name="battler">攻撃社員</param>
+        /// <param name="opponents">相手社員たち</param>
+        /// <returns>攻撃パターン</returns>
         private List<int> CalcTargets(Battler? battler, List<Battler?> opponents)
         {
-
             List<int> list = new();
             if (battler == null)
             {
                 // nullは0を返却
-                // 値は利用されないのでなんでもいいが1項目で返す必要がある
+                // 戦闘は行わないので値はなんでもいいが、「戦闘しない」の1パターンを行うため1項目で返す必要がある
                 list.Add(0);
                 return list;
             }
             if (battler.FixedTarget != 0)
             {
-                // 固定時はそれだけ返却
+                // 固定時は攻撃対象だけを返却
                 list.Add(battler.FixedTarget);
                 return list;
             }
 
+            // 特にスキルの影響等がない場合存在する相手全員を返却
             for (int i = 0; i < opponents.Count; i++)
             {
                 if (opponents[i] != null)
@@ -447,8 +519,15 @@ namespace MonsterCompanySimModel.Service
             return list;
         }
 
+        /// <summary>
+        /// 引き付けスキル計算
+        /// </summary>
+        /// <param name="we">自分側社員たち</param>
+        /// <param name="opponents">相手側社員たち</param>
         private void CalcDecoySkill(List<Battler?> we, List<Battler?> opponents)
         {
+            // 引き付けスキル持ちがいた場合、相手のターゲットをその社員に固定する
+            // 右側が優先なので左から計算して上書き
             for (int i = 0; i < we.Count; i++)
             {
                 Battler? skillOwner = we[i];
@@ -465,6 +544,12 @@ namespace MonsterCompanySimModel.Service
             }
         }
 
+        /// <summary>
+        /// 正面スキル計算
+        /// </summary>
+        /// <param name="we">自分側社員たち</param>
+        /// <param name="opponents">相手側社員たち</param>
+        /// <exception cref="ArgumentException"></exception>
         private void CalcFrontSkill(List<Battler?> we, List<Battler?> opponents)
         {
             for (int i = 0; i < we.Count; i++)
@@ -472,14 +557,16 @@ namespace MonsterCompanySimModel.Service
                 Battler? skillOwner = we[i];
                 if (skillOwner?.Employee.HasSkill(SkillType.正面攻撃) != null && !skillOwner.IsSkillDisabled)
                 {
+                    // 正面攻撃持ちは自分のターゲットを正面に固定
                     skillOwner.FixedTarget = Front(i, opponents) + 1;
                 }
                 if (skillOwner?.Employee.HasSkill(SkillType.正面引き付け) != null && !skillOwner.IsSkillDisabled)
                 {
+                    // 正面引き付け持ちは相手のターゲットを自分に固定
                     Battler? opponent = opponents[Front(i, opponents)];
                     if (opponent == null)
                     {
-                        // ここで発生するならFrontメソッドで発生しているはずではある
+                        // ここで発生するならFrontメソッドで発生しているはず
                         throw new ArgumentException("opponents is all null.");
                     }
                     opponent.FixedTarget = i + 1;
@@ -487,24 +574,45 @@ namespace MonsterCompanySimModel.Service
             }
         }
 
+        /// <summary>
+        /// 正面社員の位置番号(0オリジン)を取得
+        /// </summary>
+        /// <param name="self">自分の位置番号(0オリジン)</param>
+        /// <param name="opponents">相手達</param>
+        /// <returns>正面社員の位置番号(0オリジン)</returns>
+        /// <exception cref="ArgumentException"></exception>
         private int Front(int self, List<Battler?> opponents)
         {
+            // 正面がいるなら正面
             if (opponents[self % 3] != null)
             {
                 return self % 3;
             }
+
+            // 正面がいないなら右、右端を超えたら左端へ
             if (opponents[(self + 1) % 3] != null)
             {
                 return (self + 1) % 3;
             }
+
+            // 右もいないならさらに右、右端を超えたら左端へ
             if (opponents[(self + 2) % 3] != null)
             {
                 return (self + 2) % 3;
             }
 
+            // 相手社員がいない
             throw new ArgumentException("opponents is all null.");
         }
 
+        /// <summary>
+        /// ターゲットの社員を取得
+        /// </summary>
+        /// <param name="target">ターゲット番号(1オリジン)</param>
+        /// <param name="battler1">相手社員1</param>
+        /// <param name="battler2">相手社員2</param>
+        /// <param name="battler3">相手社員3</param>
+        /// <returns></returns>
         private Battler? TargetBattler(int target, Battler? battler1, Battler? battler2, Battler? battler3)
         {
             return target switch
@@ -516,17 +624,28 @@ namespace MonsterCompanySimModel.Service
             };
         }
 
+        /// <summary>
+        /// 相手に依存しないスキルを計算
+        /// </summary>
+        /// <param name="self">自分</param>
+        /// <param name="right">右側社員</param>
+        /// <param name="left">左側社員</param>
         private void CalcNormalSkills(Battler? self, Battler? right, Battler? left)
         {
+            // 自分がnullまたはスキル無効化されているなら計算終了
             if (self == null || self.IsSkillDisabled)
             {
                 return;
             }
+
+            // 右がnullで左がいるなら、左の社員を右扱いする
             if (right == null && left != null)
             {
                 right = left;
                 left = null;
             }
+
+            // 各スキルを計算する
             foreach (var skill in self.Employee.Skills)
             {
                 CalcNormalSkill(skill, self, right, left);
@@ -534,6 +653,13 @@ namespace MonsterCompanySimModel.Service
 
         }
 
+        /// <summary>
+        /// 相手に依存しないスキルを計算(本体)
+        /// </summary>
+        /// <param name="skill">スキル</param>
+        /// <param name="self">自分</param>
+        /// <param name="right">右側社員</param>
+        /// <param name="left">左側社員</param>
         private void CalcNormalSkill(Skill skill, Battler self, Battler? right, Battler? left)
         {
             switch (skill.SkillType)
@@ -732,13 +858,20 @@ namespace MonsterCompanySimModel.Service
             }
         }
 
+        /// <summary>
+        /// 攻撃側の相手に依存するスキルを計算
+        /// </summary>
+        /// <param name="attacker">攻撃側社員</param>
+        /// <param name="defender">防御側社員</param>
         private void CalcAttackSkills(Battler attacker, Battler defender)
         {
+            // スキル無効化されている場合計算終了
             if (attacker.IsSkillDisabled)
             {
                 return;
             }
 
+            // 各スキルを計算
             foreach (var skill in attacker.Employee.Skills)
             {
                 switch (skill.SkillType)
@@ -755,6 +888,11 @@ namespace MonsterCompanySimModel.Service
             }
         }
 
+        /// <summary>
+        /// 防御側側の相手に依存するスキルを計算
+        /// </summary>
+        /// <param name="attacker">攻撃側社員</param>
+        /// <param name="defender">防御側社員</param>
         private void CalcDefenceSkills(Battler attacker, Battler defender)
         {
             if (defender.IsSkillDisabled)
@@ -780,6 +918,11 @@ namespace MonsterCompanySimModel.Service
             }
         }
 
+        /// <summary>
+        /// 属性・属性関係のスキルを計算
+        /// </summary>
+        /// <param name="attacker">攻撃側社員</param>
+        /// <param name="defender">防御側社員</param>
         private void CalcElement(Battler attacker, Battler defender)
         {
             // タイプキラー時は属性無視
@@ -909,9 +1052,19 @@ namespace MonsterCompanySimModel.Service
                 attacker.Modifier *= 1.5;
                 return;
             }
-            return;
+            if (normal) 
+            {
+                // この分岐は不要だが可読性のため追加
+                return;
+            }
         }
 
+        /// <summary>
+        /// クリティカル率計算
+        /// </summary>
+        /// <param name="attacker">攻撃側社員</param>
+        /// <param name="defender">防御側社員</param>
+        /// <returns>クリティカル率</returns>
         private double CalcCritical(Battler attacker, Battler defender)
         {
             // 回避最優先
@@ -972,6 +1125,11 @@ namespace MonsterCompanySimModel.Service
             return 1;
         }
 
+        /// <summary>
+        /// ダメージ計算
+        /// </summary>
+        /// <param name="attacker">攻撃社員</param>
+        /// <returns>ダメージ(クリティカル無し)</returns>
         private double CalcDamage(Battler attacker)
         {
             double atkAtk = attacker.Atk * (attacker.IsBoost ? 1.3 : 1.0);

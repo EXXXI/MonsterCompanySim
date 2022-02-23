@@ -1,5 +1,8 @@
 ﻿namespace MonsterCompanySimModel.Models
 {
+    /// <summary>
+    /// スキル種類
+    /// </summary>
     public enum SkillType
     {
         属性強化,
@@ -27,18 +30,4 @@
         特定社員強化,
         特定社員強化_進化指定
     }
-    /*
-    
-    "Skills": [
-      {
-        "SkillType": "確定",
-        "Target": "全体",
-        "Modifier": 2.5,
-        "Type": "神",
-        "Element": "火",
-        "Buddys": [1,2]
-      }
-    ],    
-    
-     */
 }
