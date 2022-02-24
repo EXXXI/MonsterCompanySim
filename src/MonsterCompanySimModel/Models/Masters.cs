@@ -30,6 +30,11 @@ namespace MonsterCompanySimModel.Models
         static private List<SimpleEmployee> IncludeEmployees { get; set; } = new List<SimpleEmployee>();
 
         /// <summary>
+        /// 設定ファイルデータ
+        /// </summary>
+        static public Config ConfigData { get; set; } = new Config();
+
+        /// <summary>
         /// 検索対象社員リスト
         /// </summary>
         static public List<Employee> SearchTargets 
@@ -48,12 +53,22 @@ namespace MonsterCompanySimModel.Models
             }
         }
 
-        // TODO: 呼び出す順番に決まりがあるからここはprivateにして全部ロードするメソッドを公開するべき
+        /// <summary>
+        /// 各種データ読み込み
+        /// </summary>
+        static public void LoadDatas()
+        {
+            LoadEmployee();
+            LoadIncludeEmployees();
+            LoadEnemyEmployee();
+            LoadConfig();
+        }
+
         /// <summary>
         /// 社員情報取得
         /// </summary>
         /// <exception cref="FileFormatException"></exception>
-        static public void LoadEmployee()
+        static private void LoadEmployee()
         {
             JsonSerializerOptions options = new();
             options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
@@ -72,7 +87,7 @@ namespace MonsterCompanySimModel.Models
         /// 敵社員情報取得
         /// </summary>
         /// <exception cref="FileFormatException"></exception>
-        static public void LoadEnemyEmployee()
+        static private void LoadEnemyEmployee()
         {
             JsonSerializerOptions options = new();
             options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
@@ -109,7 +124,7 @@ namespace MonsterCompanySimModel.Models
         /// 検索対象社員情報取得
         /// </summary>
         /// <exception cref="FileFormatException"></exception>
-        static public void LoadIncludeEmployees()
+        static private void LoadIncludeEmployees()
         {
             JsonSerializerOptions options = new();
             options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
@@ -188,6 +203,25 @@ namespace MonsterCompanySimModel.Models
                 }
             }
             return false;
+        }
+
+        /// <summary>
+        /// 設定ファイルの情報を取得
+        /// </summary>
+        /// <exception cref="FileFormatException"></exception>
+        static private void LoadConfig()
+        {
+            JsonSerializerOptions options = new();
+            options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
+            options.Converters.Add(new JsonStringEnumConverter());
+
+            string json = File.ReadAllText("data/Config.json");
+            Config? config = JsonSerializer.Deserialize<Config>(json, options);
+            if (config == null)
+            {
+                throw new FileFormatException("data/Config.json");
+            }
+            ConfigData = config;
         }
 
         /// <summary>

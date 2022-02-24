@@ -257,8 +257,7 @@ namespace MonsterCompanySim.ViewModels
             StringBuilder sb = new();
             sb.AppendLine("■検索条件 LV:" + level + ", 部:" + part);
             sb.AppendLine("■検索結果 " + results.Count + "件");
-            // TODO:定数化
-            if (results.Count > 200)
+            if (results.Count > Masters.ConfigData.RequireThreshold)
             {
                 sb.AppendLine("★件数が多すぎるため、要求レベルの計算は行いません");
             }

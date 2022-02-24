@@ -17,9 +17,8 @@ namespace MonsterCompanySim.ViewModels.Controls
     {
         /// <summary>
         /// 社員なし時の表示名
-        /// TODO: 外部ファイル化
         /// </summary>
-        const string NoEmployeeName = "社員無し";
+        private string NoEmployeeName { get; } = Masters.ConfigData.NoEmproyeeName;
 
         /// <summary>
         /// 社員一覧

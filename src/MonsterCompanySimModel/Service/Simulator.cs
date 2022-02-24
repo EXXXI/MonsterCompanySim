@@ -26,9 +26,7 @@ namespace MonsterCompanySimModel.Service
         /// </summary>
         public void LoadData()
         {
-            Masters.LoadEmployee();
-            Masters.LoadIncludeEmployees();
-            Masters.LoadEnemyEmployee();
+            Masters.LoadDatas();
         }
 
         /// <summary>
@@ -126,8 +124,7 @@ namespace MonsterCompanySimModel.Service
             }
 
             // 要求レベル計算
-            // TODO:閾値定数化
-            if (resultList.Count < 200)
+            if (resultList.Count < Masters.ConfigData.RequireThreshold)
             {
                 foreach (var result in resultList)
                 {
@@ -167,8 +164,7 @@ namespace MonsterCompanySimModel.Service
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
             bool boost)
         {
-            // TODO:定数化
-            int max = 139999;
+            int max = Masters.ConfigData.MaxLevel;
             int min = 1;
             
             bool won = false;
