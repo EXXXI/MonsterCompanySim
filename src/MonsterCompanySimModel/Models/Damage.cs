@@ -6,43 +6,72 @@ using System.Threading.Tasks;
 
 namespace MonsterCompanySimModel.Models
 {
+    /// <summary>
+    /// ダメージ情報
+    /// </summary>
     public class Damage
     {
+        /// <summary>
+        /// 発生確率
+        /// </summary>
         public double Probability { get; set; } = 1;
+
+        /// <summary>
+        /// ダメージ量
+        /// </summary>
         public double Value { get; set; } = 0;
+
+        /// <summary>
+        /// 戦闘ログ
+        /// </summary>
         public string Log { get; set; } = string.Empty;
 
+        /// <summary>
+        /// デフォルトコンストラクタ
+        /// </summary>
         public Damage()
         {
 
         }
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="probability">発生確率</param>
+        /// <param name="value">ダメージ量</param>
         public Damage(double probability, double value)
         {
             Probability = probability;
             Value = value;
         }
 
-        static public List<Damage> CombineDamages(List<Damage> damages1, List<Damage> damages2, string log)
+        /// <summary>
+        /// 新しい攻撃でのダメージ情報をもとに、総ダメージを再計算
+        /// </summary>
+        /// <param name="oldDamages">今までのダメージ</param>
+        /// <param name="newDamages">新しい攻撃でのダメージ</param>
+        /// <param name="log">新しい攻撃の戦闘ログ</param>
+        /// <returns>新しい攻撃を含めたダメージ情報</returns>
+        static public List<Damage> CombineDamages(List<Damage> oldDamages, List<Damage> newDamages, string log)
         {
-            List<Damage> newDamages = new();
-            foreach (Damage damage1 in damages1)
+            List<Damage> result = new();
+            foreach (Damage oldDamage in oldDamages)
             {
-                foreach (Damage damage2 in damages2)
+                foreach (Damage newDamage in newDamages)
                 {
-                    if (damage1.Probability > 0 && damage2.Probability > 0)
+                    if (oldDamage.Probability > 0 && newDamage.Probability > 0)
                     {
-                        Damage newDamage = new Damage()
+                        Damage damage = new()
                         {
-                            Probability = damage1.Probability * damage2.Probability,
-                            Value = damage1.Value + damage2.Value,
-                            Log = damage1.Log + log + ":" +damage2.Value + "\n"
+                            Probability = oldDamage.Probability * newDamage.Probability,
+                            Value = oldDamage.Value + newDamage.Value,
+                            Log = oldDamage.Log + log + ":" +newDamage.Value + "\n"
                         };
-                        newDamages.Add(newDamage);
+                        result.Add(damage);
                     }
                 }
             }
-            return newDamages;
+            return result;
         }
     }
 }

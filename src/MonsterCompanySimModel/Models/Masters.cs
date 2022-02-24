@@ -9,12 +9,34 @@ using System.Threading.Tasks;
 
 namespace MonsterCompanySimModel.Models
 {
+    /// <summary>
+    /// マスタデータ管理クラス
+    /// </summary>
     static public class Masters
     {
+        /// <summary>
+        /// 社員リスト
+        /// </summary>
         static public List<Employee> Employees { get; set; } = new List<Employee>();
+
+        /// <summary>
+        /// 社員リスト(敵用)
+        /// </summary>
         static public List<Employee> EnemyEmployees { get; set; } = new List<Employee>();
+
+        /// <summary>
+        /// 検索対象社員リスト(ファイル入出力用)
+        /// </summary>
         static private List<SimpleEmployee> IncludeEmployees { get; set; } = new List<SimpleEmployee>();
 
+        /// <summary>
+        /// 設定ファイルデータ
+        /// </summary>
+        static public Config ConfigData { get; set; } = new Config();
+
+        /// <summary>
+        /// 検索対象社員リスト
+        /// </summary>
         static public List<Employee> SearchTargets 
         {
             get
@@ -31,8 +53,22 @@ namespace MonsterCompanySimModel.Models
             }
         }
 
+        /// <summary>
+        /// 各種データ読み込み
+        /// </summary>
+        static public void LoadDatas()
+        {
+            LoadEmployee();
+            LoadIncludeEmployees();
+            LoadEnemyEmployee();
+            LoadConfig();
+        }
 
-        static public void LoadEmployee()
+        /// <summary>
+        /// 社員情報取得
+        /// </summary>
+        /// <exception cref="FileFormatException"></exception>
+        static private void LoadEmployee()
         {
             JsonSerializerOptions options = new();
             options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
@@ -47,7 +83,11 @@ namespace MonsterCompanySimModel.Models
             Employees = employees;
         }
 
-        static public void LoadEnemyEmployee()
+        /// <summary>
+        /// 敵社員情報取得
+        /// </summary>
+        /// <exception cref="FileFormatException"></exception>
+        static private void LoadEnemyEmployee()
         {
             JsonSerializerOptions options = new();
             options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
@@ -80,7 +120,11 @@ namespace MonsterCompanySimModel.Models
             EnemyEmployees = enemyEmployees;
         }
 
-        static public void LoadIncludeEmployees()
+        /// <summary>
+        /// 検索対象社員情報取得
+        /// </summary>
+        /// <exception cref="FileFormatException"></exception>
+        static private void LoadIncludeEmployees()
         {
             JsonSerializerOptions options = new();
             options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
@@ -95,6 +139,9 @@ namespace MonsterCompanySimModel.Models
             IncludeEmployees = includeEmployees;
         }
 
+        /// <summary>
+        /// 検索対象社員情報保存
+        /// </summary>
         static public void SaveIncludeEmployees()
         {
             JsonSerializerOptions options = new();
@@ -105,6 +152,10 @@ namespace MonsterCompanySimModel.Models
             File.WriteAllText("data/Includes.json",json);
         }
 
+        /// <summary>
+        /// 検索対象社員追加
+        /// </summary>
+        /// <param name="emp">追加社員</param>
         static public void AddTarget(Employee emp)
         {
             foreach (var target in IncludeEmployees)
@@ -118,6 +169,10 @@ namespace MonsterCompanySimModel.Models
             SaveIncludeEmployees();
         }
 
+        /// <summary>
+        /// 検索対象社員情報削除
+        /// </summary>
+        /// <param name="emp">削除社員</param>
         static public void DeleteTarget(Employee emp)
         {
             foreach (var target in IncludeEmployees)
@@ -132,6 +187,12 @@ namespace MonsterCompanySimModel.Models
             }
         }
 
+
+        /// <summary>
+        /// 検索対象か否かを取得
+        /// </summary>
+        /// <param name="emp">社員</param>
+        /// <returns>検索対象の場合true</returns>
         public static bool IsTarget(Employee emp)
         {
             foreach (var target in IncludeEmployees)
@@ -144,7 +205,30 @@ namespace MonsterCompanySimModel.Models
             return false;
         }
 
-        // Debug用
+        /// <summary>
+        /// 設定ファイルの情報を取得
+        /// </summary>
+        /// <exception cref="FileFormatException"></exception>
+        static private void LoadConfig()
+        {
+            JsonSerializerOptions options = new();
+            options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
+            options.Converters.Add(new JsonStringEnumConverter());
+
+            string json = File.ReadAllText("data/Config.json");
+            Config? config = JsonSerializer.Deserialize<Config>(json, options);
+            if (config == null)
+            {
+                throw new FileFormatException("data/Config.json");
+            }
+            ConfigData = config;
+        }
+
+        /// <summary>
+        /// 開発用
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         static public Employee? GetEmployee(int id)
         {
             foreach (var emp in Employees)
@@ -156,6 +240,13 @@ namespace MonsterCompanySimModel.Models
             }
             return null;
         }
+
+        /// <summary>
+        /// 開発用
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="evol"></param>
+        /// <returns></returns>
         static public Employee? GetEmployee(int id, int evol)
         {
             foreach (var emp in Employees)

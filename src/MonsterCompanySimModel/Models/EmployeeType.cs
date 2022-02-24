@@ -1,5 +1,8 @@
 ﻿namespace MonsterCompanySimModel.Models
 {
+    /// <summary>
+    /// タイプ
+    /// </summary>
     public enum EmployeeType
     {
         なし,

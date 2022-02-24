@@ -1,5 +1,8 @@
 ﻿namespace MonsterCompanySimModel.Models
 {
+    /// <summary>
+    /// レアリティ
+    /// </summary>
     public enum EmployeeRarity
     {
         N,
