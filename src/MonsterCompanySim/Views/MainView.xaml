@@ -6,6 +6,10 @@
         xmlns:local="clr-namespace:MonsterCompanySim.Views" xmlns:controls="clr-namespace:MonsterCompanySim.Views.Controls" xmlns:viewmodels="clr-namespace:MonsterCompanySim.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
         Title="モンカニ計算機" Height="600" Width="1000">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter" />
+    </Window.Resources>
     <TabControl>
         <TabItem Header="計算機">
             <Grid>
@@ -42,6 +46,7 @@
                         <TextBlock Width="50">　Lv上限:</TextBlock>
                         <TextBox Text="{Binding SearchLevel.Value}" Width="100"/>
                         <Button Command="{Binding SearchCommand}" Content="編成検索"/>
+                        <ProgressBar Width="200" Minimum="0" Maximum="1" Value="{Binding Progress.Value, Mode=OneWay}" />
                     </StackPanel>
                 </StackPanel>
                 <TextBox Grid.Column="1" Text="{Binding ResultText.Value}">

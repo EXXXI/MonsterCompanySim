@@ -1,4 +1,5 @@
 ﻿using MonsterCompanySimModel.Models;
+using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,8 +40,9 @@ namespace MonsterCompanySimModel.Service
         /// <param name="boost">ブースト有無(ブーストありでtrue)</param>
         /// <param name="level">味方レベル</param>
         /// <param name="part">部制限</param>
+        /// <param name="progress">プログレスバー用ReactiveProperty</param>
         /// <returns>編成検索結果リスト</returns>
-        public List<SearchResult> Search(Battler? enemy1, Battler? enemy2, Battler? enemy3, bool boost, int level,int part)
+        public List<SearchResult> Search(Battler? enemy1, Battler? enemy2, Battler? enemy3, bool boost, int level,int part, ReactivePropertySlim<double>? progress)
         {
             // 結果用List
             List<SearchResult> resultList = new();
@@ -48,6 +50,12 @@ namespace MonsterCompanySimModel.Service
             // 社員無し(null)入り検索対象リスト
             List<Employee?> emps = new(Masters.SearchTargets) { null };
 
+            // プログレスバー用
+            if(progress != null)
+            {
+                progress.Value = 0;
+            }
+            
             // 総当たり
             foreach (var ally1 in emps)
             {
@@ -109,6 +117,12 @@ namespace MonsterCompanySimModel.Service
                         }
                     }
                 }
+
+                // プログレスバー増加
+                if (progress != null)
+                {
+                    progress.Value += 1.0 / emps.Count;
+                }
             }
 
             // 要求レベル計算
@@ -125,6 +139,12 @@ namespace MonsterCompanySimModel.Service
                     // 要求レベル計算
                     result.MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost) ?? 0;
                 }
+            }
+
+            // プログレスバーリセット
+            if (progress != null)
+            {
+                progress.Value = 0;
             }
 
             // 返却

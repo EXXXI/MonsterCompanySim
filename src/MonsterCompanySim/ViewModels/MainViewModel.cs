@@ -89,6 +89,11 @@ namespace MonsterCompanySim.ViewModels
         public ReadOnlyReactivePropertySlim<bool> IsFree { get; }
 
         /// <summary>
+        /// 進捗
+        /// </summary>
+        public ReactivePropertySlim<double> Progress { get; set; } = new();
+
+        /// <summary>
         /// 編成検索結果
         /// </summary>
         public ReactivePropertySlim<List<SearchResult>> Results { get; } = new();
@@ -243,7 +248,7 @@ namespace MonsterCompanySim.ViewModels
             int part = Parse(SearchPart.Value);
 
             // 編成検索(非同期)
-            List<SearchResult> results = await Task.Run(() => simulator.Search(enemy1, enemy2, enemy3, IsBoost.Value, level, part));
+            List<SearchResult> results = await Task.Run(() => simulator.Search(enemy1, enemy2, enemy3, IsBoost.Value, level, part, Progress));
 
             // 結果出力
             Results.Value = results;
