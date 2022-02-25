@@ -95,8 +95,7 @@ namespace MonsterCompanySimModel.Models
         {
             get
             {
-                // TODO: 20億が最大値？
-                return (long)(Employee.Eng * (1 + (Level - 1) * Employee.GuerrillaModifier));
+                return Math.Min(2000000000, (long)(Employee.Eng * (1 + (Level - 1) * Employee.GuerrillaModifier)));
             }
         }
 
