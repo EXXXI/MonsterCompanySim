@@ -571,21 +571,57 @@ namespace MonsterCompanySimModel.Service
             for (int i = 0; i < we.Count; i++)
             {
                 Battler? skillOwner = we[i];
-                if (skillOwner?.Employee.HasSkill(SkillType.正面攻撃) != null && !skillOwner.IsSkillDisabled)
+                if (skillOwner == null)
                 {
-                    // 正面攻撃持ちは自分のターゲットを正面に固定
-                    skillOwner.FixedTarget = Front(i, opponents) + 1;
+                    // 社員がnullの場合次へ
+                    continue;
                 }
-                if (skillOwner?.Employee.HasSkill(SkillType.正面引き付け) != null && !skillOwner.IsSkillDisabled)
+
+                // 正面攻撃
+                Skill? attackFront = skillOwner.Employee.HasSkill(SkillType.正面攻撃);
+                if (attackFront != null && !skillOwner.IsSkillDisabled)
+                {
+                    // 正面攻撃持ちはターゲットを正面に固定
+                    if (attackFront.Range == Models.Range.自分)
+                    {
+                        skillOwner.FixedTarget = Front(i, opponents) + 1;
+                    }
+                    if (attackFront.Range == Models.Range.全体)
+                    {
+                        for (int j = 0; j < we.Count; j++)
+                        {
+                            Battler? battler = we[j];
+                            if (battler != null)
+                            {
+                                battler.FixedTarget = Front(j, opponents) + 1;
+                            }
+                        }
+                    }
+                }
+
+                // 正面引き付け
+                Skill? attractFront = skillOwner.Employee.HasSkill(SkillType.正面引き付け);
+                if (attractFront != null && !skillOwner.IsSkillDisabled)
                 {
                     // 正面引き付け持ちは相手のターゲットを自分に固定
-                    Battler? opponent = opponents[Front(i, opponents)];
-                    if (opponent == null)
+                    Battler? opponent = opponents[i];
+                    // 自分限定の場合は正面がいる場合のみ有効
+                    if (attractFront.Range == Models.Range.自分 && opponent != null)
                     {
-                        // ここで発生するならFrontメソッドで発生しているはず
-                        throw new ArgumentException("opponents is all null.");
+                        opponent.FixedTarget = i + 1;
                     }
-                    opponent.FixedTarget = i + 1;
+                    // 全体の場合は敵全員に正面攻撃(いなかったら右)を付与
+                    if (attractFront.Range == Models.Range.全体)
+                    {
+                        for (int j = 0; j < opponents.Count; j++)
+                        {
+                            Battler? battler = opponents[j];
+                            if (battler != null)
+                            {
+                                battler.FixedTarget = Front(j, we) + 1;
+                            }
+                        }
+                    }
                 }
             }
         }
