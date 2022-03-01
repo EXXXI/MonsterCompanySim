@@ -26,6 +26,8 @@
         SHV,
         SHVplus,
         UHV,
-        UHVplus
+        UHVplus,
+        LHV,
+        LHVplus
     }
 }
