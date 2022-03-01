@@ -3074,5 +3074,168 @@
     "Atk": 1380,
     "Dex": 880,
     "Eng": 3800
+  },
+  {
+    "Id": 133,
+    "Name": "天下の盗人",
+    "Skills": [
+      {
+        "SkillType": "タイプキラー",
+        "Modifier": 2.5,
+        "Type": "悪魔"
+      }
+    ],
+    "Element": "火",
+    "Type": "スピード",
+    "Rarity": "LHV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1770,
+    "Dex": 3900,
+    "Eng": 2600
+  },
+  {
+    "Id": 134,
+    "Name": "デストロイヤー",
+    "Skills": [
+      {
+        "SkillType": "デストロイヤー",
+        "Modifier": 10
+      },
+      {
+        "SkillType": "正面引き付け",
+        "Range": "全体"
+      },
+      {
+        "SkillType": "正面攻撃",
+        "Range": "全体"
+      }
+    ],
+    "Element": "火",
+    "Type": "悪魔",
+    "Rarity": "LHV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1999,
+    "Dex": 99,
+    "Eng": 199999
+  },
+  {
+    "Id": 135,
+    "Name": "パーニー",
+    "Skills": [
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 3,
+        "Type": "支援"
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 3,
+        "Type": "神"
+      }
+    ],
+    "Element": "水",
+    "Type": "支援",
+    "Rarity": "LHV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1380,
+    "Dex": 1460,
+    "Eng": 12900
+  },
+  {
+    "Id": 136,
+    "Name": "アルナディアス",
+    "Skills": [
+      {
+        "SkillType": "タイプキラー",
+        "Modifier": 3,
+        "Type": "神"
+      },
+      {
+        "SkillType": "味方タイプ反応",
+        "Modifier": 2,
+        "Type": "悪魔"
+      }
+    ],
+    "Element": "水",
+    "Type": "ブラック",
+    "Rarity": "LHV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1980,
+    "Dex": 680,
+    "Eng": 12800
+  },
+  {
+    "Id": 137,
+    "Name": "とらこ",
+    "Skills": [
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 3,
+        "Type": "けもみみ"
+      }
+    ],
+    "Element": "木",
+    "Type": "けもみみ",
+    "Rarity": "LHV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1420,
+    "Dex": 1280,
+    "Eng": 7100
+  },
+  {
+    "Id": 138,
+    "Name": "アサインバイト",
+    "Skills": [
+      {
+        "SkillType": "特定社員強化",
+        "Range": "全体",
+        "Modifier": 13,
+        "Buddys": [ 82, 92 ]
+      },
+      {
+        "SkillType": "正面攻撃",
+        "Range": "全体"
+      }
+    ],
+    "Element": "木",
+    "Type": "飛翔",
+    "Rarity": "LHV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1380,
+    "Dex": 880,
+    "Eng": 3800
+  },
+  {
+    "Id": 139,
+    "Name": "超覚醒屍鬼",
+    "Skills": [
+      {
+        "SkillType": "一タイプ編成強化",
+        "Modifier": 3.5,
+        "Type": "悪魔"
+      },
+      {
+        "SkillType": "タイプ軽減",
+        "Modifier": 0.25,
+        "Type": "神"
+      }
+    ],
+    "Element": "火",
+    "Type": "悪魔",
+    "Rarity": "LHVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1760,
+    "Dex": 1680,
+    "Eng": 43800
   }
 ]

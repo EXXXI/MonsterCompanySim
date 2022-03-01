@@ -905,6 +905,40 @@ namespace MonsterCompanySimModel.Service
                         }
                     }
                     break;
+                case SkillType.味方タイプ反応:
+                    bool existType = false;
+                    if (right != null && right.Employee.Type == skill.Type)
+                    {
+                        existType = true;
+                    }
+                    if (left != null && left.Employee.Type == skill.Type)
+                    {
+                        existType = true;
+                    }
+                    if (existType)
+                    {
+                        self.Modifier *= skill.Modifier;
+                    }
+                    break;
+                case SkillType.一タイプ編成強化:
+                    if (right != null && self.Employee.Type != right.Employee.Type)
+                    {
+                        break;
+                    }
+                    if (left != null && self.Employee.Type != left.Employee.Type)
+                    {
+                        break;
+                    }
+                    self.Modifier *= skill.Modifier;
+                    if (right != null)
+                    {
+                        right.Modifier *= skill.Modifier;
+                    }
+                    if (left != null)
+                    {
+                        left.Modifier *= skill.Modifier;
+                    }
+                    break;
                 default:
                     break;
             }
@@ -932,6 +966,12 @@ namespace MonsterCompanySimModel.Service
                         if (defender.Employee.Type == skill.Type && attacker.AtkCritState != CriticalState.noCrit)
                         {
                             attacker.OnceAtkCritState = CriticalState.Crit;
+                        }
+                        break;
+                    case SkillType.デストロイヤー:
+                        if (attacker.Modifier == 1.0)
+                        {
+                            attacker.Modifier *= skill.Modifier;
                         }
                         break;
                     default:
