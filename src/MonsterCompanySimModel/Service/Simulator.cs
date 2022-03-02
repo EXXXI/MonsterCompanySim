@@ -930,14 +930,16 @@ namespace MonsterCompanySimModel.Service
                         break;
                     }
                     self.Modifier *= skill.Modifier;
-                    if (right != null)
+                    /* 今後必要になったら別途検討して実装
+                    if (right != null && skill.Range != Models.Range.自分)
                     {
                         right.Modifier *= skill.Modifier;
                     }
-                    if (left != null)
+                    if (left != null && skill.Range == Models.Range.全体)
                     {
                         left.Modifier *= skill.Modifier;
                     }
+                    */
                     break;
                 default:
                     break;
