@@ -165,5 +165,56 @@
     "Atk": 1080,
     "Dex": 1440,
     "Eng": 9800
+  },
+  {
+    "Id": 102,
+    "Name": "アレグリアス",
+    "Element": "木",
+    "Type": "支援",
+    "Rarity": "HXVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 400,
+    "Dex": 3400,
+    "Eng": 74000
+  },
+  {
+    "Id": 107,
+    "Name": "双極の器マザー",
+    "Skills": [
+      {
+        "SkillType": "タイプ強化",
+        "Range": "右",
+        "Modifier": 3.5,
+        "Type": "ブラック"
+      }
+    ],
+    "Element": "木",
+    "Type": "ブラック",
+    "Rarity": "SHV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1550,
+    "Dex": 1250,
+    "Eng": 44000
+  },
+  {
+    "Id": 111,
+    "Name": "創生のキラif",
+    "Skills": [
+      {
+        "SkillType": "タイプキラー",
+        "Modifier": 2,
+        "Type": "ブラック"
+      }
+    ],
+    "Element": "水",
+    "Type": "神",
+    "Rarity": "SHVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1250,
+    "Dex": 2550,
+    "Eng": 165000
   }
 ]
