@@ -32,9 +32,20 @@ namespace MonsterCompanySimModel.Models
         public int MinLevel { get; set; }
 
         /// <summary>
-        /// 勝率
+        /// 勝率(0～1の数値)
         /// </summary>
         public double WinRate { get; set; }
+
+        /// <summary>
+        /// 勝率(百分率の文字列)
+        /// </summary>
+        public string WinPercentage
+        {
+            get
+            {
+                return $"{WinRate * 100:0.00}%";
+            }
+        }
 
         /// <summary>
         /// 消費合計

@@ -255,8 +255,8 @@ namespace MonsterCompanySim.ViewModels
 
             // ログ出力
             StringBuilder sb = new();
-            sb.AppendLine("■検索条件 LV:" + level + ", 部:" + part);
-            sb.AppendLine("■検索結果 " + results.Count + "件");
+            sb.AppendLine($"■検索条件 部:{part}, Lv:{level:#,0}");
+            sb.AppendLine($"■検索結果 {results.Count:#,0}件");
             if (results.Count > Masters.ConfigData.RequireThreshold)
             {
                 sb.AppendLine("★件数が多すぎるため、要求レベルの計算は行いません");
@@ -309,11 +309,11 @@ namespace MonsterCompanySim.ViewModels
 
             // 結果出力
             StringBuilder sb = new();
-            sb.AppendLine("勝率：" + (result.WinRate * 100).ToString() + "%");
+            sb.AppendLine($"勝率：{result.WinPercentage}");
             sb.AppendLine("■敵");
-            sb.AppendLine(result.MinEnemyDamage?.Log + result.MinEnemyDamage?.Value);
+            sb.AppendLine($"{result.MinEnemyDamage?.Log}合計:{result.MinEnemyDamage?.Value:#,0}");
             sb.AppendLine("■味方");
-            sb.AppendLine(result.MaxAllyDamage?.Log + result.MaxAllyDamage?.Value);
+            sb.AppendLine($"{result.MaxAllyDamage?.Log}合計:{result.MaxAllyDamage?.Value:#,0}");
             ResultText.Value = sb.ToString();
         }
 
@@ -353,7 +353,7 @@ namespace MonsterCompanySim.ViewModels
             }
             else
             {
-                sb.AppendLine("要求Lv：" + level.ToString());
+                sb.AppendLine($"要求Lv：{level}");
             }
             ResultText.Value = sb.ToString();
         }
@@ -388,11 +388,11 @@ namespace MonsterCompanySim.ViewModels
 
             // ログ出力
             StringBuilder sb = new();
-            sb.AppendLine("勝率：" + (result.WinRate * 100).ToString() + "%");
+            sb.AppendLine($"勝率：{result.WinPercentage}");
             sb.AppendLine("■敵");
-            sb.AppendLine(result.MinEnemyDamage?.Log + result.MinEnemyDamage?.Value);
+            sb.AppendLine($"{result.MinEnemyDamage?.Log}合計:{result.MinEnemyDamage?.Value:#,0}");
             sb.AppendLine("■味方");
-            sb.AppendLine(result.MaxAllyDamage?.Log + result.MaxAllyDamage?.Value);
+            sb.AppendLine($"{result.MaxAllyDamage?.Log}合計:{result.MaxAllyDamage?.Value:#,0}");
             ResultText.Value = sb.ToString();
 
         }

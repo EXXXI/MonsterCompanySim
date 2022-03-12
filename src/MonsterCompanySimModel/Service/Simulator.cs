@@ -384,11 +384,11 @@ namespace MonsterCompanySimModel.Service
 
             // 攻撃してダメージ情報を格納
             result.CombineEnemyDamages(Attack(enemy1, TargetBattler(enemyTarget1, ally1, ally2, ally3)),
-                enemy1?.Employee?.Name + "→" + TargetBattler(enemyTarget1, ally1, ally2, ally3)?.Employee?.Name);
+                $"{enemy1?.Employee?.Name}→{TargetBattler(enemyTarget1, ally1, ally2, ally3)?.Employee?.Name}");
             result.CombineEnemyDamages(Attack(enemy2, TargetBattler(enemyTarget2, ally1, ally2, ally3)),
-                enemy2?.Employee?.Name + "→" + TargetBattler(enemyTarget2, ally1, ally2, ally3)?.Employee?.Name);
+                $"{enemy2?.Employee?.Name}→{TargetBattler(enemyTarget2, ally1, ally2, ally3)?.Employee?.Name}");
             result.CombineEnemyDamages(Attack(enemy3, TargetBattler(enemyTarget3, ally1, ally2, ally3)),
-                enemy3?.Employee?.Name + "→" + TargetBattler(enemyTarget3, ally1, ally2, ally3)?.Employee?.Name);
+                $"{enemy3?.Employee?.Name}→{TargetBattler(enemyTarget3, ally1, ally2, ally3)?.Employee?.Name}");
 
             // ダメージ情報返却
             return result.EnemyDamages;
@@ -439,11 +439,11 @@ namespace MonsterCompanySimModel.Service
 
             // 攻撃してダメージ情報を格納
             result.CombineAllyDamages(Attack(ally1, TargetBattler(allyTarget1, enemy1, enemy2, enemy3)),
-                ally1?.Employee?.Name + "→" + TargetBattler(allyTarget1, enemy1, enemy2, enemy3)?.Employee?.Name);
+                $"{ally1?.Employee?.Name}→{TargetBattler(allyTarget1, enemy1, enemy2, enemy3)?.Employee?.Name}");
             result.CombineAllyDamages(Attack(ally2, TargetBattler(allyTarget2, enemy1, enemy2, enemy3)),
-                ally2?.Employee?.Name + "→" + TargetBattler(allyTarget2, enemy1, enemy2, enemy3)?.Employee?.Name);
+                $"{ally2?.Employee?.Name}→{TargetBattler(allyTarget2, enemy1, enemy2, enemy3)?.Employee?.Name}");
             result.CombineAllyDamages(Attack(ally3, TargetBattler(allyTarget3, enemy1, enemy2, enemy3)),
-                ally3?.Employee?.Name + "→" + TargetBattler(allyTarget3, enemy1, enemy2, enemy3)?.Employee?.Name);
+                $"{ally3?.Employee?.Name}→{TargetBattler(allyTarget3, enemy1, enemy2, enemy3)?.Employee?.Name}");
            
             // ダメージ情報返却
             return result.AllyDamages;
@@ -494,8 +494,8 @@ namespace MonsterCompanySimModel.Service
 
             // ダメージ情報をセット
             List<Damage> damages = new();
-            damages.Add(new Damage(crit, damageValue * 1.5));
-            damages.Add(new Damage(1 - crit, damageValue));
+            damages.Add(new Damage(crit, damageValue * 1.5, true));
+            damages.Add(new Damage(1 - crit, damageValue, false));
 
             // 返却
             return damages;

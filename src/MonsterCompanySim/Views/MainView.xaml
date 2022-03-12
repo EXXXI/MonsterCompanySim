@@ -61,9 +61,9 @@
                         <DataGridTextColumn Header="左" Binding="{Binding Ally1, Mode=OneWay}" />
                         <DataGridTextColumn Header="中" Binding="{Binding Ally2, Mode=OneWay}" />
                         <DataGridTextColumn Header="右" Binding="{Binding Ally3, Mode=OneWay}" />
-                        <DataGridTextColumn Header="要求レベル" Binding="{Binding MinLevel, Mode=OneWay}" />
-                        <DataGridTextColumn Header="勝率(1=100%)" Binding="{Binding WinRate, Mode=OneWay}" />
-                        <DataGridTextColumn Header="消費エナジー" Binding="{Binding SumEng, Mode=OneWay}" />
+                        <DataGridTextColumn Header="要求レベル" Binding="{Binding MinLevel, Mode=OneWay, StringFormat={}{0:N0}}" />
+                        <DataGridTextColumn Header="勝率" Binding="{Binding WinPercentage, Mode=OneWay}" />
+                        <DataGridTextColumn Header="消費エナジー" Binding="{Binding SumEng, Mode=OneWay, StringFormat={}{0:N0}}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

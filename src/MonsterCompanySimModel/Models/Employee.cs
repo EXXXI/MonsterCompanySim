@@ -9,7 +9,7 @@ namespace MonsterCompanySimModel.Models
     /// <summary>
     /// 社員情報
     /// </summary>
-    public class Employee
+    public class Employee : IComparable
     {
         /// <summary>
         /// 社員番号
@@ -72,6 +72,28 @@ namespace MonsterCompanySimModel.Models
         public int Eng { get; set; }
 
         /// <summary>
+        /// 比較メソッド(IComparable)
+        /// </summary>
+        /// <param name="obj">比較対象</param>
+        /// <returns></returns>
+        public int CompareTo(object? obj)
+        {
+            Employee? emp = obj as Employee;
+            if (emp == null)
+            {
+                return 1;
+            }
+
+            int n = Id.CompareTo(emp.Id);
+            if (n != 0)
+            {
+                return n;
+            }
+
+            return EvolState.CompareTo(emp.EvolState);
+        }
+
+        /// <summary>
         /// 指定スキルを所持しているか調べる
         /// </summary>
         /// <param name="type">スキル</param>
@@ -94,7 +116,7 @@ namespace MonsterCompanySimModel.Models
         /// <returns>レアリティ\t社員名</returns>
         public override string ToString()
         {
-            return Rarity + "\t" + Name ?? string.Empty;
+            return $"{Rarity}\t{Name ?? string.Empty}";
         }
     }
 }

@@ -22,6 +22,11 @@ namespace MonsterCompanySimModel.Models
         public double Value { get; set; } = 0;
 
         /// <summary>
+        /// クリティカルフラグ(ログ用)
+        /// </summary>
+        private bool IsCrit { get; set; } = false;
+
+        /// <summary>
         /// 戦闘ログ
         /// </summary>
         public string Log { get; set; } = string.Empty;
@@ -39,10 +44,12 @@ namespace MonsterCompanySimModel.Models
         /// </summary>
         /// <param name="probability">発生確率</param>
         /// <param name="value">ダメージ量</param>
-        public Damage(double probability, double value)
+        /// <param name="isCrit">クリティカルフラグ(ログ用)</param>
+        public Damage(double probability, double value, bool isCrit)
         {
             Probability = probability;
             Value = value;
+            IsCrit = isCrit;
         }
 
         /// <summary>
@@ -65,7 +72,7 @@ namespace MonsterCompanySimModel.Models
                         {
                             Probability = oldDamage.Probability * newDamage.Probability,
                             Value = oldDamage.Value + newDamage.Value,
-                            Log = oldDamage.Log + log + ":" +newDamage.Value + "\n"
+                            Log = $"{oldDamage.Log}{log}:{newDamage.Value:#,0}{(newDamage.IsCrit ? " Critical" : "")}\n"
                         };
                         result.Add(damage);
                     }
