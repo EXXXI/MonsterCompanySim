@@ -64,9 +64,14 @@ namespace MonsterCompanySim.ViewModels
         public ReactivePropertySlim<string> ResultText { get; } = new();
 
         /// <summary>
+        /// 編成検索用：部指定候補
+        /// </summary>
+        public ReactivePropertySlim<List<string>> Parts { get; } = new();
+
+        /// <summary>
         /// 編成検索用：部指定
         /// </summary>
-        public ReactivePropertySlim<string> SearchPart { get; } = new();
+        public ReactivePropertySlim<string> SelectedPart { get; } = new();
 
         /// <summary>
         /// 編成検索用：レベル指定
@@ -174,6 +179,11 @@ namespace MonsterCompanySim.ViewModels
             // ビジーフラグとビジーじゃないフラグを紐づけ
             IsFree = IsBusy.Select(x => !x).ToReadOnlyReactivePropertySlim();
 
+            // 編成検索条件の初期状態
+            Parts.Value = new() { "1", "2", "All" };
+            SelectedPart.Value = "1";
+            SearchLevel.Value = "99999";
+
             // Subscribe
             CalcWinRateCommand.Subscribe(_ => CalcWinRate());
             CalcRequireCommand.Subscribe(_ => CalcRequire());
@@ -245,7 +255,13 @@ namespace MonsterCompanySim.ViewModels
 
             // 検索条件取得
             int level = Parse(SearchLevel.Value);
-            int part = Parse(SearchPart.Value);
+            int part = SelectedPart.Value switch
+            {
+                "All" => 0,
+                "1" => 1,
+                "2" => 2,
+                _ => -1
+            };
 
             // 編成検索(非同期)
             List<SearchResult> results = await Task.Run(() => simulator.Search(enemy1, enemy2, enemy3, IsBoost.Value, level, part, Progress));
@@ -255,8 +271,8 @@ namespace MonsterCompanySim.ViewModels
 
             // ログ出力
             StringBuilder sb = new();
-            sb.AppendLine("■検索条件 LV:" + level + ", 部:" + part);
-            sb.AppendLine("■検索結果 " + results.Count + "件");
+            sb.AppendLine($"■検索条件 部:{part}, Lv:{level:#,0}");
+            sb.AppendLine($"■検索結果 {results.Count:#,0}件");
             if (results.Count > Masters.ConfigData.RequireThreshold)
             {
                 sb.AppendLine("★件数が多すぎるため、要求レベルの計算は行いません");
@@ -309,11 +325,11 @@ namespace MonsterCompanySim.ViewModels
 
             // 結果出力
             StringBuilder sb = new();
-            sb.AppendLine("勝率：" + (result.WinRate * 100).ToString() + "%");
+            sb.AppendLine($"勝率：{result.WinPercentage}");
             sb.AppendLine("■敵");
-            sb.AppendLine(result.MinEnemyDamage?.Log + result.MinEnemyDamage?.Value);
+            sb.AppendLine($"{result.MinEnemyDamage?.Log}合計:{result.MinEnemyDamage?.Value:#,0}");
             sb.AppendLine("■味方");
-            sb.AppendLine(result.MaxAllyDamage?.Log + result.MaxAllyDamage?.Value);
+            sb.AppendLine($"{result.MaxAllyDamage?.Log}合計:{result.MaxAllyDamage?.Value:#,0}");
             ResultText.Value = sb.ToString();
         }
 
@@ -353,7 +369,7 @@ namespace MonsterCompanySim.ViewModels
             }
             else
             {
-                sb.AppendLine("要求Lv：" + level.ToString());
+                sb.AppendLine($"要求Lv：{level}");
             }
             ResultText.Value = sb.ToString();
         }
@@ -388,11 +404,11 @@ namespace MonsterCompanySim.ViewModels
 
             // ログ出力
             StringBuilder sb = new();
-            sb.AppendLine("勝率：" + (result.WinRate * 100).ToString() + "%");
+            sb.AppendLine($"勝率：{result.WinPercentage}");
             sb.AppendLine("■敵");
-            sb.AppendLine(result.MinEnemyDamage?.Log + result.MinEnemyDamage?.Value);
+            sb.AppendLine($"{result.MinEnemyDamage?.Log}合計:{result.MinEnemyDamage?.Value:#,0}");
             sb.AppendLine("■味方");
-            sb.AppendLine(result.MaxAllyDamage?.Log + result.MaxAllyDamage?.Value);
+            sb.AppendLine($"{result.MaxAllyDamage?.Log}合計:{result.MaxAllyDamage?.Value:#,0}");
             ResultText.Value = sb.ToString();
 
         }

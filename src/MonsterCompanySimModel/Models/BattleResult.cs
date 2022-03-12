@@ -19,13 +19,24 @@ namespace MonsterCompanySimModel.Models
         public List<Damage> EnemyDamages { get; set; } = new List<Damage> { new Damage() };
 
         /// <summary>
-        /// 勝率
+        /// 勝率(0～1の実数)
         /// </summary>
         public double WinRate
-        { 
-            get 
+        {
+            get
             {
                 return CalcWinRate();
+            }
+        }
+
+        /// <summary>
+        /// 勝率(百分率の文字列)
+        /// </summary>
+        public string WinPercentage
+        {
+            get
+            {
+                return $"{CalcWinRate() * 100:0.00}%";
             }
         }
 
