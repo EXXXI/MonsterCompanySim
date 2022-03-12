@@ -64,9 +64,14 @@ namespace MonsterCompanySim.ViewModels
         public ReactivePropertySlim<string> ResultText { get; } = new();
 
         /// <summary>
+        /// 編成検索用：部指定候補
+        /// </summary>
+        public ReactivePropertySlim<List<string>> Parts { get; } = new();
+
+        /// <summary>
         /// 編成検索用：部指定
         /// </summary>
-        public ReactivePropertySlim<string> SearchPart { get; } = new();
+        public ReactivePropertySlim<string> SelectedPart { get; } = new();
 
         /// <summary>
         /// 編成検索用：レベル指定
@@ -174,6 +179,11 @@ namespace MonsterCompanySim.ViewModels
             // ビジーフラグとビジーじゃないフラグを紐づけ
             IsFree = IsBusy.Select(x => !x).ToReadOnlyReactivePropertySlim();
 
+            // 編成検索条件の初期状態
+            Parts.Value = new() { "1", "2", "All" };
+            SelectedPart.Value = "1";
+            SearchLevel.Value = "99999";
+
             // Subscribe
             CalcWinRateCommand.Subscribe(_ => CalcWinRate());
             CalcRequireCommand.Subscribe(_ => CalcRequire());
@@ -245,7 +255,13 @@ namespace MonsterCompanySim.ViewModels
 
             // 検索条件取得
             int level = Parse(SearchLevel.Value);
-            int part = Parse(SearchPart.Value);
+            int part = SelectedPart.Value switch
+            {
+                "All" => 0,
+                "1" => 1,
+                "2" => 2,
+                _ => -1
+            };
 
             // 編成検索(非同期)
             List<SearchResult> results = await Task.Run(() => simulator.Search(enemy1, enemy2, enemy3, IsBoost.Value, level, part, Progress));

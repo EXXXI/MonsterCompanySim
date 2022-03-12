@@ -42,7 +42,8 @@
                     <Button Command="{Binding CalcRequireCommand}" Content="要求Lv概算"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Width="20">部:</TextBlock>
-                        <TextBox Text="{Binding SearchPart.Value}" Width="20"/>
+                        <ComboBox Width="45" ItemsSource="{Binding Parts.Value, Mode=OneWay}" SelectedItem="{Binding SelectedPart.Value}">
+                        </ComboBox>
                         <TextBlock Width="50">　Lv上限:</TextBlock>
                         <TextBox Text="{Binding SearchLevel.Value}" Width="100"/>
                         <Button Command="{Binding SearchCommand}" Content="編成検索"/>

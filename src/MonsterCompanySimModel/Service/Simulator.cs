@@ -71,24 +71,27 @@ namespace MonsterCompanySimModel.Service
                         }
 
                         // 部制限
-                        bool otherPart = false;
-                        if (ally1 != null && ally1.Part != part)
+                        if (part != 0)
                         {
-                            otherPart = true;
-                        }
-                        if (ally2 != null && ally2.Part != part)
-                        {
-                            if (otherPart)
+                            bool otherPart = false;
+                            if (ally1 != null && ally1.Part != part)
                             {
-                                continue;
+                                otherPart = true;
                             }
-                            otherPart = true;
-                        }
-                        if (ally3 != null && ally3.Part != part)
-                        {
-                            if (otherPart)
+                            if (ally2 != null && ally2.Part != part)
                             {
-                                continue;
+                                if (otherPart)
+                                {
+                                    continue;
+                                }
+                                otherPart = true;
+                            }
+                            if (ally3 != null && ally3.Part != part)
+                            {
+                                if (otherPart)
+                                {
+                                    continue;
+                                }
                             }
                         }
 
