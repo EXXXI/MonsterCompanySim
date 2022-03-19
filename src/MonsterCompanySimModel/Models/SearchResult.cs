@@ -37,13 +37,13 @@ namespace MonsterCompanySimModel.Models
         public double WinRate { get; set; }
 
         /// <summary>
-        /// 勝率(百分率の文字列)
+        /// 勝率(0～100の数値)
         /// </summary>
-        public string WinPercentage
+        public double WinPercentage
         {
             get
             {
-                return $"{WinRate * 100:0.00}%";
+                return WinRate * 100;
             }
         }
 
