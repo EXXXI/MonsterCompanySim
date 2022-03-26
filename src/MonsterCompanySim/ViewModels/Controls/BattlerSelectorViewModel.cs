@@ -123,7 +123,6 @@ namespace MonsterCompanySim.ViewModels.Controls
                 Dex.Value = battler.Dex;
                 Eng.Value = battler.Eng;
             }
-
         }
 
         /// <summary>

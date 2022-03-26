@@ -24,6 +24,9 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel>
+
+                    <ComboBox ItemsSource="{Binding StageDatas.Value, Mode=OneWay}" SelectedItem="{Binding SelectedStage.Value}">
+                    </ComboBox>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Width="30">敵</TextBlock>
                         <controls:BattlerSelector DataContext="{Binding Enemy1VM.Value}"/>

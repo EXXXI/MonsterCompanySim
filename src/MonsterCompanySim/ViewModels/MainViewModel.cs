@@ -64,6 +64,16 @@ namespace MonsterCompanySim.ViewModels
         public ReactivePropertySlim<string> ResultText { get; } = new();
 
         /// <summary>
+        /// ステージリスト
+        /// </summary>
+        public ReactivePropertySlim<List<StageData>> StageDatas { get; } = new();
+
+        /// <summary>
+        /// 選択ステージ
+        /// </summary>
+        public ReactivePropertySlim<StageData> SelectedStage { get; } = new();
+
+        /// <summary>
         /// 編成検索用：部指定候補
         /// </summary>
         public ReactivePropertySlim<List<string>> Parts { get; } = new();
@@ -184,6 +194,16 @@ namespace MonsterCompanySim.ViewModels
             SelectedPart.Value = "1";
             SearchLevel.Value = "99999";
 
+            // ステージリストを準備
+            StageData def = new();
+            List<StageData> stages = new() { def };
+            foreach (var stage in Masters.StageDatas)
+            {
+                stages.Add(stage);
+            }
+            StageDatas.Value = stages;
+            SelectedStage.Value = def;
+
             // Subscribe
             CalcWinRateCommand.Subscribe(_ => CalcWinRate());
             CalcRequireCommand.Subscribe(_ => CalcRequire());
@@ -193,6 +213,7 @@ namespace MonsterCompanySim.ViewModels
             AllIncludeCommand.Subscribe(_ => AllInclude());
             RecommendationCommand.Subscribe(_ => Recommendation());
             SearchCommand = IsFree.ToAsyncReactiveCommand().WithSubscribe(async () => await Search());
+            SelectedStage.Subscribe(_ => SetStage());
 
             // 初期表示
             ResultText.Value = "ここに計算結果などが表示されます\n編成検索の結果は下部の表に表示されます";
@@ -219,6 +240,19 @@ namespace MonsterCompanySim.ViewModels
 
             // 開発用
             // simulator.Debug();
+        }
+
+        /// <summary>
+        /// ステージの敵情報を入力
+        /// </summary>
+        private void SetStage()
+        {
+            Enemy1VM.Value.SetEmployee(Masters.GetEnemyEmployee(SelectedStage.Value.Enemy1Id, SelectedStage.Value.Enemy1EvolState));
+            Enemy1VM.Value.Level.Value = SelectedStage.Value.Enemy1Level.ToString();
+            Enemy2VM.Value.SetEmployee(Masters.GetEnemyEmployee(SelectedStage.Value.Enemy2Id, SelectedStage.Value.Enemy2EvolState));
+            Enemy2VM.Value.Level.Value = SelectedStage.Value.Enemy2Level.ToString();
+            Enemy3VM.Value.SetEmployee(Masters.GetEnemyEmployee(SelectedStage.Value.Enemy3Id, SelectedStage.Value.Enemy3EvolState));
+            Enemy3VM.Value.Level.Value = SelectedStage.Value.Enemy3Level.ToString();
         }
 
         /// <summary>

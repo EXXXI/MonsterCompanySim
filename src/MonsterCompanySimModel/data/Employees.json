@@ -1882,6 +1882,10 @@
         "Modifier": 6,
         "Buddys": [ 75 ],
         "BuddyEvolState": 1
+      },
+      {
+        "SkillType": "正面引き付け",
+        "Range": "全体"
       }
     ],
     "Element": "火",
