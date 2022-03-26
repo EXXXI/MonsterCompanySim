@@ -30,6 +30,11 @@ namespace MonsterCompanySimModel.Models
         static private List<SimpleEmployee> IncludeEmployees { get; set; } = new List<SimpleEmployee>();
 
         /// <summary>
+        /// ステージリスト
+        /// </summary>
+        static public List<StageData> StageDatas { get; set; } = new List<StageData>();
+
+        /// <summary>
         /// 設定ファイルデータ
         /// </summary>
         static public Config ConfigData { get; set; } = new Config();
@@ -61,6 +66,7 @@ namespace MonsterCompanySimModel.Models
             LoadEmployee();
             LoadIncludeEmployees();
             LoadEnemyEmployee();
+            LoadStageDatas();
             LoadConfig();
         }
 
@@ -187,7 +193,6 @@ namespace MonsterCompanySimModel.Models
             }
         }
 
-
         /// <summary>
         /// 検索対象か否かを取得
         /// </summary>
@@ -225,10 +230,47 @@ namespace MonsterCompanySimModel.Models
         }
 
         /// <summary>
-        /// 開発用
+        /// ステージ情報取得
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <exception cref="FileFormatException"></exception>
+        static private void LoadStageDatas()
+        {
+            JsonSerializerOptions options = new();
+            options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
+            options.Converters.Add(new JsonStringEnumConverter());
+
+            string json = File.ReadAllText("data/Stages.json");
+            List<StageData>? stages = JsonSerializer.Deserialize<List<StageData>>(json, options);
+            if (stages == null)
+            {
+                throw new FileFormatException("data/Stages.json");
+            }
+            StageDatas = stages;
+        }
+
+        /// <summary>
+        /// 社員リスト(敵用)から社員を取得
+        /// </summary>
+        /// <param name="id">社員番号</param>
+        /// <param name="evol">進化状況</param>
+        /// <returns>社員</returns>
+        static public Employee? GetEnemyEmployee(int id, int evol)
+        {
+            foreach (var emp in EnemyEmployees)
+            {
+                if (emp.Id == id && emp.EvolState == evol)
+                {
+                    return emp;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 開発用：社員リストから社員を取得
+        /// </summary>
+        /// <param name="id">社員番号</param>
+        /// <returns>社員</returns>
         static public Employee? GetEmployee(int id)
         {
             foreach (var emp in Employees)
@@ -242,11 +284,11 @@ namespace MonsterCompanySimModel.Models
         }
 
         /// <summary>
-        /// 開発用
+        /// 開発用：社員リストから社員を取得
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="evol"></param>
-        /// <returns></returns>
+        /// <param name="id">社員番号</param>
+        /// <param name="evol">進化状況</param>
+        /// <returns>社員</returns>
         static public Employee? GetEmployee(int id, int evol)
         {
             foreach (var emp in Employees)
@@ -258,7 +300,5 @@ namespace MonsterCompanySimModel.Models
             }
             return null;
         }
-
-
     }
 }
