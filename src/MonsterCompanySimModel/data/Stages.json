@@ -209,8 +209,8 @@
     "Part": 1,
     "Grade": 41,
     "Stage": 9,
-    "Gold": 7980000,
-    "Ticket": 154800,
+    "Gold": 8090000,
+    "Ticket": 155900,
     "Enemy1Id": 56,
     "Enemy1Level": 10959991,
     "Enemy2Id": 71,
@@ -222,8 +222,8 @@
     "Part": 1,
     "Grade": 41,
     "Stage": 10,
-    "Gold": 8000000,
-    "Ticket": 155000,
+    "Gold": 8100000,
+    "Ticket": 156000,
     "Enemy2Id": 87,
     "Enemy2Level": 5891918
   },
@@ -450,7 +450,7 @@
     "Enemy2Id": 91,
     "Enemy2Level": 2077616,
     "Enemy3Id": 85,
-    "Enemy3Level": 3063864
+    "Enemy3Level": 3063964
   },
   {
     "Part": 2,
