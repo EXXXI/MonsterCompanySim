@@ -25,5 +25,15 @@ namespace MonsterCompanySimModel.Models
         /// 編成検索時の、要求レベル検索を起動する検索結果数の閾値
         /// </summary>
         public int RequireThreshold { get; set; }
+
+        /// <summary>
+        /// 初期表示する1部ステージの下限グレード
+        /// </summary>
+        public int Part1StageThreshold { get; set; }
+
+        /// <summary>
+        /// 初期表示する2部ステージの下限グレード
+        /// </summary>
+        public int Part2StageThreshold { get; set; }
     }
 }

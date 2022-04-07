@@ -1,5 +1,7 @@
 ﻿{
   "NoEmproyeeName": "社員無し",
   "MaxLevel": 149999,
-  "RequireThreshold": 200
+  "RequireThreshold": 500,
+  "Part1StageThreshold": 40,
+  "Part2StageThreshold": 13
 }

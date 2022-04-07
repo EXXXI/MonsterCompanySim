@@ -92,7 +92,7 @@ namespace MonsterCompanySimModel.Models
                 // TODO: 定数化
                 return "ステージを選択する場合、ここから選択する";
             }
-            return $"{Part}-{Grade}-{Stage}\t資金:{Gold:#,0}\tチケット:{Ticket:#,0}";
+            return $"{Part}-{Grade}-{Stage}\t資金:{Gold:#,0}   \tチケット:{Ticket:#,0}";
         }
     }
 }

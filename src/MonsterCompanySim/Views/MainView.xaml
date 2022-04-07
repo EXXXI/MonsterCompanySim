@@ -24,9 +24,10 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel>
-
-                    <ComboBox ItemsSource="{Binding StageDatas.Value, Mode=OneWay}" SelectedItem="{Binding SelectedStage.Value}">
-                    </ComboBox>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox ItemsSource="{Binding StageDatas.Value, Mode=OneWay}" SelectedItem="{Binding SelectedStage.Value}" Width="330" />
+                        <CheckBox IsChecked="{Binding ShowAllStage.Value}">序盤ステージも表示する</CheckBox>
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Width="30">敵</TextBlock>
                         <controls:BattlerSelector DataContext="{Binding Enemy1VM.Value}"/>
