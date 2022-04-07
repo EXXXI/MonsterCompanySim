@@ -69,6 +69,11 @@ namespace MonsterCompanySim.ViewModels
         public ReactivePropertySlim<List<StageData>> StageDatas { get; } = new();
 
         /// <summary>
+        /// 全ステージ表示フラグ(trueで全ステージ表示)
+        /// </summary>
+        public ReactivePropertySlim<bool> ShowAllStage { get; } = new(false);
+
+        /// <summary>
         /// 選択ステージ
         /// </summary>
         public ReactivePropertySlim<StageData> SelectedStage { get; } = new();
@@ -195,14 +200,7 @@ namespace MonsterCompanySim.ViewModels
             SearchLevel.Value = "99999";
 
             // ステージリストを準備
-            StageData def = new();
-            List<StageData> stages = new() { def };
-            foreach (var stage in Masters.StageDatas)
-            {
-                stages.Add(stage);
-            }
-            StageDatas.Value = stages;
-            SelectedStage.Value = def;
+            SetStageList();
 
             // Subscribe
             CalcWinRateCommand.Subscribe(_ => CalcWinRate());
@@ -214,6 +212,7 @@ namespace MonsterCompanySim.ViewModels
             RecommendationCommand.Subscribe(_ => Recommendation());
             SearchCommand = IsFree.ToAsyncReactiveCommand().WithSubscribe(async () => await Search());
             SelectedStage.Subscribe(_ => SetStage());
+            ShowAllStage.Subscribe(_ => SetStageList());
 
             // 初期表示
             ResultText.Value = "ここに計算結果などが表示されます\n編成検索の結果は下部の表に表示されます";
@@ -247,12 +246,42 @@ namespace MonsterCompanySim.ViewModels
         /// </summary>
         private void SetStage()
         {
-            Enemy1VM.Value.SetEmployee(Masters.GetEnemyEmployee(SelectedStage.Value.Enemy1Id, SelectedStage.Value.Enemy1EvolState));
-            Enemy1VM.Value.Level.Value = SelectedStage.Value.Enemy1Level.ToString();
-            Enemy2VM.Value.SetEmployee(Masters.GetEnemyEmployee(SelectedStage.Value.Enemy2Id, SelectedStage.Value.Enemy2EvolState));
-            Enemy2VM.Value.Level.Value = SelectedStage.Value.Enemy2Level.ToString();
-            Enemy3VM.Value.SetEmployee(Masters.GetEnemyEmployee(SelectedStage.Value.Enemy3Id, SelectedStage.Value.Enemy3EvolState));
-            Enemy3VM.Value.Level.Value = SelectedStage.Value.Enemy3Level.ToString();
+            if(SelectedStage?.Value != null && SelectedStage.Value.Part != 0)
+            {
+                Enemy1VM.Value.SetEmployee(Masters.GetEnemyEmployee(SelectedStage.Value.Enemy1Id, SelectedStage.Value.Enemy1EvolState));
+                Enemy1VM.Value.Level.Value = SelectedStage.Value.Enemy1Level.ToString();
+                Enemy2VM.Value.SetEmployee(Masters.GetEnemyEmployee(SelectedStage.Value.Enemy2Id, SelectedStage.Value.Enemy2EvolState));
+                Enemy2VM.Value.Level.Value = SelectedStage.Value.Enemy2Level.ToString();
+                Enemy3VM.Value.SetEmployee(Masters.GetEnemyEmployee(SelectedStage.Value.Enemy3Id, SelectedStage.Value.Enemy3EvolState));
+                Enemy3VM.Value.Level.Value = SelectedStage.Value.Enemy3Level.ToString();
+            }
+        }
+
+        /// <summary>
+        /// ステージリストを初期化
+        /// </summary>
+        /// <param name="isShowAllStage">trueの場合、全ステージ表示</param>
+        private void SetStageList()
+        {
+            int part1StageThreshold = Masters.ConfigData.Part1StageThreshold;
+            int part2StageThreshold = Masters.ConfigData.Part2StageThreshold;
+            if (ShowAllStage.Value)
+            {
+                part1StageThreshold = 1;
+                part2StageThreshold = 1;
+            }
+            StageData def = new();
+            List<StageData> stages = new() { def };
+            foreach (var stage in Masters.StageDatas)
+            {
+                if ((stage.Part == 1 && stage.Grade >= part1StageThreshold) ||
+                    (stage.Part == 2 && stage.Grade >= part2StageThreshold))
+                {
+                    stages.Add(stage);
+                }
+            }
+            StageDatas.Value = stages;
+            SelectedStage.Value = def;
         }
 
         /// <summary>
