@@ -93,6 +93,24 @@ namespace MonsterCompanySimModel.Service
                                     continue;
                                 }
                             }
+
+                            bool samePart = false;
+                            if (ally1 != null && ally1.Part == part)
+                            {
+                                samePart = true;
+                            }
+                            if (ally2 != null && ally2.Part == part)
+                            {
+                                samePart = true;
+                            }
+                            if (ally3 != null && ally3.Part == part)
+                            {
+                                samePart = true;
+                            }
+                            if (!samePart)
+                            {
+                                continue;
+                            }
                         }
 
                         // 戦闘データ生成
