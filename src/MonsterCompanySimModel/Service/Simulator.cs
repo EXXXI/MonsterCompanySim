@@ -113,6 +113,13 @@ namespace MonsterCompanySimModel.Service
                             }
                         }
 
+                        // 固定社員確認
+                        bool isRequierdValid = Masters.IsRequierdValid(ally1, ally2, ally3);
+                        if (!isRequierdValid)
+                        {
+                            continue;
+                        }
+
                         // 戦闘データ生成
                         Battler? battler1 = ally1 == null ? null : new Battler(ally1) { Level = level };
                         Battler? battler2 = ally2 == null ? null : new Battler(ally2) { Level = level };

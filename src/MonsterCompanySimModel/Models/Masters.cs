@@ -30,6 +30,11 @@ namespace MonsterCompanySimModel.Models
         static private List<SimpleEmployee> IncludeEmployees { get; set; } = new List<SimpleEmployee>();
 
         /// <summary>
+        /// 固定対象社員リスト(内部管理用、保存はしない)
+        /// </summary>
+        static private List<SimpleEmployee> RequiredEmployees { get; set; } = new List<SimpleEmployee>();
+
+        /// <summary>
         /// ステージリスト
         /// </summary>
         static public List<StageData> StageDatas { get; set; } = new List<StageData>();
@@ -210,6 +215,84 @@ namespace MonsterCompanySimModel.Models
             return false;
         }
 
+        /// <summary>
+        /// 固定対象社員追加
+        /// </summary>
+        /// <param name="emp">追加社員</param>
+        static public void AddRequired(Employee emp)
+        {
+            foreach (var target in RequiredEmployees)
+            {
+                if (emp.Id == target.Id && emp.EvolState == target.EvolState)
+                {
+                    return;
+                }
+            }
+            RequiredEmployees.Add(new SimpleEmployee() { Id = emp.Id, EvolState = emp.EvolState });
+        }
+
+        /// <summary>
+        /// 固定対象社員情報削除
+        /// </summary>
+        /// <param name="emp">削除社員</param>
+        static public void DeleteRequired(Employee emp)
+        {
+            foreach (var target in RequiredEmployees)
+            {
+                if (emp.Id == target.Id && emp.EvolState == target.EvolState)
+                {
+
+                    RequiredEmployees.Remove(target);
+                    return;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 検索対象か否かを取得
+        /// </summary>
+        /// <param name="emp">社員</param>
+        /// <returns>検索対象の場合true</returns>
+        public static bool IsRequired(Employee emp)
+        {
+            foreach (var target in RequiredEmployees)
+            {
+                if (emp.Id == target.Id && emp.EvolState == target.EvolState)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 編成が固定条件を満たしているか否かを取得
+        /// </summary>
+        /// <param name="ally1">味方1</param>
+        /// <param name="ally2">味方2</param>
+        /// <param name="ally3">味方3</param>
+        /// <returns>検索対象の場合true</returns>
+        public static bool IsRequierdValid(Employee? ally1, Employee? ally2, Employee? ally3)
+        {
+            foreach (var emp in RequiredEmployees)
+            {
+                if (ally1?.Id == emp.Id && ally1?.EvolState == emp.EvolState)
+                {
+                    continue;
+                }
+                if (ally2?.Id == emp.Id && ally2?.EvolState == emp.EvolState)
+                {
+                    continue;
+                }
+                if (ally3?.Id == emp.Id && ally3?.EvolState == emp.EvolState)
+                {
+                    continue;
+                }
+                return false;
+            }
+            return true;
+        }
+        
         /// <summary>
         /// 設定ファイルの情報を取得
         /// </summary>
