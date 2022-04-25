@@ -9,6 +9,7 @@
     <StackPanel Orientation="Horizontal">
         <TextBlock Width="150" Text="{Binding Employee.Value}"/>
         <RadioButton Content="検索対象に入れる　" IsChecked="{Binding IsTarget.Value}"/>
-        <RadioButton Content="検索対象に入れない" IsChecked="{Binding IsNotTarget.Value, Mode=OneWay}"/>
+        <RadioButton Content="検索対象に入れない　" IsChecked="{Binding IsNotTarget.Value, Mode=OneWay}"/>
+        <CheckBox Content="必ず編成に入れる" IsChecked="{Binding IsRequired.Value}"/>
     </StackPanel>
 </UserControl>
