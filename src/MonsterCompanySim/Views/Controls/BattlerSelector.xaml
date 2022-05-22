@@ -15,7 +15,7 @@
         </ComboBox>
         <StackPanel Orientation="Horizontal">
             <TextBlock Width="20">Lv:</TextBlock>
-            <TextBox Width="60" Text="{Binding Level.Value, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Width="60" Text="{Binding Level.Value, UpdateSourceTrigger=PropertyChanged}" TabIndex="0"/>
             <TextBlock Width="30">タゲ:</TextBlock>
 
             <ComboBox Width="40" ItemsSource="{Binding Targets.Value, Mode=OneWay}" SelectedItem="{Binding SelectedTarget.Value}">

@@ -68,11 +68,12 @@ namespace MonsterCompanySimModel.Models
                 {
                     if (oldDamage.Probability > 0 && newDamage.Probability > 0)
                     {
+                        double crit = newDamage.IsCrit ? newDamage.Probability : 1 - newDamage.Probability;
                         Damage damage = new()
                         {
                             Probability = oldDamage.Probability * newDamage.Probability,
                             Value = oldDamage.Value + newDamage.Value,
-                            Log = $"{oldDamage.Log}{log}:{newDamage.Value:#,0}{(newDamage.IsCrit ? " Critical" : "")}\n"
+                            Log = $"{oldDamage.Log}{log}:{newDamage.Value:#,0} {(newDamage.IsCrit ? "Critical " : "            ")}(CT率{crit * 100}%)\n"
                         };
                         result.Add(damage);
                     }
