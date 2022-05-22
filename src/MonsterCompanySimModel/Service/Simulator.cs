@@ -137,7 +137,7 @@ namespace MonsterCompanySimModel.Service
                                 Ally2 = ally2,
                                 Ally3 = ally3,
                                 WinRate = battleResult.WinRate,
-                                SumEng = (battler1?.Eng ?? 0) + (battler2?.Eng ?? 0) + (battler3?.Eng ?? 0)
+                                SumEng = Math.Min(2000000000, ((battler1?.Eng ?? 0) + (battler2?.Eng ?? 0) + (battler3?.Eng ?? 0)) * (boost ? 10 : 1))
                             };
                             resultList.Add(result);
                         }
