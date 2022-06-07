@@ -138,5 +138,10 @@ namespace MonsterCompanySimModel.Models
         {
             return Employee?.ToString() ?? string.Empty;
         }
+
+        public Battler ShallowCopy()
+        {
+            return (Battler)MemberwiseClone();
+        }
     }
 }
