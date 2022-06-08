@@ -40,7 +40,7 @@ namespace MonsterCompanySimModel.Service
         /// <param name="part">部制限</param>
         /// <param name="progress">プログレスバー用ReactiveProperty</param>
         /// <returns>編成検索結果リスト</returns>
-        public List<SearchResult> Search(Battler? enemy1, Battler? enemy2, Battler? enemy3, bool boost, int level,int part, ReactivePropertySlim<double>? progress)
+        public List<SearchResult> Search(Battler? enemy1_, Battler? enemy2_, Battler? enemy3_, bool boost, int level,int part, ReactivePropertySlim<double>? progress)
         {
             // 結果用List
             List<SearchResult> resultList = new();
@@ -53,103 +53,121 @@ namespace MonsterCompanySimModel.Service
             {
                 progress.Value = 0;
             }
-            
+
             // 総当たり
-            foreach (var ally1 in emps)
-            {
-                foreach (var ally2 in emps)
+            Parallel.ForEach(emps,
+                new ParallelOptions { MaxDegreeOfParallelism = 4 },
+                () => new List<SearchResult>(),
+                (ally1, loop, subResult) =>
                 {
-                    foreach (var ally3 in emps)
+                    foreach (var ally2 in emps)
                     {
-                        // 同一社員不可
-                        if ((ally1 != null && ally1?.Id == ally2?.Id) ||
-                            (ally2 != null && ally2?.Id == ally3?.Id) ||
-                            (ally3 != null && ally3?.Id == ally1?.Id) ||
-                            (ally1 == null && ally2 == null && ally3 == null))
+                        foreach (var ally3 in emps)
                         {
-                            continue;
-                        }
-
-                        // 部制限
-                        if (part != 0)
-                        {
-                            bool otherPart = false;
-                            if (ally1 != null && ally1.Part != part)
-                            {
-                                otherPart = true;
-                            }
-                            if (ally2 != null && ally2.Part != part)
-                            {
-                                if (otherPart)
-                                {
-                                    continue;
-                                }
-                                otherPart = true;
-                            }
-                            if (ally3 != null && ally3.Part != part)
-                            {
-                                if (otherPart)
-                                {
-                                    continue;
-                                }
-                            }
-
-                            bool samePart = false;
-                            if (ally1 != null && ally1.Part == part)
-                            {
-                                samePart = true;
-                            }
-                            if (ally2 != null && ally2.Part == part)
-                            {
-                                samePart = true;
-                            }
-                            if (ally3 != null && ally3.Part == part)
-                            {
-                                samePart = true;
-                            }
-                            if (!samePart)
+                            var enemy1 = enemy1_?.ShallowCopy();
+                            var enemy2 = enemy2_?.ShallowCopy();
+                            var enemy3 = enemy3_?.ShallowCopy();
+                            // 同一社員不可
+                            if ((ally1 != null && ally1?.Id == ally2?.Id) ||
+                                (ally2 != null && ally2?.Id == ally3?.Id) ||
+                                (ally3 != null && ally3?.Id == ally1?.Id) ||
+                                (ally1 == null && ally2 == null && ally3 == null))
                             {
                                 continue;
                             }
-                        }
 
-                        // 固定社員確認
-                        bool isRequierdValid = Masters.IsRequierdValid(ally1, ally2, ally3);
-                        if (!isRequierdValid)
-                        {
-                            continue;
-                        }
-
-                        // 戦闘データ生成
-                        Battler? battler1 = ally1 == null ? null : new Battler(ally1) { Level = level };
-                        Battler? battler2 = ally2 == null ? null : new Battler(ally2) { Level = level };
-                        Battler? battler3 = ally3 == null ? null : new Battler(ally3) { Level = level };
-
-                        // 勝率計算
-                        BattleResult battleResult = FullBattle(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost);
-
-                        // 結果確認
-                        if (battleResult.WinRate > 0)
-                        {
-                            SearchResult result = new()
+                            // 部制限
+                            if (part != 0)
                             {
-                                Ally1 = ally1,
-                                Ally2 = ally2,
-                                Ally3 = ally3,
-                                WinRate = battleResult.WinRate,
-                                SumEng = Math.Min(2000000000, ((battler1?.Eng ?? 0) + (battler2?.Eng ?? 0) + (battler3?.Eng ?? 0)) * (boost ? 10 : 1))
-                            };
-                            resultList.Add(result);
+                                bool otherPart = false;
+                                if (ally1 != null && ally1.Part != part)
+                                {
+                                    otherPart = true;
+                                }
+                                if (ally2 != null && ally2.Part != part)
+                                {
+                                    if (otherPart)
+                                    {
+                                        continue;
+                                    }
+                                    otherPart = true;
+                                }
+                                if (ally3 != null && ally3.Part != part)
+                                {
+                                    if (otherPart)
+                                    {
+                                        continue;
+                                    }
+                                }
+
+                                bool samePart = false;
+                                if (ally1 != null && ally1.Part == part)
+                                {
+                                    samePart = true;
+                                }
+                                if (ally2 != null && ally2.Part == part)
+                                {
+                                    samePart = true;
+                                }
+                                if (ally3 != null && ally3.Part == part)
+                                {
+                                    samePart = true;
+                                }
+                                if (!samePart)
+                                {
+                                    continue;
+                                }
+                            }
+
+                            // 固定社員確認
+                            bool isRequierdValid = Masters.IsRequierdValid(ally1, ally2, ally3);
+                            if (!isRequierdValid)
+                            {
+                                continue;
+                            }
+
+                            // 戦闘データ生成
+                            Battler? battler1 = ally1 == null ? null : new Battler(ally1) { Level = level };
+                            Battler? battler2 = ally2 == null ? null : new Battler(ally2) { Level = level };
+                            Battler? battler3 = ally3 == null ? null : new Battler(ally3) { Level = level };
+
+                            // 勝率計算
+                            BattleResult battleResult = FullBattle(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost);
+
+                            // 結果確認
+                            if (battleResult.WinRate > 0)
+                            {
+                                SearchResult result = new()
+                                {
+                                    Ally1 = ally1,
+                                    Ally2 = ally2,
+                                    Ally3 = ally3,
+                                    WinRate = battleResult.WinRate,
+                                    SumEng = Math.Min(2000000000, ((battler1?.Eng ?? 0) + (battler2?.Eng ?? 0) + (battler3?.Eng ?? 0)) * (boost ? 10 : 1))
+                                };
+                                subResult.Add(result);
+                            }
                         }
                     }
-                }
 
-                // プログレスバー増加
-                if (progress != null)
+                    // プログレスバー増加
+                    if (progress != null)
+                    {
+                        lock (progress)
+                        {
+                            progress.Value += 1.0 / emps.Count;
+                        }
+                    }
+                    return subResult;
+                },
+                (finalResult) =>
                 {
-                    progress.Value += 1.0 / emps.Count;
+                    lock (resultList)
+                    {
+                        resultList.AddRange(finalResult);
+                    }
                 }
-            }
+            );
 
             // 要求レベル計算
             if (resultList.Count < Masters.ConfigData.RequireThreshold)
@@ -162,7 +180,7 @@ namespace MonsterCompanySimModel.Service
                     Battler? battler3 = result.Ally3 == null ? null : new Battler(result.Ally3) { Level = level };
 
                     // 要求レベル計算
-                    result.MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost) ?? 0;
+                    result.MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1_, enemy2_, enemy3_, boost) ?? 0;
                 }
             }
 
@@ -194,7 +212,7 @@ namespace MonsterCompanySimModel.Service
         {
             int max = Masters.ConfigData.MaxLevel;
             int min = 1;
-            
+
             bool won = false;
             while (max != min)
             {
@@ -301,7 +319,7 @@ namespace MonsterCompanySimModel.Service
             }
             foreach (var damage in allyDamages)
             {
-                damage.Probability /= allyTargetCount; 
+                damage.Probability /= allyTargetCount;
             }
 
             // 敵戦闘
@@ -472,7 +490,7 @@ namespace MonsterCompanySimModel.Service
                 $"{ally2?.Employee?.Name}→{TargetBattler(allyTarget2, enemy1, enemy2, enemy3)?.Employee?.Name}");
             result.CombineAllyDamages(Attack(ally3, TargetBattler(allyTarget3, enemy1, enemy2, enemy3)),
                 $"{ally3?.Employee?.Name}→{TargetBattler(allyTarget3, enemy1, enemy2, enemy3)?.Employee?.Name}");
-           
+
             // ダメージ情報返却
             return result.AllyDamages;
         }
@@ -1174,7 +1192,7 @@ namespace MonsterCompanySimModel.Service
                 attacker.Modifier *= 1.5;
                 return;
             }
-            if (normal) 
+            if (normal)
             {
                 // この分岐は不要だが可読性のため追加
                 return;
