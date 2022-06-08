@@ -131,6 +131,16 @@ namespace MonsterCompanySimModel.Models
         }
 
         /// <summary>
+        /// コピー作成
+        /// プロパティはシャローコピー
+        /// </summary>
+        /// <returns>コピーした戦闘社員</returns>
+        public Battler ShallowCopy()
+        {
+            return (Battler)MemberwiseClone();
+        }
+
+        /// <summary>
         /// 表示用：ToStringオーバーライド
         /// </summary>
         /// <returns>EmployeeのToString結果</returns>
