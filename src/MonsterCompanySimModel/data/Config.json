@@ -3,5 +3,6 @@
   "MaxLevel": 149999,
   "RequireThreshold": 500,
   "Part1StageThreshold": 40,
-  "Part2StageThreshold": 13
+  "Part2StageThreshold": 13,
+  "MaxDegreeOfParallelism": 4
 }

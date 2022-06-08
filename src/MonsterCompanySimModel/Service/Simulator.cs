@@ -56,7 +56,7 @@ namespace MonsterCompanySimModel.Service
 
             // 総当たり
             Parallel.ForEach(emps,
-                new ParallelOptions { MaxDegreeOfParallelism = 4 },
+                new ParallelOptions { MaxDegreeOfParallelism = Masters.ConfigData.MaxDegreeOfParallelism },
                 () => new List<SearchResult>(),
                 (ally1, loop, subResult) =>
                 {

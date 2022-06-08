@@ -35,5 +35,10 @@ namespace MonsterCompanySimModel.Models
         /// 初期表示する2部ステージの下限グレード
         /// </summary>
         public int Part2StageThreshold { get; set; }
+
+        /// <summary>
+        /// 並列処理数
+        /// </summary>
+        public int MaxDegreeOfParallelism { get; set; }
     }
 }
