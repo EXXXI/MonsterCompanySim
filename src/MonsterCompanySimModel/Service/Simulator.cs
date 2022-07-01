@@ -987,6 +987,17 @@ namespace MonsterCompanySimModel.Service
                     }
                     */
                     break;
+                case SkillType.味方属性不在:
+                    if (right != null && skill.Element == right.Employee.Element)
+                    {
+                        break;
+                    }
+                    if (left != null && skill.Element == left.Employee.Element)
+                    {
+                        break;
+                    }
+                    self.Modifier *= skill.Modifier;
+                    break;
                 default:
                     break;
             }
