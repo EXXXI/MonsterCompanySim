@@ -3266,7 +3266,7 @@
   {
     "Id": 140,
     "EvolState": 1,
-    "Name": "餅月ひまり進化後(仮)",
+    "Name": "覚醒餅月ひまり",
     "Skills": [
       {
         "SkillType": "味方属性不在",
@@ -3284,8 +3284,8 @@
     "Rarity": "LHVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1520,
-    "Dex": 2500,
+    "Atk": 1620,
+    "Dex": 2800,
     "Eng": 2700
   },
   {

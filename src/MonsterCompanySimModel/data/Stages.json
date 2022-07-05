@@ -5246,6 +5246,32 @@
     "Enemy3Level": 6812348
   },
   {
+    "Part": 1,
+    "Grade": 43,
+    "Stage": 9,
+    "Gold": 8290000,
+    "Ticket": 157900,
+    "Enemy1Id": 66,
+    "Enemy1Level": 10672035,
+    "Enemy2Id": 27,
+    "Enemy2Level": 220555552,
+    "Enemy3Id": 31,
+    "Enemy3Level": 114080448
+  },
+  {
+    "Part": 1,
+    "Grade": 43,
+    "Stage": 10,
+    "Gold": 8300000,
+    "Ticket": 158000,
+    "Enemy1Id": 47,
+    "Enemy1Level": 38550716,
+    "Enemy2Id": 36,
+    "Enemy2Level": 110833328,
+    "Enemy3Id": 45,
+    "Enemy3Level": 50053756
+  },
+  {
     "Part": 2,
     "Grade": 1,
     "Stage": 1,
