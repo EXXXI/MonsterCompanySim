@@ -37,19 +37,37 @@ namespace MonsterCompanySimModel.Models
                 {
                     double crit = NewDamage.IsCrit ? NewDamage.Probability : 1 - NewDamage.Probability;
                     string log = OldDamage.Log + LocalLog + $":{NewDamage.Value:#,0} {(NewDamage.IsCrit ? "Critical " : "            ")}(CT率{crit * 100}%)\n";
-                    // System.Diagnostics.Debug.Assert(log == LocalLog);
+
+                    // // ログ遅延評価確認用
+                    // System.Diagnostics.Debug.Assert(log == TestLog);
+
                     return log;
                 }
                 return string.Empty;
             }
         }
-
+        
+        // /// <summary>
+        // /// ログ遅延評価確認用
+        // /// </summary>
         // private string TestLog { get; set; } = "";
 
+        /// <summary>
+        /// ログ計算用
+        /// 本攻撃での社員情報
+        /// </summary>
         private string LocalLog { get; set; } = string.Empty;
 
+        /// <summary>
+        /// ログ計算用
+        /// 本攻撃以前のダメージデータ
+        /// </summary>
         private Damage? OldDamage { get; set; } = null;
 
+        /// <summary>
+        /// ログ計算用
+        /// 本攻撃単体のダメージデータ
+        /// </summary>
         private Damage? NewDamage { get; set; } = null;
 
         /// <summary>
@@ -90,13 +108,18 @@ namespace MonsterCompanySimModel.Models
                 {
                     if (oldDamage.Probability > 0 && newDamage.Probability > 0)
                     {
-                        // double crit = newDamage.IsCrit ? newDamage.Probability : 1 - newDamage.Probability;
                         dmg.Probability = oldDamage.Probability * newDamage.Probability;
                         dmg.Value = oldDamage.Value + newDamage.Value;
-                        // dmg.TestLog = oldDamage.Log + log + $":{newDamage.Value:#,0} {(newDamage.IsCrit ? "Critical " : "            ")}(CT率{crit * 100}%)\n";
+
+                        // ログ関連は遅延評価にするため、プロパティに必要な情報を保存
                         dmg.OldDamage = oldDamage;
                         dmg.NewDamage = newDamage;
                         dmg.LocalLog = log;
+
+                        // // ログ遅延評価確認用
+                        // double crit = newDamage.IsCrit ? newDamage.Probability : 1 - newDamage.Probability;
+                        // dmg.TestLog = oldDamage.Log + log + $":{newDamage.Value:#,0} {(newDamage.IsCrit ? "Critical " : "            ")}(CT率{crit * 100}%)\n";
+
                         result.Add(dmg);
                     }
                 }
