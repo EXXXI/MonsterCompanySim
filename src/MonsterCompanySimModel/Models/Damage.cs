@@ -101,11 +101,11 @@ namespace MonsterCompanySimModel.Models
         static public List<Damage> CombineDamages(List<Damage> oldDamages, List<Damage> newDamages, string log)
         {
             var result = new List<Damage>(oldDamages.Count * newDamages.Count);
-            var dmg = new Damage { };
             foreach (Damage oldDamage in oldDamages)
             {
                 foreach (Damage newDamage in newDamages)
                 {
+                    Damage dmg = new();
                     if (oldDamage.Probability > 0 && newDamage.Probability > 0)
                     {
                         dmg.Probability = oldDamage.Probability * newDamage.Probability;
