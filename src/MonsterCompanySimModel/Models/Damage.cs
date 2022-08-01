@@ -109,7 +109,7 @@ namespace MonsterCompanySimModel.Models
                     if (oldDamage.Probability > 0 && newDamage.Probability > 0)
                     {
                         dmg.Probability = oldDamage.Probability * newDamage.Probability;
-                        dmg.Value = oldDamage.Value + newDamage.Value;
+                        dmg.Value = Math.Min(oldDamage.Value + newDamage.Value, 2147000000.0);
 
                         // ログ関連は遅延評価にするため、プロパティに必要な情報を保存
                         dmg.OldDamage = oldDamage;
