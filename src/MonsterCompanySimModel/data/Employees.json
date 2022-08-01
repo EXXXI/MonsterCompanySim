@@ -1957,8 +1957,8 @@
     "Rarity": "HXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1490,
-    "Dex": 700,
+    "Atk": 1640,
+    "Dex": 770,
     "Eng": 47000
   },
   {
@@ -1968,17 +1968,17 @@
     "Skills": [
       {
         "SkillType": "タイプキラー",
-        "Modifier": 2,
+        "Modifier": 2.5,
         "Type": "支援"
       },
       {
         "SkillType": "タイプキラー",
-        "Modifier": 2,
+        "Modifier": 2.5,
         "Type": "飛翔"
       },
       {
         "SkillType": "三色編成強化",
-        "Modifier": 2
+        "Modifier": 2.5
       }
     ],
     "Element": "水",
@@ -1986,8 +1986,8 @@
     "Rarity": "HXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1590,
-    "Dex": 700,
+    "Atk": 1750,
+    "Dex": 770,
     "Eng": 47000
   },
   {
@@ -2198,11 +2198,16 @@
         "SkillType": "属性強化",
         "Element": "水",
         "Range": "自分",
-        "Modifier": 2.5
+        "Modifier": 3
       },
       {
         "SkillType": "CT確定",
         "Range": "自分"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "変革"
       }
     ],
     "Element": "水",
@@ -2210,7 +2215,7 @@
     "Rarity": "HXVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1750,
+    "Atk": 2100,
     "Dex": 280,
     "Eng": 124000
   },
@@ -2593,6 +2598,11 @@
       {
         "SkillType": "正面攻撃",
         "Range": "自分"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "飛翔"
       }
     ],
     "Element": "火",
@@ -2600,8 +2610,8 @@
     "Rarity": "LXRplus",
     "Part": 1,
     "GuerrillaModifier": 0.1,
-    "Atk": 970,
-    "Dex": 1180,
+    "Atk": 1070,
+    "Dex": 1300,
     "Eng": 13400
   },
   {
@@ -3045,6 +3055,11 @@
         "Type": "神"
       },
       {
+        "SkillType": "タイプキラー",
+        "Modifier": 2.5,
+        "Type": "支援"
+      },
+      {
         "SkillType": "属性強化",
         "Element": "火",
         "Range": "全体",
@@ -3072,8 +3087,8 @@
     "Rarity": "UHVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1380,
-    "Dex": 880,
+    "Atk": 1520,
+    "Dex": 970,
     "Eng": 3800
   },
   {
