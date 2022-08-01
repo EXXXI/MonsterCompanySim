@@ -1076,7 +1076,7 @@ namespace MonsterCompanySimModel.Service
         /// <param name="defender">防御側社員</param>
         private void CalcElement(Battler attacker, Battler defender)
         {
-            // タイプキラー時は属性無視
+            // タイプキラー
             if (!attacker.IsSkillDisabled)
             {
                 foreach (var skill in attacker.Employee.Skills)
@@ -1087,7 +1087,14 @@ namespace MonsterCompanySimModel.Service
                             if (defender.Employee.Type == skill.Type)
                             {
                                 attacker.Modifier *= skill.Modifier;
+                                // 通常のタイプキラーは属性無視のためreturn
                                 return;
+                            }
+                            break;
+                        case SkillType.属性別タイプキラー:
+                            if (defender.Employee.Type == skill.Type)
+                            {
+                                attacker.Modifier *= skill.Modifier;
                             }
                             break;
                         default:
