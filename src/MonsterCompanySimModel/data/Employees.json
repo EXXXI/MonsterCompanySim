@@ -2593,13 +2593,13 @@
         "SkillType": "属性強化",
         "Element": "火",
         "Range": "全体",
-        "Modifier": 2
+        "Modifier": 2.5
       },
       {
         "SkillType": "属性強化",
         "Element": "水",
         "Range": "全体",
-        "Modifier": 2
+        "Modifier": 2.5
       },
       {
         "SkillType": "正面攻撃",
@@ -2830,7 +2830,7 @@
   },
   {
     "Id": 124,
-    "Name": "ミルメル",
+    "Name": "ミル＆メル",
     "Skills": [
       {
         "SkillType": "タイプキラー",
