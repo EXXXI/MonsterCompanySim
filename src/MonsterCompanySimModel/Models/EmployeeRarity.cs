@@ -28,6 +28,7 @@
         UHV,
         UHVplus,
         LHV,
-        LHVplus
+        LHVplus,
+        LXV
     }
 }
