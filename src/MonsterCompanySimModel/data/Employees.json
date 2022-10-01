@@ -3411,5 +3411,52 @@
     "Atk": 1980,
     "Dex": 1880,
     "Eng": 12800
+  },
+  {
+    "Id": 144,
+    "Name": "シェアメイド",
+    "Skills": [
+      {
+        "SkillType": "CT確定",
+        "Range": "右"
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "右",
+        "Modifier": 3.5,
+        "Type": "飛翔"
+      }
+    ],
+    "Element": "木",
+    "Type": "支援",
+    "Rarity": "LHVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1530,
+    "Dex": 980,
+    "Eng": 12200
+  },
+  {
+    "Id": 147,
+    "Name": "ヴァンちゃん",
+    "Skills": [
+      {
+        "SkillType": "CT回避",
+        "Range": "自分"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 4,
+        "Type": "神"
+      }
+    ],
+    "Element": "水",
+    "Type": "悪魔",
+    "Rarity": "LXV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1610,
+    "Dex": 1750,
+    "Eng": 23100
   }
 ]
