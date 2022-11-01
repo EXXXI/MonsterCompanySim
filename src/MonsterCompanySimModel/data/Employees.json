@@ -3098,6 +3098,61 @@
     "Eng": 3800
   },
   {
+    "Id": 132,
+    "EvolState": 1,
+    "Name": "覚醒惡夜部はろん",
+    "Skills": [
+      {
+        "SkillType": "タイプキラー",
+        "Modifier": 2.5,
+        "Type": "神"
+      },
+      {
+        "SkillType": "タイプキラー",
+        "Modifier": 2.5,
+        "Type": "支援"
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "木",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "CT確定",
+        "Range": "右"
+      },
+      {
+        "SkillType": "CT確定",
+        "Range": "自分"
+      },
+      {
+        "SkillType": "CT回避",
+        "Range": "自分"
+      }
+    ],
+    "Element": "木",
+    "Type": "悪魔",
+    "Rarity": "UHVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1830,
+    "Dex": 970,
+    "Eng": 3800
+  },
+  {
     "Id": 133,
     "Name": "天下の盗人",
     "Skills": [
