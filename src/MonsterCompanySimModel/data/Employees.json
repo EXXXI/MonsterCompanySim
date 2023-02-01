@@ -3530,5 +3530,181 @@
     "Atk": 1610,
     "Dex": 1750,
     "Eng": 23100
+  },
+  {
+    "Id": 151,
+    "Name": "日向こがね",
+    "Skills": [
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 3,
+        "Type": "変革"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "スピード"
+      }
+    ],
+    "Element": "火",
+    "Type": "変革",
+    "Rarity": "LXVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1570,
+    "Dex": 1120,
+    "Eng": 13900
+  },
+  {
+    "Id": 152,
+    "Name": "シバイヌ＆コメット",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "タイプ軽減",
+        "Modifier": 0.2,
+        "Type": "支援"
+      }
+    ],
+    "Element": "火",
+    "Type": "けもみみ",
+    "Rarity": "LXVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1590,
+    "Dex": 1050,
+    "Eng": 10300
+  },
+  {
+    "Id": 153,
+    "Name": "まつり",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "CT確定",
+        "Range": "自分"
+      },
+      {
+        "SkillType": "CT回避",
+        "Range": "自分"
+      }
+    ],
+    "Element": "水",
+    "Type": "飛翔",
+    "Rarity": "LXVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1290,
+    "Dex": 550,
+    "Eng": 83100
+  },
+  {
+    "Id": 154,
+    "Name": "ネイト",
+    "Skills": [
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "飛翔"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "支援"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "神"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "悪魔"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "変革"
+      },
+      {
+        "SkillType": "CT確定",
+        "Range": "自分"
+      },
+      {
+        "SkillType": "CT確定",
+        "Range": "右"
+      },
+      {
+        "SkillType": "CT回避",
+        "Range": "全体"
+      }
+    ],
+    "Element": "水",
+    "Type": "支援",
+    "Rarity": "LXVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1480,
+    "Dex": 1520,
+    "Eng": 8700
+  },
+  {
+    "Id": 155,
+    "Name": "くまのこぴぴこ",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "木",
+        "Range": "全体",
+        "Modifier": 2.5
+      },
+      {
+        "SkillType": "正面引き付け",
+        "Range": "全体"
+      }
+    ],
+    "Element": "木",
+    "Type": "けもみみ",
+    "Rarity": "LXVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1440,
+    "Dex": 1220,
+    "Eng": 18100
+  },
+  {
+    "Id": 156,
+    "Name": "神凪てと",
+    "Skills": [
+      {
+        "SkillType": "三色編成強化",
+        "Modifier": 2.5
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "悪魔"
+      }
+    ],
+    "Element": "木",
+    "Type": "変革",
+    "Rarity": "LXVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1470,
+    "Dex": 4450,
+    "Eng": 2600
   }
 ]
