@@ -191,6 +191,18 @@
     "Eng": 16600
   },
   {
+    "Id": 99,
+    "Name": "ナーガ姉妹",
+    "Element": "水",
+    "Type": "支援",
+    "Rarity": "HXVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 920,
+    "Dex": 2670,
+    "Eng": 38000
+  },
+  {
     "Id": 102,
     "Name": "アレグリアス",
     "Element": "木",
