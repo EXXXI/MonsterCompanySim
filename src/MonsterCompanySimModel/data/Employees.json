@@ -2430,7 +2430,7 @@
       },
       {
         "SkillType": "タイプキラー",
-        "Modifier": 2,
+        "Modifier": 3,
         "Type": "ブラック"
       }
     ],
@@ -2479,7 +2479,7 @@
     "Skills": [
       {
         "SkillType": "タイプキラー",
-        "Modifier": 2,
+        "Modifier": 3,
         "Type": "ブラック"
       },
       {
@@ -2539,7 +2539,7 @@
     "Skills": [
       {
         "SkillType": "タイプキラー",
-        "Modifier": 2,
+        "Modifier": 3,
         "Type": "ブラック"
       },
       {
