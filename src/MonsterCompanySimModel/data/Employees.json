@@ -1248,6 +1248,12 @@
       },
       {
         "SkillType": "オールキラー"
+      },
+      {
+        "SkillType": "特定社員強化",
+        "Range": "自分",
+        "Modifier": 0.2,
+        "Buddys": [ 105, 148 ]
       }
     ],
     "Element": "木",
@@ -1270,6 +1276,12 @@
       },
       {
         "SkillType": "全属性軽減"
+      },
+      {
+        "SkillType": "特定社員強化",
+        "Range": "自分",
+        "Modifier": 0.2,
+        "Buddys": [ 105, 148 ]
       }
     ],
     "Element": "木",
@@ -1299,6 +1311,12 @@
       },
       {
         "SkillType": "全属性軽減"
+      },
+      {
+        "SkillType": "特定社員強化",
+        "Range": "自分",
+        "Modifier": 0.2,
+        "Buddys": [ 105, 148 ]
       }
     ],
     "Element": "木",
@@ -3509,6 +3527,66 @@
     "Eng": 12200
   },
   {
+    "Id": 145,
+    "Name": "ころねちゃん",
+    "Skills": [
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 3,
+        "Type": "支援"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 3,
+        "Type": "飛翔"
+      }
+    ],
+    "Element": "火",
+    "Type": "支援",
+    "Rarity": "LXV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1560,
+    "Dex": 2100,
+    "Eng": 21700
+  },
+  {
+    "Id": 146,
+    "Name": "うさこ",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "CT回避",
+        "Range": "全体"
+      },
+      {
+        "SkillType": "属性軽減",
+        "Modifier": 0.2,
+        "Element": "火"
+      }
+    ],
+    "Element": "火",
+    "Type": "けもみみ",
+    "Rarity": "LXV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1810,
+    "Dex": 1250,
+    "Eng": 28200
+  },
+  {
     "Id": 147,
     "Name": "ヴァンちゃん",
     "Skills": [
@@ -3530,6 +3608,26 @@
     "Atk": 1610,
     "Dex": 1750,
     "Eng": 23100
+  },
+  {
+    "Id": 148,
+    "Name": "りとるあるか",
+    "Skills": [
+      {
+        "SkillType": "特定社員強化",
+        "Range": "全体",
+        "Modifier": 5,
+        "Buddys": [ 72 ]
+      }
+    ],
+    "Element": "水",
+    "Type": "変革",
+    "Rarity": "LXV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1365,
+    "Dex": 1000,
+    "Eng": 13700
   },
   {
     "Id": 149,
@@ -3557,7 +3655,7 @@
   },
   {
     "Id": 149,
-    "EvolState" : 1, 
+    "EvolState": 1,
     "Name": "覚醒花園セレナ",
     "Skills": [
       {
@@ -3579,6 +3677,29 @@
     "Atk": 1510,
     "Dex": 1630,
     "Eng": 10700
+  },
+  {
+    "Id": 150,
+    "Name": "鬼嬢ノ九龍",
+    "Skills": [
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 4,
+        "Type": "支援"
+      },
+      {
+        "SkillType": "CT回避",
+        "Range": "自分"
+      }
+    ],
+    "Element": "木",
+    "Type": "悪魔",
+    "Rarity": "LXV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1980,
+    "Dex": 750,
+    "Eng": 11100
   },
   {
     "Id": 151,
