@@ -3544,12 +3544,47 @@
     ],
     "Element": "火",
     "Type": "支援",
-    "Rarity": "LHVplus",
+    "Rarity": "LXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
     "Atk": 1560,
     "Dex": 2100,
     "Eng": 21700
+  },
+  {
+    "Id": 146,
+    "Name": "うさこ",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "CT回避",
+        "Range": "全体"
+      },
+      {
+        "SkillType": "属性軽減",
+        "Modifier": 0.2,
+        "Element": "火"
+      }
+    ],
+    "Element": "火",
+    "Type": "けもみみ",
+    "Rarity": "LXV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1810,
+    "Dex": 1250,
+    "Eng": 28200
   },
   {
     "Id": 147,
