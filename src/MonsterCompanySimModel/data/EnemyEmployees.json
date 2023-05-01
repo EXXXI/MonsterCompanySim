@@ -167,6 +167,32 @@
     "Eng": 9800
   },
   {
+    "Id": 88,
+    "Name": "忍魔隊ミコ",
+    "Skills": [
+      {
+        "SkillType": "敵ミコ属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 1.5
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 1.5,
+        "Type": "スピード"
+      }
+    ],
+    "Element": "水",
+    "Type": "スピード",
+    "Rarity": "HVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1380,
+    "Dex": 1180,
+    "Eng": 8800
+  },
+  {
     "Id": 98,
     "Name": "ラビリンス",
     "Skills": [
@@ -217,14 +243,6 @@
   {
     "Id": 107,
     "Name": "双極の器マザー",
-    "Skills": [
-      {
-        "SkillType": "タイプ強化",
-        "Range": "右",
-        "Modifier": 3.5,
-        "Type": "ブラック"
-      }
-    ],
     "Element": "木",
     "Type": "ブラック",
     "Rarity": "SHV",
