@@ -8251,5 +8251,18 @@
     "Enemy2Level": 6020879,
     "Enemy3Id": 98,
     "Enemy3Level": 7922321
+  },
+  {
+    "Part": 2,
+    "Grade": 23,
+    "Stage": 10,
+    "Gold": 10640000,
+    "Ticket": 530000,
+    "Enemy1Id": 87,
+    "Enemy1Level": 3651104,
+    "Enemy2Id": 99,
+    "Enemy2Level": 9546595,
+    "Enemy3Id": 98,
+    "Enemy3Level": 12561485
   }
 ]
