@@ -2579,6 +2579,12 @@
     "Name": "進藤岬",
     "Skills": [
       {
+        "SkillType": "属性強化",
+        "Element": "木",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
         "SkillType": "タイプ軽減",
         "Modifier": 0.2,
         "Type": "変革"
@@ -2599,8 +2605,8 @@
     "Rarity": "SHVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1350,
-    "Dex": 5690,
+    "Atk": 1490,
+    "Dex": 6260,
     "Eng": 6500
   },
   {
