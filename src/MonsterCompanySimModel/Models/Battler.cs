@@ -89,7 +89,7 @@ namespace MonsterCompanySimModel.Models
         {
             get
             {
-                return (long)(Employee.Dex * (1 + (Level - 1) * Employee.GuerrillaModifier));
+                return Math.Min(2147483647, (long)(Employee.Dex * (1 + (Level - 1) * Employee.GuerrillaModifier)));
             }
         }
 

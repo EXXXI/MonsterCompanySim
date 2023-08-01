@@ -3882,5 +3882,64 @@
     "Atk": 1470,
     "Dex": 4450,
     "Eng": 2600
+  },
+  {
+    "Id": 157,
+    "Name": "姫熊りぼん",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "スピード"
+      },
+      {
+        "SkillType": "CT回避",
+        "Range": "自分"
+      }
+    ],
+    "Element": "火",
+    "Type": "けもみみ",
+    "Rarity": "Tier1",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1430,
+    "Dex": 2840,
+    "Eng": 12600
+  },
+  {
+    "Id": 157,
+    "EvolState": 1,
+    "Name": "覚醒姫熊りぼん",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 2.5
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "スピード"
+      },
+      {
+        "SkillType": "CT回避",
+        "Range": "自分"
+      }
+    ],
+    "Element": "火",
+    "Type": "けもみみ",
+    "Rarity": "Tier1",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1490,
+    "Dex": 2940,
+    "Eng": 12600
   }
 ]
