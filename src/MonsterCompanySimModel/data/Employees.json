@@ -3359,8 +3359,8 @@
     "Rarity": "LHVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1520,
-    "Dex": 2500,
+    "Atk": 1600,
+    "Dex": 2880,
     "Eng": 2700
   },
   {
@@ -3377,6 +3377,11 @@
         "SkillType": "属性軽減",
         "Modifier": 0.25,
         "Element": "水"
+      },
+      {
+        "SkillType": "タイプキラー",
+        "Modifier": 2,
+        "Type": "変革"
       }
     ],
     "Element": "火",
@@ -3384,8 +3389,8 @@
     "Rarity": "LHVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1620,
-    "Dex": 2800,
+    "Atk": 1700,
+    "Dex": 3220,
     "Eng": 2700
   },
   {
