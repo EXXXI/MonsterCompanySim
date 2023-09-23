@@ -40,7 +40,7 @@ namespace MonsterCompanySimModel.Service
         /// <param name="part">部制限</param>
         /// <param name="progress">プログレスバー用ReactiveProperty</param>
         /// <returns>編成検索結果リスト</returns>
-        public List<SearchResult> Search(Battler? enemy1_, Battler? enemy2_, Battler? enemy3_, bool boost, int level,int part, ReactivePropertySlim<double>? progress)
+        public List<SearchResult> Search(Battler? enemy1_, Battler? enemy2_, Battler? enemy3_, bool boost, int level,int part, StageCondition condition, ReactivePropertySlim<double>? progress)
         {
             // 結果用List
             List<SearchResult> resultList = new();
@@ -132,7 +132,7 @@ namespace MonsterCompanySimModel.Service
                             Battler? battler3 = ally3 == null ? null : new Battler(ally3) { Level = level };
 
                             // 勝率計算
-                            BattleResult battleResult = FullBattle(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost);
+                            BattleResult battleResult = FullBattle(battler1, battler2, battler3, enemy1, enemy2, enemy3, boost, condition);
 
                             // 結果確認
                             if (battleResult.WinRate > 0)
@@ -180,7 +180,7 @@ namespace MonsterCompanySimModel.Service
                     Battler? battler3 = result.Ally3 == null ? null : new Battler(result.Ally3) { Level = level };
 
                     // 要求レベル計算
-                    result.MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1_, enemy2_, enemy3_, boost) ?? 0;
+                    result.MinLevel = CalcRequireLevel(battler1, battler2, battler3, enemy1_, enemy2_, enemy3_, boost, condition) ?? 0;
                 }
             }
 
@@ -208,7 +208,7 @@ namespace MonsterCompanySimModel.Service
         public int? CalcRequireLevel(
             Battler? ally1, Battler? ally2, Battler? ally3,
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
-            bool boost)
+            bool boost, StageCondition condition)
         {
             int max = Masters.ConfigData.MaxLevel;
             int min = 1;
@@ -232,7 +232,7 @@ namespace MonsterCompanySimModel.Service
                 }
 
                 // 勝率計算
-                BattleResult battleResult = FullBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, boost);
+                BattleResult battleResult = FullBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, boost, condition);
 
                 // 結果確認
                 if (battleResult.WinRate > 0)
@@ -268,11 +268,12 @@ namespace MonsterCompanySimModel.Service
         /// <param name="enemy2">敵2</param>
         /// <param name="enemy3">敵3</param>
         /// <param name="boost">ブースト有無(ブーストありでtrue)</param>
+        /// <param name="condition">ステージ特殊条件</param>
         /// <returns>戦闘結果</returns>
         public BattleResult FullBattle(
             Battler? ally1, Battler? ally2, Battler? ally3,
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
-            bool boost
+            bool boost, StageCondition condition
             )
         {
             // 整理
@@ -312,7 +313,7 @@ namespace MonsterCompanySimModel.Service
                 {
                     foreach (var a3 in CalcTargets(ally3, enemys))
                     {
-                        allyDamages.AddRange(AllyBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, a1, a2, a3, boost));
+                        allyDamages.AddRange(AllyBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, a1, a2, a3, boost, condition));
                         allyTargetCount++;
                     }
                 }
@@ -331,7 +332,7 @@ namespace MonsterCompanySimModel.Service
                 {
                     foreach (var e3 in CalcTargets(enemy3, allys))
                     {
-                        enemyDamages.AddRange(EnemyBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, e1, e2, e3, boost));
+                        enemyDamages.AddRange(EnemyBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, e1, e2, e3, boost, condition));
                         enemyTargetCount++;
                     }
                 }
@@ -372,17 +373,17 @@ namespace MonsterCompanySimModel.Service
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
             int allyTarget1, int allyTarget2, int allyTarget3,
             int enemyTarget1, int enemyTarget2, int enemyTarget3,
-            bool boost
+            bool boost, StageCondition condition
             )
         {
             // 戦闘結果クラス
             BattleResult result = new();
 
             // 味方戦闘
-            result.AllyDamages = AllyBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, allyTarget1, allyTarget2, allyTarget3, boost);
+            result.AllyDamages = AllyBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, allyTarget1, allyTarget2, allyTarget3, boost, condition);
 
             // 敵戦闘
-            result.EnemyDamages = EnemyBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, enemyTarget1, enemyTarget2, enemyTarget3, boost);
+            result.EnemyDamages = EnemyBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, enemyTarget1, enemyTarget2, enemyTarget3, boost, condition);
 
             // 返却
             return result;
@@ -406,7 +407,7 @@ namespace MonsterCompanySimModel.Service
             Battler? ally1, Battler? ally2, Battler? ally3,
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
             int enemyTarget1, int enemyTarget2, int enemyTarget3,
-            bool boost
+            bool boost, StageCondition condition
             )
         {
             // 戦闘用の情報を初期化
@@ -427,6 +428,9 @@ namespace MonsterCompanySimModel.Service
             CalcNormalSkills(enemy1, enemy2, enemy3);
             CalcNormalSkills(enemy2, enemy3, enemy1);
             CalcNormalSkills(enemy3, enemy1, enemy2);
+
+            // ステージ特殊条件を反映
+            CalcStageCondition(ally1, ally2, ally3, enemy1, enemy2, enemy3, condition);
 
             // 攻撃してダメージ情報を格納
             result.CombineEnemyDamages(Attack(enemy1, TargetBattler(enemyTarget1, ally1, ally2, ally3)),
@@ -461,7 +465,7 @@ namespace MonsterCompanySimModel.Service
             Battler? ally1, Battler? ally2, Battler? ally3,
             Battler? enemy1, Battler? enemy2, Battler? enemy3,
             int allyTarget1, int allyTarget2, int allyTarget3,
-            bool boost
+            bool boost, StageCondition condition
             )
         {
             // 戦闘用の情報を初期化
@@ -483,6 +487,9 @@ namespace MonsterCompanySimModel.Service
             CalcNormalSkills(enemy2, enemy3, enemy1);
             CalcNormalSkills(enemy3, enemy1, enemy2);
 
+            // ステージ特殊条件を反映
+            CalcStageCondition(ally1, ally2, ally3, enemy1, enemy2, enemy3, condition);
+
             // 攻撃してダメージ情報を格納
             result.CombineAllyDamages(Attack(ally1, TargetBattler(allyTarget1, enemy1, enemy2, enemy3)),
                 $"{ally1?.Employee?.Name}→{TargetBattler(allyTarget1, enemy1, enemy2, enemy3)?.Employee?.Name}");
@@ -493,6 +500,44 @@ namespace MonsterCompanySimModel.Service
 
             // ダメージ情報返却
             return result.AllyDamages;
+        }
+
+        /// <summary>
+        /// ステージ特殊条件を反映
+        /// </summary>
+        /// <param name="ally1">味方1</param>
+        /// <param name="ally2">味方2</param>
+        /// <param name="ally3">味方3</param>
+        /// <param name="enemy1">敵1</param>
+        /// <param name="enemy2">敵2</param>
+        /// <param name="enemy3">敵3</param>
+        /// <param name="condition">ステージ特殊条件</param>
+        private void CalcStageCondition(Battler? ally1, Battler? ally2, Battler? ally3, Battler? enemy1, Battler? enemy2, Battler? enemy3, StageCondition condition)
+        {
+            if (ally1 != null)
+            {
+                ally1.Modifier *= condition.AllyAtkModifier;
+            }
+            if (ally2 != null)
+            {
+                ally2.Modifier *= condition.AllyAtkModifier;
+            }
+            if (ally3 != null)
+            {
+                ally3.Modifier *= condition.AllyAtkModifier;
+            }
+            if (enemy1 != null)
+            {
+                enemy1.Modifier *= condition.EnemyAtkModifier;
+            }
+            if (enemy2 != null)
+            {
+                enemy2.Modifier *= condition.EnemyAtkModifier;
+            }
+            if (enemy3 != null)
+            {
+                enemy3.Modifier *= condition.EnemyAtkModifier;
+            }
         }
 
         /// <summary>

@@ -40,6 +40,10 @@
                         <controls:BattlerSelector DataContext="{Binding Ally2VM.Value}"/>
                         <controls:BattlerSelector DataContext="{Binding Ally3VM.Value}"/>
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100">ステージ特殊条件：</TextBlock>
+                        <ComboBox ItemsSource="{Binding StageConditions.Value, Mode=OneWay}" SelectedItem="{Binding SelectedStageCondition.Value}" Width="330" />
+                    </StackPanel>
                     <CheckBox IsChecked="{Binding IsBoost.Value}">ブースト</CheckBox>
                     <Button Command="{Binding CalcOneBattleCommand}" Content="勝率計算(ターゲット指定)"/>
                     <Button Command="{Binding CalcWinRateCommand}" Content="勝率計算(ターゲットランダム)"/>

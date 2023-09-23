@@ -79,6 +79,16 @@ namespace MonsterCompanySim.ViewModels
         public ReactivePropertySlim<StageData> SelectedStage { get; } = new();
 
         /// <summary>
+        /// ステージ特殊条件リスト
+        /// </summary>
+        public ReactivePropertySlim<List<StageCondition>> StageConditions { get; } = new();
+
+        /// <summary>
+        /// 選択ステージ特殊条件
+        /// </summary>
+        public ReactivePropertySlim<StageCondition> SelectedStageCondition { get; } = new();
+
+        /// <summary>
         /// 編成検索用：部指定候補
         /// </summary>
         public ReactivePropertySlim<List<string>> Parts { get; } = new();
@@ -202,6 +212,10 @@ namespace MonsterCompanySim.ViewModels
             // ステージリストを準備
             SetStageList();
 
+            // ステージ特殊条件を準備
+            StageConditions.Value = Masters.StageConditions;
+            SelectedStageCondition.Value = StageConditions.Value[0];
+
             // Subscribe
             CalcWinRateCommand.Subscribe(_ => CalcWinRate());
             CalcRequireCommand.Subscribe(_ => CalcRequire());
@@ -254,6 +268,7 @@ namespace MonsterCompanySim.ViewModels
                 Enemy2VM.Value.Level.Value = SelectedStage.Value.Enemy2Level.ToString();
                 Enemy3VM.Value.SetEmployee(Masters.GetEnemyEmployee(SelectedStage.Value.Enemy3Id, SelectedStage.Value.Enemy3EvolState));
                 Enemy3VM.Value.Level.Value = SelectedStage.Value.Enemy3Level.ToString();
+                SelectedStageCondition.Value = SelectedStage.Value.StageCondition;
             }
         }
 
@@ -326,8 +341,11 @@ namespace MonsterCompanySim.ViewModels
                 _ => -1
             };
 
+            // ステージ特殊条件
+            StageCondition condition = SelectedStageCondition.Value;
+
             // 編成検索(非同期)
-            List<SearchResult> results = await Task.Run(() => simulator.Search(enemy1, enemy2, enemy3, IsBoost.Value, level, part, Progress));
+            List<SearchResult> results = await Task.Run(() => simulator.Search(enemy1, enemy2, enemy3, IsBoost.Value, level, part, condition, Progress));
 
             // 結果出力
             Results.Value = results;
@@ -384,7 +402,7 @@ namespace MonsterCompanySim.ViewModels
                 ally1, ally2, ally3, enemy1, enemy2, enemy3,
                 Ally1VM.Value.SelectedTarget.Value , Ally2VM.Value.SelectedTarget.Value, Ally3VM.Value.SelectedTarget.Value,
                 Enemy1VM.Value.SelectedTarget.Value, Enemy2VM.Value.SelectedTarget.Value, Enemy3VM.Value.SelectedTarget.Value,
-                IsBoost.Value);
+                IsBoost.Value, SelectedStageCondition.Value);
 
             // 結果出力
             StringBuilder sb = new();
@@ -422,7 +440,7 @@ namespace MonsterCompanySim.ViewModels
             }
 
             // 計算
-            int? level = simulator.CalcRequireLevel(ally1, ally2, ally3, enemy1, enemy2, enemy3, IsBoost.Value);
+            int? level = simulator.CalcRequireLevel(ally1, ally2, ally3, enemy1, enemy2, enemy3, IsBoost.Value, SelectedStageCondition.Value);
 
             // ログ出力
             StringBuilder sb = new();
@@ -463,7 +481,7 @@ namespace MonsterCompanySim.ViewModels
             }
 
             // 計算
-            BattleResult result = simulator.FullBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, IsBoost.Value);
+            BattleResult result = simulator.FullBattle(ally1, ally2, ally3, enemy1, enemy2, enemy3, IsBoost.Value, SelectedStageCondition.Value);
 
             // ログ出力
             StringBuilder sb = new();
