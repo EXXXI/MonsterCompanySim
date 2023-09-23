@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="data\StageCondition.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="data\Stages.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

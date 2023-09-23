@@ -82,6 +82,29 @@ namespace MonsterCompanySimModel.Models
         public int Enemy3Level { get; set; }
 
         /// <summary>
+        /// ステージ特殊条件(名前)
+        /// </summary>
+        public string StageConditionName { get; set; } = "None";
+
+        /// <summary>
+        /// ステージ特殊条件
+        /// </summary>
+        public StageCondition StageCondition 
+        {
+            get
+            {
+                foreach (var cond in Masters.StageConditions)
+                {
+                    if (cond.Name.Equals(StageConditionName))
+                    {
+                        return cond;
+                    }
+                }
+                return Masters.StageConditions[0];
+            }
+        }
+
+        /// <summary>
         /// 表示用：ToStringオーバーライド
         /// </summary>
         /// <returns>部-グレード-ステージ</returns>

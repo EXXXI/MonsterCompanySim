@@ -35,6 +35,11 @@ namespace MonsterCompanySimModel.Models
         static private List<SimpleEmployee> RequiredEmployees { get; set; } = new List<SimpleEmployee>();
 
         /// <summary>
+        /// ステージ条件リスト
+        /// </summary>
+        static public List<StageCondition> StageConditions { get; set; } = new List<StageCondition>();
+
+        /// <summary>
         /// ステージリスト
         /// </summary>
         static public List<StageData> StageDatas { get; set; } = new List<StageData>();
@@ -71,6 +76,7 @@ namespace MonsterCompanySimModel.Models
             LoadEmployee();
             LoadIncludeEmployees();
             LoadEnemyEmployee();
+            LoadStageCondition();
             LoadStageDatas();
             LoadConfig();
         }
@@ -310,6 +316,25 @@ namespace MonsterCompanySimModel.Models
                 throw new FileFormatException("data/Config.json");
             }
             ConfigData = config;
+        }
+
+        /// <summary>
+        /// ステージ特殊条件取得
+        /// </summary>
+        /// <exception cref="FileFormatException"></exception>
+        static private void LoadStageCondition()
+        {
+            JsonSerializerOptions options = new();
+            options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
+            options.Converters.Add(new JsonStringEnumConverter());
+
+            string json = File.ReadAllText("data/StageCondition.json");
+            List<StageCondition>? stageConditions = JsonSerializer.Deserialize<List<StageCondition>>(json, options);
+            if (stageConditions == null)
+            {
+                throw new FileFormatException("data/StageCondition.json");
+            }
+            StageConditions = stageConditions;
         }
 
         /// <summary>
