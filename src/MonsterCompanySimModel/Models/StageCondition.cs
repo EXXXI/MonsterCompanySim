@@ -22,14 +22,24 @@ namespace MonsterCompanySimModel.Models
         public string Description { get; set; } = string.Empty;
 
         /// <summary>
-        /// 味方への倍率
+        /// 味方への戦闘倍率
         /// </summary>
-        public double AllyAtkModifier { get; set; }
+        public double AllyAtkModifier { get; set; } = 1.0;
 
         /// <summary>
-        /// 敵への倍率
+        /// 敵への戦闘倍率
         /// </summary>
-        public double EnemyAtkModifier { get; set; }
+        public double EnemyAtkModifier { get; set; } = 1.0;
+
+        /// <summary>
+        /// 味方への器用倍率
+        /// </summary>
+        public double AllyDexModifier { get; set; } = 1.0;
+
+        /// <summary>
+        /// 敵への器用倍率
+        /// </summary>
+        public double EnemyDexModifier { get; set; } = 1.0;
 
         /// <summary>
         /// 表示用：ToStringオーバーライド

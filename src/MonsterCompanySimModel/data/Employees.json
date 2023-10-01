@@ -3946,5 +3946,86 @@
     "Atk": 1490,
     "Dex": 2940,
     "Eng": 12600
+  },
+  {
+    "Id": 158,
+    "Name": "覚醒山吹奈々",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 3
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 3
+      },
+      {
+        "SkillType": "タイプ軽減",
+        "Modifier": 0.2,
+        "Type": "ブラック"
+      }
+    ],
+    "Element": "火",
+    "Type": "変革",
+    "Rarity": "Tier1",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1620,
+    "Dex": 6280,
+    "Eng": 77700
+  },
+  {
+    "Id": 159,
+    "Name": "覚醒進藤岬",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 3
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 3
+      },
+      {
+        "SkillType": "タイプ軽減",
+        "Modifier": 0.2,
+        "Type": "変革"
+      }
+    ],
+    "Element": "水",
+    "Type": "変革",
+    "Rarity": "Tier1",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1580,
+    "Dex": 6820,
+    "Eng": 65000
+  },
+  {
+    "Id": 160,
+    "Name": "リピドイーターif",
+    "Skills": [
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 8,
+        "Type": "変革"
+      }
+    ],
+    "Element": "水",
+    "Type": "ブラック",
+    "Rarity": "Tier1",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 2220,
+    "Dex": 2370,
+    "Eng": 108000
   }
 ]

@@ -1,20 +1,18 @@
 ﻿[
   {
     "Name": "None",
-    "Description": "条件なし",
-    "AllyAtkModifier": 1,
-    "EnemyAtkModifier": 1
+    "Description": "条件なし"
   },
   {
     "Name": "Enemy3",
     "Description": "敵の攻撃力3倍",
-    "AllyAtkModifier": 1,
-    "EnemyAtkModifier": 3
+    "EnemyAtkModifier": 3,
+    "EnemyDexModifier": 2.5
   },
   {
     "Name": "Ally10",
     "Description": "味方の攻撃力1/10",
     "AllyAtkModifier": 0.1,
-    "EnemyAtkModifier": 1
+    "EnemyDexModifier": 7.5
   }
 ]
