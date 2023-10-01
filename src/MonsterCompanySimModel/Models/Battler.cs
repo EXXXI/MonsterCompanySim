@@ -22,6 +22,11 @@ namespace MonsterCompanySimModel.Models
         public double Modifier { get; set; } = 1;
 
         /// <summary>
+        /// 器用倍率
+        /// </summary>
+        public double DexModifier { get; set; } = 1;
+
+        /// <summary>
         /// 攻撃時クリティカル指定
         /// </summary>
         public CriticalState AtkCritState { get; set; }
@@ -130,6 +135,7 @@ namespace MonsterCompanySimModel.Models
         {
             IsBoost = boost;
             Modifier = 1;
+            DexModifier = 1;
             AtkCritState = CriticalState.normal;
             DefCritState = CriticalState.normal;
             IsReduced = false;

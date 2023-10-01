@@ -517,26 +517,32 @@ namespace MonsterCompanySimModel.Service
             if (ally1 != null)
             {
                 ally1.Modifier *= condition.AllyAtkModifier;
+                ally1.DexModifier *= condition.AllyDexModifier;
             }
             if (ally2 != null)
             {
                 ally2.Modifier *= condition.AllyAtkModifier;
+                ally2.DexModifier *= condition.AllyDexModifier;
             }
             if (ally3 != null)
             {
                 ally3.Modifier *= condition.AllyAtkModifier;
+                ally3.DexModifier *= condition.AllyDexModifier;
             }
             if (enemy1 != null)
             {
                 enemy1.Modifier *= condition.EnemyAtkModifier;
+                enemy1.DexModifier *= condition.EnemyDexModifier;
             }
             if (enemy2 != null)
             {
                 enemy2.Modifier *= condition.EnemyAtkModifier;
+                enemy2.DexModifier *= condition.EnemyDexModifier;
             }
             if (enemy3 != null)
             {
                 enemy3.Modifier *= condition.EnemyAtkModifier;
+                enemy3.DexModifier *= condition.EnemyDexModifier;
             }
         }
 
@@ -1304,8 +1310,8 @@ namespace MonsterCompanySimModel.Service
             }
 
             // 普通に計算(暫定)
-            double atkDex = attacker.Dex * (attacker.IsBoost ? 1.3 : 1.0);
-            double defDex = defender.Dex * (defender.IsBoost ? 1.3 : 1.0);
+            double atkDex = attacker.Dex * (attacker.IsBoost ? 1.3 : 1.0) * attacker.DexModifier;
+            double defDex = defender.Dex * (defender.IsBoost ? 1.3 : 1.0) * defender.DexModifier;
 
             double rate = atkDex / defDex;
 
