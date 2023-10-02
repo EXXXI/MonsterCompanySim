@@ -115,7 +115,24 @@ namespace MonsterCompanySimModel.Models
                 // TODO: 定数化
                 return "ステージを選択する場合、ここから選択する";
             }
-            return $"{Part}-{Grade}-{Stage}\t資金:{Gold:#,0}   \tチケット:{Ticket:#,0}";
+            string part = Part.ToString();
+            string grade = Grade.ToString();
+            if (Part == 2)
+            {
+                switch (Grade)
+                {
+                    case > 24:
+                        part = "2.5";
+                        grade = (Grade - 24).ToString();
+                        break;
+                    case > 12:
+                        grade = "幕間" + (Grade - 12);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return $"{part}-{grade}-{Stage}\t資金:{Gold:#,0}   \tチケット:{Ticket:#,0}";
         }
     }
 }
