@@ -1317,6 +1317,12 @@
         "Range": "自分",
         "Modifier": 0.2,
         "Buddys": [ 105, 148 ]
+      },
+      {
+        "SkillType": "特定社員強化",
+        "Range": "自分",
+        "Modifier": 0.4,
+        "Buddys": [ 75, 162 ]
       }
     ],
     "Element": "木",
@@ -4027,5 +4033,48 @@
     "Atk": 2220,
     "Dex": 2370,
     "Eng": 108000
+  },
+  {
+    "Id": 161,
+    "Name": "タナトスイーターif",
+    "Skills": [
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 8,
+        "Type": "支援"
+      }
+    ],
+    "Element": "木",
+    "Type": "ブラック",
+    "Rarity": "Tier1",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 2320,
+    "Dex": 1370,
+    "Eng": 124000
+  },
+  {
+    "Id": 162,
+    "Name": "こあくまVer.Ch",
+    "Skills": [
+      {
+        "SkillType": "正面攻撃",
+        "Range": "全体"
+      },
+      {
+        "SkillType": "特定社員強化",
+        "Range": "全体",
+        "Modifier": 2.5,
+        "Buddys": [ 72 ]
+      }
+    ],
+    "Element": "木",
+    "Type": "変革",
+    "Rarity": "Tier1",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1056,
+    "Dex": 1010,
+    "Eng": 34000
   }
 ]
