@@ -14,5 +14,20 @@
     "Description": "味方の攻撃力1/10",
     "AllyAtkModifier": 0.1,
     "EnemyDexModifier": 7.5
+  },
+  {
+    "Name": "Fire0",
+    "Description": "火属性攻撃力0",
+    "FireAtkModifier": 0
+  },
+  {
+    "Name": "Water0",
+    "Description": "水属性攻撃力0",
+    "WaterAtkModifier": 0
+  },
+  {
+    "Name": "Wood0",
+    "Description": "木属性攻撃力0",
+    "WoodAtkModifier": 0
   }
 ]

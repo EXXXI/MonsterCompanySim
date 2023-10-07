@@ -1,7 +1,7 @@
 ﻿{
   "NoEmproyeeName": "社員無し",
-  "MaxLevel": 179999,
-  "RequireThreshold": 500,
+  "MaxLevel": 189999,
+  "RequireThreshold": 1000,
   "Part1StageThreshold": 40,
   "Part2StageThreshold": 13,
   "MaxDegreeOfParallelism": 4
