@@ -514,35 +514,48 @@ namespace MonsterCompanySimModel.Service
         /// <param name="condition">ステージ特殊条件</param>
         private void CalcStageCondition(Battler? ally1, Battler? ally2, Battler? ally3, Battler? enemy1, Battler? enemy2, Battler? enemy3, StageCondition condition)
         {
-            if (ally1 != null)
+            CalcStageConditionForBattler(ally1, condition, true);
+            CalcStageConditionForBattler(ally2, condition, true);
+            CalcStageConditionForBattler(ally3, condition, true);
+            CalcStageConditionForBattler(enemy1, condition, false);
+            CalcStageConditionForBattler(enemy2, condition, false);
+            CalcStageConditionForBattler(enemy3, condition, false);
+        }
+
+        /// <summary>
+        /// ステージ特殊条件を反映(各社員)
+        /// </summary>
+        /// <param name="battler">社員</param>
+        /// <param name="condition">ステージ特殊条件</param>
+        /// <param name="isAlly">味方かどうか(trueで味方、falseで敵)</param>
+        private static void CalcStageConditionForBattler(Battler? battler, StageCondition condition, bool isAlly)
+        {
+            if (battler != null)
             {
-                ally1.Modifier *= condition.AllyAtkModifier;
-                ally1.DexModifier *= condition.AllyDexModifier;
-            }
-            if (ally2 != null)
-            {
-                ally2.Modifier *= condition.AllyAtkModifier;
-                ally2.DexModifier *= condition.AllyDexModifier;
-            }
-            if (ally3 != null)
-            {
-                ally3.Modifier *= condition.AllyAtkModifier;
-                ally3.DexModifier *= condition.AllyDexModifier;
-            }
-            if (enemy1 != null)
-            {
-                enemy1.Modifier *= condition.EnemyAtkModifier;
-                enemy1.DexModifier *= condition.EnemyDexModifier;
-            }
-            if (enemy2 != null)
-            {
-                enemy2.Modifier *= condition.EnemyAtkModifier;
-                enemy2.DexModifier *= condition.EnemyDexModifier;
-            }
-            if (enemy3 != null)
-            {
-                enemy3.Modifier *= condition.EnemyAtkModifier;
-                enemy3.DexModifier *= condition.EnemyDexModifier;
+                if (isAlly)
+                {
+                    battler.Modifier *= condition.AllyAtkModifier;
+                    battler.DexModifier *= condition.AllyDexModifier;
+                }
+                else
+                {
+                    battler.Modifier *= condition.EnemyAtkModifier;
+                    battler.DexModifier *= condition.EnemyDexModifier;
+                }
+                switch (battler.Employee.Element)
+                {
+                    case Element.火:
+                        battler.Modifier *= condition.FireAtkModifier;
+                        break;
+                    case Element.水:
+                        battler.Modifier *= condition.WaterAtkModifier;
+                        break;
+                    case Element.木:
+                        battler.Modifier *= condition.WoodAtkModifier;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 

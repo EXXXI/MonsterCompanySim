@@ -42,6 +42,21 @@ namespace MonsterCompanySimModel.Models
         public double EnemyDexModifier { get; set; } = 1.0;
 
         /// <summary>
+        /// 火属性倍率
+        /// </summary>
+        public double FireAtkModifier { get; set; } = 1.0;
+
+        /// <summary>
+        /// 水属性倍率
+        /// </summary>
+        public double WaterAtkModifier { get; set; } = 1.0;
+
+        /// <summary>
+        /// 木属性倍率
+        /// </summary>
+        public double WoodAtkModifier { get; set; } = 1.0;
+
+        /// <summary>
         /// 表示用：ToStringオーバーライド
         /// </summary>
         public override string ToString()
