@@ -87,6 +87,26 @@
     "Eng": 350
   },
   {
+    "Id": 43,
+    "Name": "ヒミコ",
+    "Skills": [
+      {
+        "SkillType": "敵用重複不可属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 1.5
+      }
+    ],
+    "Element": "火",
+    "Type": "なし",
+    "Rarity": "SSRplus",
+    "Part": 1,
+    "GuerrillaModifier": 0.1,
+    "Atk": 75,
+    "Dex": 117,
+    "Eng": 1021
+  },
+  {
     "Id": 47,
     "Name": "邪王クロコ",
     "Skills": [
@@ -171,7 +191,7 @@
     "Name": "忍魔隊ミコ",
     "Skills": [
       {
-        "SkillType": "敵ミコ属性強化",
+        "SkillType": "敵用重複不可属性強化",
         "Element": "水",
         "Range": "全体",
         "Modifier": 1.5

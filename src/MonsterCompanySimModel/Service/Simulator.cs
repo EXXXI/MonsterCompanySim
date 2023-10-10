@@ -840,24 +840,24 @@ namespace MonsterCompanySimModel.Service
                         left.Modifier *= skill.Modifier;
                     }
                     break;
-                case SkillType.敵ミコ属性強化:
+                case SkillType.敵用重複不可属性強化:
                     if (skill.Range != Models.Range.右 && self.Employee.Element == skill.Element &&
-                        self.IsBuffedByMico == false)
+                        self.IsUniqueBuffed == false)
                     {
                         self.Modifier *= skill.Modifier;
-                        self.IsBuffedByMico = true;
+                        self.IsUniqueBuffed = true;
                     }
                     if (right != null && skill.Range != Models.Range.自分 && right.Employee.Element == skill.Element &&
-                        right.IsBuffedByMico == false)
+                        right.IsUniqueBuffed == false)
                     {
                         right.Modifier *= skill.Modifier;
-                        right.IsBuffedByMico = true;
+                        right.IsUniqueBuffed = true;
                     }
                     if (left != null && skill.Range == Models.Range.全体 && left.Employee.Element == skill.Element &&
-                        left.IsBuffedByMico == false)
+                        left.IsUniqueBuffed == false)
                     {
                         left.Modifier *= skill.Modifier;
-                        left.IsBuffedByMico = true;
+                        left.IsUniqueBuffed = true;
                     }
                     break;
                 case SkillType.タイプ強化:

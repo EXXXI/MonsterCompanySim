@@ -62,9 +62,9 @@ namespace MonsterCompanySimModel.Models
         public bool IsReduced { get; set; } = false;
 
         /// <summary>
-        /// 「敵ミコ属性強化」使用フラグ(使用済みでtrue)
+        /// 「敵用重複不可属性強化」使用フラグ(使用済みでtrue)
         /// </summary>
-        public bool IsBuffedByMico { get; set; } = false;
+        public bool IsUniqueBuffed { get; set; } = false;
 
         /// <summary>
         /// ブースト有無(ありでtrue)
@@ -139,7 +139,7 @@ namespace MonsterCompanySimModel.Models
             AtkCritState = CriticalState.normal;
             DefCritState = CriticalState.normal;
             IsReduced = false;
-            IsBuffedByMico = false;
+            IsUniqueBuffed = false;
         }
 
         /// <summary>
