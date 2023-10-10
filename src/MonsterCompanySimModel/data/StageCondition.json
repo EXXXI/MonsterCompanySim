@@ -18,16 +18,19 @@
   {
     "Name": "Fire0",
     "Description": "火属性攻撃力0",
-    "FireAtkModifier": 0
+    "FireAtkModifier": 0,
+    "EnemyDexModifier": 2
   },
   {
     "Name": "Water0",
     "Description": "水属性攻撃力0",
-    "WaterAtkModifier": 0
+    "WaterAtkModifier": 0,
+    "EnemyDexModifier": 2
   },
   {
     "Name": "Wood0",
     "Description": "木属性攻撃力0",
-    "WoodAtkModifier": 0
+    "WoodAtkModifier": 0,
+    "EnemyDexModifier": 2
   }
 ]
