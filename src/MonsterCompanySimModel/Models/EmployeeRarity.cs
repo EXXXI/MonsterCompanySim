@@ -31,6 +31,7 @@
         LHVplus,
         LXV,
         LXVplus,
-        Tier1
+        Tier1,
+        Tier2
     }
 }

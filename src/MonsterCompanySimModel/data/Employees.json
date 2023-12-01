@@ -1972,6 +1972,11 @@
         "Type": "飛翔"
       },
       {
+        "SkillType": "タイプキラー",
+        "Modifier": 2,
+        "Type": "変革"
+      },
+      {
         "SkillType": "三色編成強化",
         "Modifier": 2
       }
@@ -1981,8 +1986,8 @@
     "Rarity": "HXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1640,
-    "Dex": 770,
+    "Atk": 1725,
+    "Dex": 885,
     "Eng": 47000
   },
   {
@@ -2001,6 +2006,11 @@
         "Type": "飛翔"
       },
       {
+        "SkillType": "タイプキラー",
+        "Modifier": 2.5,
+        "Type": "変革"
+      },
+      {
         "SkillType": "三色編成強化",
         "Modifier": 2.5
       }
@@ -2010,8 +2020,8 @@
     "Rarity": "HXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1750,
-    "Dex": 770,
+    "Atk": 1840,
+    "Dex": 885,
     "Eng": 47000
   },
   {
@@ -2230,7 +2240,7 @@
       },
       {
         "SkillType": "属性別タイプキラー",
-        "Modifier": 2,
+        "Modifier": 2.5,
         "Type": "変革"
       }
     ],
@@ -2239,8 +2249,8 @@
     "Rarity": "HXVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 2100,
-    "Dex": 280,
+    "Atk": 2210,
+    "Dex": 330,
     "Eng": 124000
   },
   {
@@ -4076,5 +4086,42 @@
     "Atk": 1056,
     "Dex": 1010,
     "Eng": 34000
+  },
+  {
+    "Id": 165,
+    "Name": "ますきゃっと",
+    "Skills": [
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 4,
+        "Type": "飛翔"
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "木",
+        "Range": "全体",
+        "Modifier": 2
+      }
+    ],
+    "Element": "水",
+    "Type": "けもみみ",
+    "Rarity": "Tier2",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1725,
+    "Dex": 885,
+    "Eng": 47000
   }
 ]
