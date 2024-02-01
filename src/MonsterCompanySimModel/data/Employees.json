@@ -1102,7 +1102,7 @@
       {
         "SkillType": "特定社員強化",
         "Range": "全体",
-        "Modifier": 2.5,
+        "Modifier": 3,
         "Buddys": [ 26, 50 ]
       }
     ],
@@ -1110,8 +1110,8 @@
     "Type": "なし",
     "Rarity": "LR",
     "Part": 1,
-    "GuerrillaModifier": 0.1,
-    "Atk": 540,
+    "GuerrillaModifier": 0.15,
+    "Atk": 650,
     "Dex": 450,
     "Eng": 4100
   },
@@ -1342,13 +1342,13 @@
         "SkillType": "属性強化",
         "Element": "火",
         "Range": "全体",
-        "Modifier": 1.5
+        "Modifier": 2
       },
       {
         "SkillType": "属性強化",
         "Element": "水",
         "Range": "全体",
-        "Modifier": 2
+        "Modifier": 2.5
       },
       {
         "SkillType": "正面引き付け",
@@ -1360,7 +1360,7 @@
     "Rarity": "LXR",
     "Part": 1,
     "GuerrillaModifier": 0.1,
-    "Atk": 920,
+    "Atk": 1110,
     "Dex": 980,
     "Eng": 17500
   },
@@ -1624,29 +1624,6 @@
     "Skills": [
       {
         "SkillType": "三色編成強化",
-        "Modifier": 1.2
-      },
-      {
-        "SkillType": "CT回避",
-        "Range": "全体"
-      }
-    ],
-    "Element": "火",
-    "Type": "けもみみ",
-    "Rarity": "HV",
-    "Part": 2,
-    "GuerrillaModifier": 0.1,
-    "Atk": 1010,
-    "Dex": 980,
-    "Eng": 24000
-  },
-  {
-    "Id": 80,
-    "EvolState": 1,
-    "Name": "戦国みここFB",
-    "Skills": [
-      {
-        "SkillType": "三色編成強化",
         "Modifier": 1.5
       },
       {
@@ -1659,8 +1636,31 @@
     "Rarity": "HV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1120,
+    "Atk": 1220,
     "Dex": 980,
+    "Eng": 24000
+  },
+  {
+    "Id": 80,
+    "EvolState": 1,
+    "Name": "戦国みここFB",
+    "Skills": [
+      {
+        "SkillType": "三色編成強化",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "CT回避",
+        "Range": "全体"
+      }
+    ],
+    "Element": "火",
+    "Type": "けもみみ",
+    "Rarity": "HV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1350,
+    "Dex": 1080,
     "Eng": 24000
   },
   {
