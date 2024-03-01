@@ -2080,7 +2080,7 @@
       {
         "SkillType": "くる",
         "Range": "全体",
-        "Modifier": 1.5
+        "Modifier": 2
       },
       {
         "SkillType": "タイプ軽減",
@@ -2093,8 +2093,8 @@
     "Rarity": "HXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1020,
-    "Dex": 4150,
+    "Atk": 1120,
+    "Dex": 4570,
     "Eng": 17500
   },
   {
@@ -2135,41 +2135,41 @@
     "Skills": [
       {
         "SkillType": "タイプキラー",
-        "Modifier": 2,
+        "Modifier": 2.5,
         "Type": "神"
       },
       {
         "SkillType": "タイプキラー",
-        "Modifier": 2,
+        "Modifier": 2.5,
         "Type": "悪魔"
       },
       {
         "SkillType": "タイプキラー",
-        "Modifier": 2,
+        "Modifier": 2.5,
         "Type": "変革"
       },
       {
         "SkillType": "タイプキラー",
-        "Modifier": 2,
+        "Modifier": 2.5,
         "Type": "スピード"
       },
       {
         "SkillType": "属性強化",
         "Element": "火",
         "Range": "全体",
-        "Modifier": 1.5
+        "Modifier": 2
       },
       {
         "SkillType": "属性強化",
         "Element": "水",
         "Range": "全体",
-        "Modifier": 1.5
+        "Modifier": 2
       },
       {
         "SkillType": "属性強化",
         "Element": "木",
         "Range": "全体",
-        "Modifier": 1.5
+        "Modifier": 2
       }
     ],
     "Element": "火",
@@ -2177,7 +2177,7 @@
     "Rarity": "HXVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1650,
+    "Atk": 1900,
     "Dex": 990,
     "Eng": 22500
   },
@@ -3337,7 +3337,7 @@
     "Skills": [
       {
         "SkillType": "一タイプ編成強化",
-        "Modifier": 3.5,
+        "Modifier": 5,
         "Type": "悪魔"
       },
       {
@@ -3351,7 +3351,7 @@
     "Rarity": "LHVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1760,
+    "Atk": 2030,
     "Dex": 1680,
     "Eng": 43800
   },
