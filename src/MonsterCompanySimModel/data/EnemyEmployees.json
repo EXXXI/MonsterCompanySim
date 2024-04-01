@@ -389,5 +389,24 @@
     "Atk": 1380,
     "Dex": 880,
     "Eng": 3800
+  },
+  {
+    "Id": 145,
+    "Name": "ころねちゃん",
+    "Skills": [
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 3,
+        "Type": "飛翔"
+      }
+    ],
+    "Element": "火",
+    "Type": "支援",
+    "Rarity": "LXV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1560,
+    "Dex": 2100,
+    "Eng": 21700
   }
 ]
