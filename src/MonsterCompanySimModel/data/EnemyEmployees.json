@@ -187,6 +187,32 @@
     "Eng": 9800
   },
   {
+    "Id": 86,
+    "Name": "忍魔隊ヒコ",
+    "Skills": [
+      {
+        "SkillType": "敵用重複不可属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 1.5
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 1.5,
+        "Type": "スピード"
+      }
+    ],
+    "Element": "火",
+    "Type": "スピード",
+    "Rarity": "HVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1430,
+    "Dex": 670,
+    "Eng": 9500
+  },
+  {
     "Id": 88,
     "Name": "忍魔隊ミコ",
     "Skills": [

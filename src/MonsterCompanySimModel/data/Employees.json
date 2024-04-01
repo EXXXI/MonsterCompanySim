@@ -2968,6 +2968,11 @@
       {
         "SkillType": "CT確定",
         "Range": "自分"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 3,
+        "Type": "支援"
       }
     ],
     "Element": "火",
@@ -2975,7 +2980,7 @@
     "Rarity": "UHVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1240,
+    "Atk": 1430,
     "Dex": 280,
     "Eng": 96600
   },
@@ -3048,9 +3053,14 @@
     "Name": "ラム",
     "Skills": [
       {
-        "SkillType": "タイプキラー",
-        "Modifier": 3,
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 5,
         "Type": "飛翔"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 5,
+        "Type": "神"
       },
       {
         "SkillType": "CT確定",
@@ -3062,7 +3072,7 @@
     "Rarity": "UHVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1570,
+    "Atk": 1810,
     "Dex": 680,
     "Eng": 12800
   },
@@ -3442,39 +3452,14 @@
     "Skills": [
       {
         "SkillType": "タイプキラー",
-        "Modifier": 2.5,
+        "Modifier": 3,
         "Type": "支援"
       },
       {
         "SkillType": "属性強化",
-        "Element": "水",
+        "Element": "火",
         "Range": "全体",
-        "Modifier": 1.5
-      }
-    ],
-    "Element": "水",
-    "Type": "スピード",
-    "Rarity": "LHVplus",
-    "Part": 2,
-    "GuerrillaModifier": 0.1,
-    "Atk": 1480,
-    "Dex": 4300,
-    "Eng": 1800
-  },
-  {
-    "Id": 142,
-    "EvolState": 1,
-    "Name": "覚醒朝ノ瑠璃",
-    "Skills": [
-      {
-        "SkillType": "タイプキラー",
-        "Modifier": 2.5,
-        "Type": "支援"
-      },
-      {
-        "SkillType": "タイプキラー",
-        "Modifier": 2.5,
-        "Type": "変革"
+        "Modifier": 2
       },
       {
         "SkillType": "属性強化",
@@ -3488,8 +3473,45 @@
     "Rarity": "LHVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1580,
-    "Dex": 4800,
+    "Atk": 1630,
+    "Dex": 4730,
+    "Eng": 1800
+  },
+  {
+    "Id": 142,
+    "EvolState": 1,
+    "Name": "覚醒朝ノ瑠璃",
+    "Skills": [
+      {
+        "SkillType": "タイプキラー",
+        "Modifier": 3,
+        "Type": "支援"
+      },
+      {
+        "SkillType": "タイプキラー",
+        "Modifier": 3,
+        "Type": "変革"
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 2.5
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 2.5
+      }
+    ],
+    "Element": "水",
+    "Type": "スピード",
+    "Rarity": "LHVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1730,
+    "Dex": 5280,
     "Eng": 1800
   },
   {
@@ -4067,10 +4089,6 @@
     "Id": 162,
     "Name": "こあくまVer.Ch",
     "Skills": [
-      {
-        "SkillType": "正面攻撃",
-        "Range": "全体"
-      },
       {
         "SkillType": "特定社員強化",
         "Range": "全体",
