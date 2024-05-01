@@ -119,6 +119,19 @@ namespace MonsterCompanySimModel.Service
                                 }
                             }
 
+                            // 編成制限
+                            if (condition.AllyMaxCount < 3)
+                            {
+                                int allyCount = 0;
+                                allyCount += ally1 != null ? 1 : 0;
+                                allyCount += ally2 != null ? 1 : 0;
+                                allyCount += ally3 != null ? 1 : 0;
+                                if (condition.AllyMaxCount < allyCount)
+                                {
+                                    continue;
+                                }
+                            }
+
                             // 固定社員確認
                             bool isRequierdValid = Masters.IsRequierdValid(ally1, ally2, ally3);
                             if (!isRequierdValid)

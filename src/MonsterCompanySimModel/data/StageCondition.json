@@ -32,5 +32,10 @@
     "Description": "木属性攻撃力0",
     "WoodAtkModifier": 0,
     "EnemyDexModifier": 2.5
+  },
+  {
+    "Name": "Only2",
+    "Description": "編成2体制限",
+    "AllyMaxCount": 2
   }
 ]
