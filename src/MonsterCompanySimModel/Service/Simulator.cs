@@ -887,6 +887,26 @@ namespace MonsterCompanySimModel.Service
                         left.Modifier *= skill.Modifier;
                     }
                     break;
+                case SkillType.敵用重複不可タイプ強化:
+                    if (skill.Range != Models.Range.右 && self.Employee.Element == skill.Element &&
+                        self.IsUniqueBuffed == false)
+                    {
+                        self.Modifier *= skill.Modifier;
+                        self.IsUniqueBuffed = true;
+                    }
+                    if (right != null && skill.Range != Models.Range.自分 && right.Employee.Element == skill.Element &&
+                        right.IsUniqueBuffed == false)
+                    {
+                        right.Modifier *= skill.Modifier;
+                        right.IsUniqueBuffed = true;
+                    }
+                    if (left != null && skill.Range == Models.Range.全体 && left.Employee.Element == skill.Element &&
+                        left.IsUniqueBuffed == false)
+                    {
+                        left.Modifier *= skill.Modifier;
+                        left.IsUniqueBuffed = true;
+                    }
+                    break;
                 case SkillType.CT確定:
                     if (skill.Range != Models.Range.右)
                     {

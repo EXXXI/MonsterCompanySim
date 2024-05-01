@@ -62,7 +62,7 @@ namespace MonsterCompanySimModel.Models
         public bool IsReduced { get; set; } = false;
 
         /// <summary>
-        /// 「敵用重複不可属性強化」使用フラグ(使用済みでtrue)
+        /// 敵用重複不可スキル使用フラグ(使用済みでtrue)
         /// </summary>
         public bool IsUniqueBuffed { get; set; } = false;
 
