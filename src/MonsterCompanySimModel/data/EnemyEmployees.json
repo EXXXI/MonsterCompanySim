@@ -247,7 +247,7 @@
         "Range": "全体"
       },
       {
-        "SkillType": "タイプ強化",
+        "SkillType": "敵用重複不可タイプ強化",
         "Range": "全体",
         "Modifier": 1.5,
         "Type": "悪魔"
