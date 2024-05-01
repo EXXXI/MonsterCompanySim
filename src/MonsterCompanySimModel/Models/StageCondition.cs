@@ -57,6 +57,11 @@ namespace MonsterCompanySimModel.Models
         public double WoodAtkModifier { get; set; } = 1.0;
 
         /// <summary>
+        /// 編成制限
+        /// </summary>
+        public int AllyMaxCount { get; set; } = 3;
+
+        /// <summary>
         /// 表示用：ToStringオーバーライド
         /// </summary>
         public override string ToString()

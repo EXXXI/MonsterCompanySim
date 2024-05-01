@@ -4106,6 +4106,51 @@
     "Eng": 34000
   },
   {
+    "Id": 163,
+    "Name": "七瀬なの",
+    "Skills": [
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 8,
+        "Type": "悪魔"
+      }
+    ],
+    "Element": "火",
+    "Type": "神",
+    "Rarity": "Tier2",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 2170,
+    "Dex": 2720,
+    "Eng": 42700
+  },
+  {
+    "Id": 164,
+    "Name": "たつこ",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 1.5
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 3,
+        "Type": "飛翔"
+      }
+    ],
+    "Element": "火",
+    "Type": "飛翔",
+    "Rarity": "Tier2",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1940,
+    "Dex": 2220,
+    "Eng": 23400
+  },
+  {
     "Id": 165,
     "Name": "ますきゃっと",
     "Skills": [
@@ -4141,5 +4186,62 @@
     "Atk": 1725,
     "Dex": 885,
     "Eng": 47000
+  },
+  {
+    "Id": 166,
+    "Name": "ポッティー",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 1.5
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 3,
+        "Type": "支援"
+      }
+    ],
+    "Element": "水",
+    "Type": "支援",
+    "Rarity": "Tier2",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1880,
+    "Dex": 2410,
+    "Eng": 16200
+  },
+  {
+    "Id": 167,
+    "Name": "シルフィ",
+    "Skills": [
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 8,
+        "Type": "飛翔"
+      }
+    ],
+    "Element": "木",
+    "Type": "飛翔",
+    "Rarity": "Tier2",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 2020,
+    "Dex": 3520,
+    "Eng": 25600
+  },
+  {
+    "Id": 168,
+    "Name": "アルカコア",
+    "Element": "木",
+    "Type": "変革",
+    "Rarity": "Tier2",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 2270,
+    "Dex": 5540,
+    "Eng": 0
   }
 ]
