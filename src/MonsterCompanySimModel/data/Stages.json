@@ -5890,7 +5890,7 @@
     "Enemy1Id": 79,
     "Enemy1Level": 1228,
     "Enemy2Id": 81,
-    "Enemy2Level": 1490
+    "Enemy2Level": 1491
   },
   {
     "Part": 2,
@@ -5899,7 +5899,7 @@
     "Gold": 1279600,
     "Ticket": 3,
     "Enemy1Id": 81,
-    "Enemy1Level": 2615,
+    "Enemy1Level": 2616,
     "Enemy2Id": 82,
     "Enemy2Level": 2099
   },
@@ -5932,7 +5932,7 @@
     "Gold": 1346800,
     "Ticket": 4,
     "Enemy1Id": 81,
-    "Enemy1Level": 4190,
+    "Enemy1Level": 4191,
     "Enemy2Id": 83,
     "Enemy2Level": 4657
   },
@@ -6428,7 +6428,7 @@
     "Gold": 6314000,
     "Ticket": 450,
     "Enemy2Id": 79,
-    "Enemy2Level": 257722
+    "Enemy2Level": 128856
   },
   {
     "Part": 2,
@@ -6437,9 +6437,9 @@
     "Gold": 6398000,
     "Ticket": 500,
     "Enemy1Id": 86,
-    "Enemy1Level": 69921,
+    "Enemy1Level": 34956,
     "Enemy3Id": 88,
-    "Enemy3Level": 72454
+    "Enemy3Level": 36222
   },
   {
     "Part": 2,
@@ -6448,11 +6448,11 @@
     "Gold": 6482000,
     "Ticket": 550,
     "Enemy1Id": 85,
-    "Enemy1Level": 134671,
+    "Enemy1Level": 67331,
     "Enemy2Id": 82,
-    "Enemy2Level": 133859,
+    "Enemy2Level": 66925,
     "Enemy3Id": 83,
-    "Enemy3Level": 185176
+    "Enemy3Level": 92583
   },
   {
     "Part": 2,
@@ -6461,9 +6461,9 @@
     "Gold": 6566000,
     "Ticket": 600,
     "Enemy2Id": 87,
-    "Enemy2Level": 97647,
+    "Enemy2Level": 48819,
     "Enemy3Id": 89,
-    "Enemy3Level": 107133
+    "Enemy3Level": 53562
   },
   {
     "Part": 2,
@@ -6472,9 +6472,9 @@
     "Gold": 6650000,
     "Ticket": 650,
     "Enemy1Id": 85,
-    "Enemy1Level": 152516,
+    "Enemy1Level": 76253,
     "Enemy3Id": 93,
-    "Enemy3Level": 171581
+    "Enemy3Level": 85786
   },
   {
     "Part": 2,
@@ -6483,11 +6483,11 @@
     "Gold": 6734000,
     "Ticket": 700,
     "Enemy1Id": 79,
-    "Enemy1Level": 43289,
+    "Enemy1Level": 21640,
     "Enemy2Id": 82,
-    "Enemy2Level": 42159,
+    "Enemy2Level": 21075,
     "Enemy3Id": 85,
-    "Enemy3Level": 42415
+    "Enemy3Level": 21203
   },
   {
     "Part": 2,
@@ -6496,9 +6496,9 @@
     "Gold": 6818000,
     "Ticket": 750,
     "Enemy1Id": 79,
-    "Enemy1Level": 131949,
+    "Enemy1Level": 65970,
     "Enemy2Id": 85,
-    "Enemy2Level": 129283
+    "Enemy2Level": 64637
   },
   {
     "Part": 2,
@@ -6507,11 +6507,11 @@
     "Gold": 6902000,
     "Ticket": 800,
     "Enemy1Id": 85,
-    "Enemy1Level": 119687,
+    "Enemy1Level": 59839,
     "Enemy2Id": 89,
-    "Enemy2Level": 84633,
+    "Enemy2Level": 42312,
     "Enemy3Id": 79,
-    "Enemy3Level": 122155
+    "Enemy3Level": 61073
   },
   {
     "Part": 2,
@@ -6520,9 +6520,9 @@
     "Gold": 6986000,
     "Ticket": 850,
     "Enemy1Id": 87,
-    "Enemy1Level": 125316,
+    "Enemy1Level": 62653,
     "Enemy2Id": 89,
-    "Enemy2Level": 137491
+    "Enemy2Level": 68741
   },
   {
     "Part": 2,
@@ -6531,11 +6531,11 @@
     "Gold": 7070000,
     "Ticket": 900,
     "Enemy1Id": 79,
-    "Enemy1Level": 122155,
+    "Enemy1Level": 61073,
     "Enemy2Id": 90,
-    "Enemy2Level": 88423,
+    "Enemy2Level": 44207,
     "Enemy3Id": 93,
-    "Enemy3Level": 134650
+    "Enemy3Level": 67320
   },
   {
     "Part": 2,
@@ -6544,11 +6544,11 @@
     "Gold": 7035000,
     "Ticket": 960,
     "Enemy1Id": 83,
-    "Enemy1Level": 180546,
+    "Enemy1Level": 90268,
     "Enemy2Id": 79,
-    "Enemy2Level": 134011,
+    "Enemy2Level": 67001,
     "Enemy3Id": 83,
-    "Enemy3Level": 130513
+    "Enemy3Level": 65252
   },
   {
     "Part": 2,
@@ -6557,7 +6557,7 @@
     "Gold": 7084000,
     "Ticket": 1020,
     "Enemy2Id": 81,
-    "Enemy2Level": 554991
+    "Enemy2Level": 277491
   },
   {
     "Part": 2,
@@ -6566,7 +6566,7 @@
     "Gold": 7133000,
     "Ticket": 1080,
     "Enemy2Id": 86,
-    "Enemy2Level": 352438
+    "Enemy2Level": 176214
   },
   {
     "Part": 2,
@@ -6575,7 +6575,7 @@
     "Gold": 7182000,
     "Ticket": 1140,
     "Enemy2Id": 89,
-    "Enemy2Level": 289276
+    "Enemy2Level": 144633
   },
   {
     "Part": 2,
@@ -6584,11 +6584,11 @@
     "Gold": 7231000,
     "Ticket": 1200,
     "Enemy1Id": 88,
-    "Enemy1Level": 39846,
+    "Enemy1Level": 19918,
     "Enemy2Id": 86,
-    "Enemy2Level": 38452,
+    "Enemy2Level": 19221,
     "Enemy3Id": 90,
-    "Enemy3Level": 41035
+    "Enemy3Level": 20513
   },
   {
     "Part": 2,
@@ -6597,9 +6597,9 @@
     "Gold": 7280000,
     "Ticket": 1260,
     "Enemy1Id": 85,
-    "Enemy1Level": 295445,
+    "Enemy1Level": 147718,
     "Enemy2Id": 89,
-    "Enemy2Level": 208919
+    "Enemy2Level": 104455
   },
   {
     "Part": 2,
@@ -6608,11 +6608,11 @@
     "Gold": 7329000,
     "Ticket": 1320,
     "Enemy1Id": 79,
-    "Enemy1Level": 108238,
+    "Enemy1Level": 54114,
     "Enemy2Id": 82,
-    "Enemy2Level": 105412,
+    "Enemy2Level": 52701,
     "Enemy3Id": 85,
-    "Enemy3Level": 106051
+    "Enemy3Level": 53021
   },
   {
     "Part": 2,
@@ -6621,9 +6621,9 @@
     "Gold": 7378000,
     "Ticket": 1380,
     "Enemy1Id": 79,
-    "Enemy1Level": 242011,
+    "Enemy1Level": 120996,
     "Enemy2Id": 85,
-    "Enemy2Level": 237112
+    "Enemy2Level": 118551
   },
   {
     "Part": 2,
@@ -6631,6 +6631,358 @@
     "Stage": 9,
     "Gold": 7427000,
     "Ticket": 1440,
+    "Enemy1Id": 91,
+    "Enemy1Level": 67627,
+    "Enemy2Id": 89,
+    "Enemy2Level": 79526,
+    "Enemy3Id": 79,
+    "Enemy3Level": 101795
+  },
+  {
+    "Part": 2,
+    "Grade": 8,
+    "Stage": 10,
+    "Gold": 7476000,
+    "Ticket": 1500,
+    "Enemy1Id": 87,
+    "Enemy1Level": 117178,
+    "Enemy2Id": 89,
+    "Enemy2Level": 128562
+  },
+  {
+    "Part": 2,
+    "Grade": 9,
+    "Stage": 1,
+    "Gold": 7511000,
+    "Ticket": 1520,
+    "Enemy1Id": 79,
+    "Enemy1Level": 115111,
+    "Enemy2Id": 87,
+    "Enemy2Level": 72690,
+    "Enemy3Id": 84,
+    "Enemy3Level": 92125
+  },
+  {
+    "Part": 2,
+    "Grade": 9,
+    "Stage": 2,
+    "Gold": 7532000,
+    "Ticket": 1540,
+    "Enemy2Id": 89,
+    "Enemy2Level": 332133
+  },
+  {
+    "Part": 2,
+    "Grade": 9,
+    "Stage": 3,
+    "Gold": 7553000,
+    "Ticket": 1560,
+    "Enemy1Id": 92,
+    "Enemy1Level": 19000,
+    "Enemy2Id": 93,
+    "Enemy2Level": 370000,
+    "Enemy3Id": 90,
+    "Enemy3Level": 18000
+  },
+  {
+    "Part": 2,
+    "Grade": 9,
+    "Stage": 4,
+    "Gold": 7574000,
+    "Ticket": 1580,
+    "Enemy1Id": 91,
+    "Enemy1Level": 77844,
+    "Enemy2Id": 82,
+    "Enemy2Level": 114114,
+    "Enemy3Id": 85,
+    "Enemy3Level": 114805
+  },
+  {
+    "Part": 2,
+    "Grade": 9,
+    "Stage": 5,
+    "Gold": 7595000,
+    "Ticket": 1600,
+    "Enemy1Id": 90,
+    "Enemy1Level": 96632,
+    "Enemy2Id": 89,
+    "Enemy2Level": 92491
+  },
+  {
+    "Part": 2,
+    "Grade": 9,
+    "Stage": 6,
+    "Gold": 7616000,
+    "Ticket": 1620,
+    "Enemy1Id": 85,
+    "Enemy1Level": 51000,
+    "Enemy2Id": 93,
+    "Enemy2Level": 400000,
+    "Enemy3Id": 89,
+    "Enemy3Level": 54000
+  },
+  {
+    "Part": 2,
+    "Grade": 9,
+    "Stage": 7,
+    "Gold": 7637000,
+    "Ticket": 1640,
+    "Enemy1Id": 89,
+    "Enemy1Level": 114991,
+    "Enemy2Id": 90,
+    "Enemy2Level": 120140
+  },
+  {
+    "Part": 2,
+    "Grade": 9,
+    "Stage": 8,
+    "Gold": 7658000,
+    "Ticket": 1660,
+    "Enemy1Id": 79,
+    "Enemy1Level": 218204,
+    "Enemy2Id": 87,
+    "Enemy2Level": 137794,
+    "Enemy3Id": 84,
+    "Enemy3Level": 174633
+  },
+  {
+    "Part": 2,
+    "Grade": 9,
+    "Stage": 9,
+    "Gold": 7679000,
+    "Ticket": 1680,
+    "Enemy2Id": 89,
+    "Enemy2Level": 614991
+  },
+  {
+    "Part": 2,
+    "Grade": 9,
+    "Stage": 10,
+    "Gold": 7700000,
+    "Ticket": 1700,
+    "Enemy1Id": 92,
+    "Enemy1Level": 51000,
+    "Enemy2Id": 93,
+    "Enemy2Level": 1010000,
+    "Enemy3Id": 90,
+    "Enemy3Level": 40100
+  },
+  {
+    "Part": 2,
+    "Grade": 10,
+    "Stage": 1,
+    "Gold": 7721000,
+    "Ticket": 5080,
+    "Enemy1Id": 79,
+    "Enemy1Level": 151666,
+    "Enemy2Id": 82,
+    "Enemy2Level": 147706,
+    "Enemy3Id": 102,
+    "Enemy3Level": 367803
+  },
+  {
+    "Part": 2,
+    "Grade": 10,
+    "Stage": 2,
+    "Gold": 7742000,
+    "Ticket": 6164,
+    "Enemy1Id": 79,
+    "Enemy1Level": 113736,
+    "Enemy2Id": 85,
+    "Enemy2Level": 111438,
+    "Enemy3Id": 86,
+    "Enemy3Level": 77147
+  },
+  {
+    "Part": 2,
+    "Grade": 10,
+    "Stage": 3,
+    "Gold": 7763000,
+    "Ticket": 7332,
+    "Enemy1Id": 88,
+    "Enemy1Level": 105063,
+    "Enemy2Id": 82,
+    "Enemy2Level": 145573
+  },
+  {
+    "Part": 2,
+    "Grade": 10,
+    "Stage": 4,
+    "Gold": 7784000,
+    "Ticket": 7696,
+    "Enemy1Id": 89,
+    "Enemy1Level": 76181,
+    "Enemy2Id": 90,
+    "Enemy2Level": 79592,
+    "Enemy3Id": 83,
+    "Enemy3Level": 148139
+  },
+  {
+    "Part": 2,
+    "Grade": 10,
+    "Stage": 5,
+    "Gold": 7805000,
+    "Ticket": 8060,
+    "Enemy1Id": 98,
+    "Enemy1Level": 91774,
+    "Enemy2Id": 90,
+    "Enemy2Level": 97938,
+    "Enemy3Id": 99,
+    "Enemy3Level": 142654
+  },
+  {
+    "Part": 2,
+    "Grade": 10,
+    "Stage": 6,
+    "Gold": 7826000,
+    "Ticket": 8424,
+    "Enemy1Id": 93,
+    "Enemy1Level": 205956,
+    "Enemy2Id": 88,
+    "Enemy2Level": 131331
+  },
+  {
+    "Part": 2,
+    "Grade": 10,
+    "Stage": 7,
+    "Gold": 7847000,
+    "Ticket": 8788,
+    "Enemy1Id": 79,
+    "Enemy1Level": 217774,
+    "Enemy2Id": 85,
+    "Enemy2Level": 213374,
+    "Enemy3Id": 86,
+    "Enemy3Level": 147718
+  },
+  {
+    "Part": 2,
+    "Grade": 10,
+    "Stage": 8,
+    "Gold": 7868000,
+    "Ticket": 9152,
+    "Enemy1Id": 88,
+    "Enemy1Level": 84256,
+    "Enemy2Id": 82,
+    "Enemy2Level": 1317764
+  },
+  {
+    "Part": 2,
+    "Grade": 10,
+    "Stage": 9,
+    "Gold": 7889000,
+    "Ticket": 9516,
+    "Enemy1Id": 89,
+    "Enemy1Level": 147312,
+    "Enemy2Id": 90,
+    "Enemy2Level": 153908
+  },
+  {
+    "Part": 2,
+    "Grade": 10,
+    "Stage": 10,
+    "Gold": 7910000,
+    "Ticket": 9880,
+    "Enemy1Id": 91,
+    "Enemy1Level": 155527,
+    "Enemy2Id": 90,
+    "Enemy2Level": 169456,
+    "Enemy3Id": 93,
+    "Enemy3Level": 258040
+  },
+  {
+    "Part": 2,
+    "Grade": 11,
+    "Stage": 1,
+    "Gold": 7931000,
+    "Ticket": 11500,
+    "Enemy2Id": 81,
+    "Enemy2Level": 684741
+  },
+  {
+    "Part": 2,
+    "Grade": 11,
+    "Stage": 2,
+    "Gold": 7952000,
+    "Ticket": 13000,
+    "Enemy2Id": 86,
+    "Enemy2Level": 557193
+  },
+  {
+    "Part": 2,
+    "Grade": 11,
+    "Stage": 3,
+    "Gold": 7973000,
+    "Ticket": 14500,
+    "Enemy1Id": 85,
+    "Enemy1Level": 245218,
+    "Enemy2Id": 89,
+    "Enemy2Level": 173401
+  },
+  {
+    "Part": 2,
+    "Grade": 11,
+    "Stage": 4,
+    "Gold": 7994000,
+    "Ticket": 16000,
+    "Enemy1Id": 79,
+    "Enemy1Level": 200859,
+    "Enemy2Id": 85,
+    "Enemy2Level": 196801
+  },
+  {
+    "Part": 2,
+    "Grade": 11,
+    "Stage": 5,
+    "Gold": 8015000,
+    "Ticket": 17500,
+    "Enemy1Id": 98,
+    "Enemy1Level": 110130,
+    "Enemy2Id": 90,
+    "Enemy2Level": 117528,
+    "Enemy3Id": 99,
+    "Enemy3Level": 171186
+  },
+  {
+    "Part": 2,
+    "Grade": 11,
+    "Stage": 6,
+    "Gold": 8036000,
+    "Ticket": 19000,
+    "Enemy1Id": 91,
+    "Enemy1Level": 112719,
+    "Enemy2Id": 89,
+    "Enemy2Level": 117550,
+    "Enemy3Id": 79,
+    "Enemy3Level": 169664
+  },
+  {
+    "Part": 2,
+    "Grade": 11,
+    "Stage": 7,
+    "Gold": 8057000,
+    "Ticket": 20500,
+    "Enemy1Id": 87,
+    "Enemy1Level": 195303,
+    "Enemy2Id": 89,
+    "Enemy2Level": 214276
+  },
+  {
+    "Part": 2,
+    "Grade": 11,
+    "Stage": 8,
+    "Gold": 8078000,
+    "Ticket": 22000,
+    "Enemy1Id": 89,
+    "Enemy1Level": 172491,
+    "Enemy2Id": 90,
+    "Enemy2Level": 180214
+  },
+  {
+    "Part": 2,
+    "Grade": 11,
+    "Stage": 9,
+    "Gold": 8099000,
+    "Ticket": 23500,
     "Enemy1Id": 91,
     "Enemy1Level": 135264,
     "Enemy2Id": 89,
@@ -6640,366 +6992,14 @@
   },
   {
     "Part": 2,
-    "Grade": 8,
-    "Stage": 10,
-    "Gold": 7476000,
-    "Ticket": 1500,
-    "Enemy1Id": 87,
-    "Enemy1Level": 234366,
-    "Enemy2Id": 89,
-    "Enemy2Level": 257133
-  },
-  {
-    "Part": 2,
-    "Grade": 9,
-    "Stage": 1,
-    "Gold": 7511000,
-    "Ticket": 1520,
-    "Enemy1Id": 79,
-    "Enemy1Level": 230231,
-    "Enemy2Id": 87,
-    "Enemy2Level": 145390,
-    "Enemy3Id": 84,
-    "Enemy3Level": 184259
-  },
-  {
-    "Part": 2,
-    "Grade": 9,
-    "Stage": 2,
-    "Gold": 7532000,
-    "Ticket": 1540,
-    "Enemy2Id": 89,
-    "Enemy2Level": 664276
-  },
-  {
-    "Part": 2,
-    "Grade": 9,
-    "Stage": 3,
-    "Gold": 7553000,
-    "Ticket": 1560,
-    "Enemy1Id": 92,
-    "Enemy1Level": 38000,
-    "Enemy2Id": 93,
-    "Enemy2Level": 740000,
-    "Enemy3Id": 90,
-    "Enemy3Level": 36000
-  },
-  {
-    "Part": 2,
-    "Grade": 9,
-    "Stage": 4,
-    "Gold": 7574000,
-    "Ticket": 1580,
-    "Enemy1Id": 91,
-    "Enemy1Level": 155698,
-    "Enemy2Id": 82,
-    "Enemy2Level": 228237,
-    "Enemy3Id": 85,
-    "Enemy3Level": 229620
-  },
-  {
-    "Part": 2,
-    "Grade": 9,
-    "Stage": 5,
-    "Gold": 7595000,
-    "Ticket": 1600,
-    "Enemy1Id": 90,
-    "Enemy1Level": 193274,
-    "Enemy2Id": 89,
-    "Enemy2Level": 184991
-  },
-  {
-    "Part": 2,
-    "Grade": 9,
-    "Stage": 6,
-    "Gold": 7616000,
-    "Ticket": 1620,
-    "Enemy1Id": 85,
-    "Enemy1Level": 102000,
-    "Enemy2Id": 93,
-    "Enemy2Level": 800000,
-    "Enemy3Id": 89,
-    "Enemy3Level": 108000
-  },
-  {
-    "Part": 2,
-    "Grade": 9,
-    "Stage": 7,
-    "Gold": 7637000,
-    "Ticket": 1640,
-    "Enemy1Id": 89,
-    "Enemy1Level": 229991,
-    "Enemy2Id": 90,
-    "Enemy2Level": 240289
-  },
-  {
-    "Part": 2,
-    "Grade": 9,
-    "Stage": 8,
-    "Gold": 7658000,
-    "Ticket": 1660,
-    "Enemy1Id": 79,
-    "Enemy1Level": 436417,
-    "Enemy2Id": 87,
-    "Enemy2Level": 275598,
-    "Enemy3Id": 84,
-    "Enemy3Level": 349275
-  },
-  {
-    "Part": 2,
-    "Grade": 9,
-    "Stage": 9,
-    "Gold": 7679000,
-    "Ticket": 1680,
-    "Enemy2Id": 89,
-    "Enemy2Level": 1229991
-  },
-  {
-    "Part": 2,
-    "Grade": 9,
-    "Stage": 10,
-    "Gold": 7700000,
-    "Ticket": 1700,
-    "Enemy1Id": 92,
-    "Enemy1Level": 102000,
-    "Enemy2Id": 93,
-    "Enemy2Level": 2020000,
-    "Enemy3Id": 90,
-    "Enemy3Level": 80200
-  },
-  {
-    "Part": 2,
-    "Grade": 10,
-    "Stage": 1,
-    "Gold": 7721000,
-    "Ticket": 5080,
-    "Enemy1Id": 79,
-    "Enemy1Level": 303341,
-    "Enemy2Id": 82,
-    "Enemy2Level": 295422,
-    "Enemy3Id": 102,
-    "Enemy3Level": 735616
-  },
-  {
-    "Part": 2,
-    "Grade": 10,
-    "Stage": 2,
-    "Gold": 7742000,
-    "Ticket": 6164,
-    "Enemy1Id": 79,
-    "Enemy1Level": 227482,
-    "Enemy2Id": 85,
-    "Enemy2Level": 222886,
-    "Enemy3Id": 86,
-    "Enemy3Level": 154303
-  },
-  {
-    "Part": 2,
-    "Grade": 10,
-    "Stage": 3,
-    "Gold": 7763000,
-    "Ticket": 7332,
-    "Enemy1Id": 88,
-    "Enemy1Level": 210135,
-    "Enemy2Id": 82,
-    "Enemy2Level": 291155
-  },
-  {
-    "Part": 2,
-    "Grade": 10,
-    "Stage": 4,
-    "Gold": 7784000,
-    "Ticket": 7696,
-    "Enemy1Id": 89,
-    "Enemy1Level": 152371,
-    "Enemy2Id": 90,
-    "Enemy2Level": 159194,
-    "Enemy3Id": 83,
-    "Enemy3Level": 296287
-  },
-  {
-    "Part": 2,
-    "Grade": 10,
-    "Stage": 5,
-    "Gold": 7805000,
-    "Ticket": 8060,
-    "Enemy1Id": 98,
-    "Enemy1Level": 183557,
-    "Enemy2Id": 90,
-    "Enemy2Level": 195886,
-    "Enemy3Id": 99,
-    "Enemy3Level": 286287
-  },
-  {
-    "Part": 2,
-    "Grade": 10,
-    "Stage": 6,
-    "Gold": 7826000,
-    "Ticket": 8424,
-    "Enemy1Id": 93,
-    "Enemy1Level": 411922,
-    "Enemy2Id": 88,
-    "Enemy2Level": 262672
-  },
-  {
-    "Part": 2,
-    "Grade": 10,
-    "Stage": 7,
-    "Gold": 7847000,
-    "Ticket": 8788,
-    "Enemy1Id": 79,
-    "Enemy1Level": 435558,
-    "Enemy2Id": 85,
-    "Enemy2Level": 426758,
-    "Enemy3Id": 86,
-    "Enemy3Level": 295445
-  },
-  {
-    "Part": 2,
-    "Grade": 10,
-    "Stage": 8,
-    "Gold": 7868000,
-    "Ticket": 9152,
-    "Enemy1Id": 88,
-    "Enemy1Level": 168513,
-    "Enemy2Id": 82,
-    "Enemy2Level": 2635528
-  },
-  {
-    "Part": 2,
-    "Grade": 10,
-    "Stage": 9,
-    "Gold": 7889000,
-    "Ticket": 9516,
-    "Enemy1Id": 89,
-    "Enemy1Level": 294633,
-    "Enemy2Id": 90,
-    "Enemy2Level": 307826
-  },
-  {
-    "Part": 2,
-    "Grade": 10,
-    "Stage": 10,
-    "Gold": 7910000,
-    "Ticket": 9880,
-    "Enemy1Id": 91,
-    "Enemy1Level": 311064,
-    "Enemy2Id": 90,
-    "Enemy2Level": 338921,
-    "Enemy3Id": 93,
-    "Enemy3Level": 516089
-  },
-  {
-    "Part": 2,
-    "Grade": 11,
-    "Stage": 1,
-    "Gold": 7931000,
-    "Ticket": 11500,
-    "Enemy2Id": 81,
-    "Enemy2Level": 1369491
-  },
-  {
-    "Part": 2,
-    "Grade": 11,
-    "Stage": 2,
-    "Gold": 7952000,
-    "Ticket": 13000,
-    "Enemy2Id": 86,
-    "Enemy2Level": 1114396
-  },
-  {
-    "Part": 2,
-    "Grade": 11,
-    "Stage": 3,
-    "Gold": 7973000,
-    "Ticket": 14500,
-    "Enemy1Id": 85,
-    "Enemy1Level": 490445,
-    "Enemy2Id": 89,
-    "Enemy2Level": 346812
-  },
-  {
-    "Part": 2,
-    "Grade": 11,
-    "Stage": 4,
-    "Gold": 7994000,
-    "Ticket": 16000,
-    "Enemy1Id": 79,
-    "Enemy1Level": 401728,
-    "Enemy2Id": 85,
-    "Enemy2Level": 393612
-  },
-  {
-    "Part": 2,
-    "Grade": 11,
-    "Stage": 5,
-    "Gold": 8015000,
-    "Ticket": 17500,
-    "Enemy1Id": 98,
-    "Enemy1Level": 220270,
-    "Enemy2Id": 90,
-    "Enemy2Level": 235065,
-    "Enemy3Id": 99,
-    "Enemy3Level": 342382
-  },
-  {
-    "Part": 2,
-    "Grade": 11,
-    "Stage": 6,
-    "Gold": 8036000,
-    "Ticket": 19000,
-    "Enemy1Id": 91,
-    "Enemy1Level": 225447,
-    "Enemy2Id": 89,
-    "Enemy2Level": 235110,
-    "Enemy3Id": 79,
-    "Enemy3Level": 339338
-  },
-  {
-    "Part": 2,
-    "Grade": 11,
-    "Stage": 7,
-    "Gold": 8057000,
-    "Ticket": 20500,
-    "Enemy1Id": 87,
-    "Enemy1Level": 390616,
-    "Enemy2Id": 89,
-    "Enemy2Level": 428562
-  },
-  {
-    "Part": 2,
-    "Grade": 11,
-    "Stage": 8,
-    "Gold": 8078000,
-    "Ticket": 22000,
-    "Enemy1Id": 89,
-    "Enemy1Level": 344991,
-    "Enemy2Id": 90,
-    "Enemy2Level": 360438
-  },
-  {
-    "Part": 2,
-    "Grade": 11,
-    "Stage": 9,
-    "Gold": 8099000,
-    "Ticket": 23500,
-    "Enemy1Id": 91,
-    "Enemy1Level": 270538,
-    "Enemy2Id": 89,
-    "Enemy2Level": 282133,
-    "Enemy3Id": 79,
-    "Enemy3Level": 407207
-  },
-  {
-    "Part": 2,
     "Grade": 11,
     "Stage": 10,
     "Gold": 8120000,
     "Ticket": 25000,
     "Enemy1Id": 87,
-    "Enemy1Level": 468741,
+    "Enemy1Level": 234366,
     "Enemy2Id": 89,
-    "Enemy2Level": 514276
+    "Enemy2Level": 257133
   },
   {
     "Part": 2,
@@ -7008,9 +7008,9 @@
     "Gold": 8141000,
     "Ticket": 26500,
     "Enemy1Id": 93,
-    "Enemy1Level": 490189,
+    "Enemy1Level": 245090,
     "Enemy2Id": 88,
-    "Enemy2Level": 312581
+    "Enemy2Level": 156286
   },
   {
     "Part": 2,
@@ -7019,11 +7019,11 @@
     "Gold": 8162000,
     "Ticket": 28000,
     "Enemy1Id": 79,
-    "Enemy1Level": 518315,
+    "Enemy1Level": 259153,
     "Enemy2Id": 85,
-    "Enemy2Level": 507844,
+    "Enemy2Level": 253917,
     "Enemy3Id": 86,
-    "Enemy3Level": 351581
+    "Enemy3Level": 175786
   },
   {
     "Part": 2,
@@ -7032,9 +7032,9 @@
     "Gold": 8183000,
     "Ticket": 29500,
     "Enemy1Id": 88,
-    "Enemy1Level": 141030,
+    "Enemy1Level": 70515,
     "Enemy2Id": 82,
-    "Enemy2Level": 2243778
+    "Enemy2Level": 1121889
   },
   {
     "Part": 2,
@@ -7043,9 +7043,9 @@
     "Gold": 8204000,
     "Ticket": 31000,
     "Enemy1Id": 89,
-    "Enemy1Level": 584366,
+    "Enemy1Level": 292178,
     "Enemy2Id": 90,
-    "Enemy2Level": 610532
+    "Enemy2Level": 305261
   },
   {
     "Part": 2,
@@ -7054,11 +7054,11 @@
     "Gold": 8225000,
     "Ticket": 32500,
     "Enemy1Id": 91,
-    "Enemy1Level": 435493,
+    "Enemy1Level": 217742,
     "Enemy2Id": 90,
-    "Enemy2Level": 474493,
+    "Enemy2Level": 237242,
     "Enemy3Id": 93,
-    "Enemy3Level": 722528
+    "Enemy3Level": 361259
   },
   {
     "Part": 2,
@@ -7067,11 +7067,11 @@
     "Gold": 8246000,
     "Ticket": 34000,
     "Enemy1Id": 79,
-    "Enemy1Level": 757379,
+    "Enemy1Level": 3778785,
     "Enemy2Id": 92,
-    "Enemy2Level": 773324,
+    "Enemy2Level": 386657,
     "Enemy3Id": 83,
-    "Enemy3Level": 1020361
+    "Enemy3Level": 510176
   },
   {
     "Part": 2,
@@ -7080,9 +7080,9 @@
     "Gold": 8267000,
     "Ticket": 35500,
     "Enemy1Id": 83,
-    "Enemy1Level": 1711796,
+    "Enemy1Level": 855893,
     "Enemy2Id": 83,
-    "Enemy2Level": 1711796
+    "Enemy2Level": 855893
   },
   {
     "Part": 2,
@@ -7091,11 +7091,11 @@
     "Gold": 8288000,
     "Ticket": 37000,
     "Enemy1Id": 87,
-    "Enemy1Level": 843307,
+    "Enemy1Level": 421648,
     "Enemy2Id": 105,
-    "Enemy2Level": 948953,
+    "Enemy2Level": 474472,
     "Enemy3Id": 107,
-    "Enemy3Level": 835689
+    "Enemy3Level": 417840
   },
   {
     "Part": 2,
@@ -7104,11 +7104,11 @@
     "Gold": 8309000,
     "Ticket": 38500,
     "Enemy1Id": 107,
-    "Enemy1Level": 623646,
+    "Enemy1Level": 311818,
     "Enemy2Id": 91,
-    "Enemy2Level": 662091,
+    "Enemy2Level": 331041,
     "Enemy3Id": 85,
-    "Enemy3Level": 976421
+    "Enemy3Level": 488206
   },
   {
     "Part": 2,
@@ -7117,11 +7117,11 @@
     "Gold": 8330000,
     "Ticket": 40000,
     "Enemy1Id": 106,
-    "Enemy1Level": 489442,
+    "Enemy1Level": 244716,
     "Enemy2Id": 114,
-    "Enemy2Level": 519006,
+    "Enemy2Level": 259498,
     "Enemy3Id": 104,
-    "Enemy3Level": 184118
+    "Enemy3Level": 92054
   },
   {
     "Part": 2,
@@ -7130,11 +7130,11 @@
     "Gold": 8351000,
     "Ticket": 45000,
     "Enemy1Id": 91,
-    "Enemy1Level": 177032,
+    "Enemy1Level": 138511,
     "Enemy2Id": 89,
-    "Enemy2Level": 288905,
+    "Enemy2Level": 144448,
     "Enemy3Id": 79,
-    "Enemy3Level": 416980
+    "Enemy3Level": 208485
   },
   {
     "Part": 2,
@@ -7143,7 +7143,7 @@
     "Gold": 8372000,
     "Ticket": 50000,
     "Enemy2Id": 86,
-    "Enemy2Level": 1546732
+    "Enemy2Level": 773361
   },
   {
     "Part": 2,
@@ -7152,9 +7152,9 @@
     "Gold": 8393000,
     "Ticket": 55000,
     "Enemy1Id": 87,
-    "Enemy1Level": 607491,
+    "Enemy1Level": 303741,
     "Enemy2Id": 89,
-    "Enemy2Level": 666505
+    "Enemy2Level": 333248
   },
   {
     "Part": 2,
@@ -7163,11 +7163,11 @@
     "Gold": 8414000,
     "Ticket": 60000,
     "Enemy1Id": 92,
-    "Enemy1Level": 200491,
+    "Enemy1Level": 100245,
     "Enemy2Id": 93,
-    "Enemy2Level": 3970512,
+    "Enemy2Level": 1985256,
     "Enemy3Id": 90,
-    "Enemy3Level": 157641
+    "Enemy3Level": 78820
   },
   {
     "Part": 2,
@@ -7176,11 +7176,11 @@
     "Gold": 8435000,
     "Ticket": 65000,
     "Enemy1Id": 79,
-    "Enemy1Level": 950644,
+    "Enemy1Level": 475317,
     "Enemy2Id": 92,
-    "Enemy2Level": 970657,
+    "Enemy2Level": 485324,
     "Enemy3Id": 83,
-    "Enemy3Level": 1280731
+    "Enemy3Level": 640361
   },
   {
     "Part": 2,
@@ -7189,9 +7189,9 @@
     "Gold": 8456000,
     "Ticket": 70000,
     "Enemy1Id": 99,
-    "Enemy1Level": 2710208,
+    "Enemy1Level": 1355099,
     "Enemy2Id": 103,
-    "Enemy2Level": 1684720
+    "Enemy2Level": 842355
   },
   {
     "Part": 2,
@@ -7200,9 +7200,9 @@
     "Gold": 8477000,
     "Ticket": 75000,
     "Enemy1Id": 83,
-    "Enemy1Level": 2148602,
+    "Enemy1Level": 1074296,
     "Enemy2Id": 83,
-    "Enemy2Level": 2148602
+    "Enemy2Level": 1074296
   },
   {
     "Part": 2,
@@ -7211,11 +7211,11 @@
     "Gold": 8498000,
     "Ticket": 80000,
     "Enemy1Id": 87,
-    "Enemy1Level": 1058498,
+    "Enemy1Level": 529244,
     "Enemy2Id": 105,
-    "Enemy2Level": 1191102,
+    "Enemy2Level": 595546,
     "Enemy3Id": 107,
-    "Enemy3Level": 1048937
+    "Enemy3Level": 524464
   },
   {
     "Part": 2,
@@ -7224,11 +7224,11 @@
     "Gold": 8519000,
     "Ticket": 85000,
     "Enemy1Id": 107,
-    "Enemy1Level": 782786,
+    "Enemy1Level": 391388,
     "Enemy2Id": 91,
-    "Enemy2Level": 831041,
+    "Enemy2Level": 415516,
     "Enemy3Id": 85,
-    "Enemy3Level": 1225580
+    "Enemy3Level": 612785
   },
   {
     "Part": 2,
@@ -7237,11 +7237,11 @@
     "Gold": 8540000,
     "Ticket": 90000,
     "Enemy1Id": 104,
-    "Enemy1Level": 231102,
+    "Enemy1Level": 115546,
     "Enemy2Id": 114,
-    "Enemy2Level": 651445,
+    "Enemy2Level": 325718,
     "Enemy3Id": 106,
-    "Enemy3Level": 614337
+    "Enemy3Level": 307164
   },
   {
     "Part": 2,
@@ -7250,11 +7250,11 @@
     "Gold": 8561000,
     "Ticket": 95000,
     "Enemy1Id": 79,
-    "Enemy1Level": 951269,
+    "Enemy1Level": 332938,
     "Enemy2Id": 85,
-    "Enemy2Level": 932051,
+    "Enemy2Level": 326212,
     "Enemy3Id": 86,
-    "Enemy3Level": 645263
+    "Enemy3Level": 225836
   },
   {
     "Part": 2,
@@ -7263,9 +7263,9 @@
     "Gold": 8582000,
     "Ticket": 100000,
     "Enemy1Id": 88,
-    "Enemy1Level": 368032,
+    "Enemy1Level": 128811,
     "Enemy2Id": 82,
-    "Enemy2Level": 5755994
+    "Enemy2Level": 2014598
   },
   {
     "Part": 2,
@@ -7274,9 +7274,9 @@
     "Gold": 8603000,
     "Ticket": 105000,
     "Enemy1Id": 89,
-    "Enemy1Level": 1072491,
+    "Enemy1Level": 375366,
     "Enemy2Id": 90,
-    "Enemy2Level": 1120513
+    "Enemy2Level": 392173
   },
   {
     "Part": 2,
@@ -7285,11 +7285,11 @@
     "Gold": 8624000,
     "Ticket": 110000,
     "Enemy1Id": 91,
-    "Enemy1Level": 679374,
+    "Enemy1Level": 237775,
     "Enemy2Id": 90,
-    "Enemy2Level": 740214,
+    "Enemy2Level": 259069,
     "Enemy3Id": 93,
-    "Enemy3Level": 1127150
+    "Enemy3Level": 394496
   },
   {
     "Part": 2,
@@ -7298,11 +7298,11 @@
     "Gold": 8645000,
     "Ticket": 115000,
     "Enemy1Id": 99,
-    "Enemy1Level": 2028976,
+    "Enemy1Level": 710135,
     "Enemy2Id": 105,
-    "Enemy2Level": 1367512,
+    "Enemy2Level": 478623,
     "Enemy3Id": 102,
-    "Enemy3Level": 4666658
+    "Enemy3Level": 1633324
   },
   {
     "Part": 2,
@@ -7311,11 +7311,11 @@
     "Gold": 8666000,
     "Ticket": 120000,
     "Enemy1Id": 110,
-    "Enemy1Level": 1607133,
+    "Enemy1Level": 562491,
     "Enemy2Id": 109,
-    "Enemy2Level": 1424041,
+    "Enemy2Level": 498408,
     "Enemy3Id": 104,
-    "Enemy3Level": 535705
+    "Enemy3Level": 187491
   },
   {
     "Part": 2,
@@ -7324,9 +7324,9 @@
     "Gold": 8687000,
     "Ticket": 125000,
     "Enemy1Id": 111,
-    "Enemy1Level": 4799991,
+    "Enemy1Level": 1679991,
     "Enemy2Id": 107,
-    "Enemy2Level": 3870958
+    "Enemy2Level": 1354829
   },
   {
     "Part": 2,
@@ -7335,11 +7335,11 @@
     "Gold": 8708000,
     "Ticket": 130000,
     "Enemy1Id": 106,
-    "Enemy1Level": 1075940,
+    "Enemy1Level": 376573,
     "Enemy2Id": 114,
-    "Enemy2Level": 1140930,
+    "Enemy2Level": 399319,
     "Enemy3Id": 104,
-    "Enemy3Level": 404752
+    "Enemy3Level": 141657
   },
   {
     "Part": 2,
@@ -7348,11 +7348,11 @@
     "Gold": 8729000,
     "Ticket": 135000,
     "Enemy1Id": 114,
-    "Enemy1Level": 1464196,
+    "Enemy1Level": 512463,
     "Enemy2Id": 107,
-    "Enemy2Level": 1407517,
+    "Enemy2Level": 492625,
     "Enemy3Id": 89,
-    "Enemy3Level": 1558324
+    "Enemy3Level": 545407
   },
   {
     "Part": 2,
@@ -7361,11 +7361,11 @@
     "Gold": 8750000,
     "Ticket": 140000,
     "Enemy1Id": 105,
-    "Enemy1Level": 4798080,
+    "Enemy1Level": 1679328,
     "Enemy2Id": 111,
-    "Enemy2Level": 1330000,
+    "Enemy2Level": 465500,
     "Enemy3Id": 112,
-    "Enemy3Level": 1470000
+    "Enemy3Level": 514500
   },
   {
     "Part": 2,
@@ -7374,9 +7374,9 @@
     "Gold": 8771000,
     "Ticket": 145000,
     "Enemy1Id": 85,
-    "Enemy1Level": 2836354,
+    "Enemy1Level": 850900,
     "Enemy2Id": 89,
-    "Enemy2Level": 2005705
+    "Enemy2Level": 601705
   },
   {
     "Part": 2,
@@ -7385,7 +7385,7 @@
     "Gold": 8792000,
     "Ticket": 150000,
     "Enemy2Id": 86,
-    "Enemy2Level": 8458732
+    "Enemy2Level": 2537613
   },
   {
     "Part": 2,
@@ -7394,11 +7394,11 @@
     "Gold": 8813000,
     "Ticket": 155000,
     "Enemy1Id": 34,
-    "Enemy1Level": 34098352,
+    "Enemy1Level": 10229499,
     "Enemy2Id": 105,
-    "Enemy2Level": 1523800,
+    "Enemy2Level": 457133,
     "Enemy3Id": 34,
-    "Enemy3Level": 34098352
+    "Enemy3Level": 10229499
   },
   {
     "Part": 2,
@@ -7407,9 +7407,9 @@
     "Gold": 8834000,
     "Ticket": 160000,
     "Enemy1Id": 89,
-    "Enemy1Level": 1839991,
+    "Enemy1Level": 551991,
     "Enemy2Id": 90,
-    "Enemy2Level": 1922379
+    "Enemy2Level": 576707
   },
   {
     "Part": 2,
@@ -7418,11 +7418,11 @@
     "Gold": 8855000,
     "Ticket": 165000,
     "Enemy1Id": 38,
-    "Enemy1Level": 49062484,
+    "Enemy1Level": 14718741,
     "Enemy2Id": 104,
-    "Enemy2Level": 1121419,
+    "Enemy2Level": 336419,
     "Enemy3Id": 38,
-    "Enemy3Level": 49062484
+    "Enemy3Level": 14718741
   },
   {
     "Part": 2,
@@ -7431,11 +7431,11 @@
     "Gold": 8876000,
     "Ticket": 170000,
     "Enemy1Id": 89,
-    "Enemy1Level": 1667133,
+    "Enemy1Level": 500133,
     "Enemy2Id": 90,
-    "Enemy2Level": 1701782,
+    "Enemy2Level": 522528,
     "Enemy3Id": 84,
-    "Enemy3Level": 1925733
+    "Enemy3Level": 577713
   },
   {
     "Part": 2,
@@ -7444,11 +7444,11 @@
     "Gold": 8897000,
     "Ticket": 175000,
     "Enemy1Id": 83,
-    "Enemy1Level": 4791657,
+    "Enemy1Level": 1437491,
     "Enemy2Id": 83,
-    "Enemy2Level": 4791657,
+    "Enemy2Level": 1437491,
     "Enemy3Id": 83,
-    "Enemy3Level": 4791657
+    "Enemy3Level": 1437491
   },
   {
     "Part": 2,
@@ -7457,11 +7457,11 @@
     "Gold": 8918000,
     "Ticket": 180000,
     "Enemy1Id": 51,
-    "Enemy1Level": 14454820,
+    "Enemy1Level": 4336440,
     "Enemy2Id": 105,
-    "Enemy2Level": 2266169,
+    "Enemy2Level": 679844,
     "Enemy3Id": 51,
-    "Enemy3Level": 14454820
+    "Enemy3Level": 4336440
   },
   {
     "Part": 2,
@@ -7470,11 +7470,11 @@
     "Gold": 8939000,
     "Ticket": 185000,
     "Enemy1Id": 48,
-    "Enemy1Level": 21548380,
+    "Enemy1Level": 6464507,
     "Enemy2Id": 91,
-    "Enemy2Level": 2287662,
+    "Enemy2Level": 686292,
     "Enemy3Id": 48,
-    "Enemy3Level": 21548380
+    "Enemy3Level": 6464507
   },
   {
     "Part": 2,
@@ -7483,11 +7483,11 @@
     "Gold": 8960000,
     "Ticket": 190000,
     "Enemy1Id": 79,
-    "Enemy1Level": 3300000,
+    "Enemy1Level": 990000,
     "Enemy2Id": 82,
-    "Enemy2Level": 4300000,
+    "Enemy2Level": 1290000,
     "Enemy3Id": 105,
-    "Enemy3Level": 3700000
+    "Enemy3Level": 1110000
   },
   {
     "Part": 2,
@@ -7496,11 +7496,11 @@
     "Gold": 8981000,
     "Ticket": 195000,
     "Enemy1Id": 110,
-    "Enemy1Level": 3481062,
+    "Enemy1Level": 1392419,
     "Enemy2Id": 109,
-    "Enemy2Level": 3084484,
+    "Enemy2Level": 1233788,
     "Enemy3Id": 104,
-    "Enemy3Level": 1160348
+    "Enemy3Level": 464133
   },
   {
     "Part": 2,
@@ -7509,11 +7509,11 @@
     "Gold": 9002000,
     "Ticket": 200000,
     "Enemy1Id": 38,
-    "Enemy1Level": 59038528,
+    "Enemy1Level": 23615404,
     "Enemy2Id": 104,
-    "Enemy2Level": 1349443,
+    "Enemy2Level": 539771,
     "Enemy3Id": 38,
-    "Enemy3Level": 59038528
+    "Enemy3Level": 23615404
   },
   {
     "Part": 2,
@@ -7522,11 +7522,11 @@
     "Gold": 9023000,
     "Ticket": 205000,
     "Enemy1Id": 89,
-    "Enemy1Level": 2006119,
+    "Enemy1Level": 802442,
     "Enemy2Id": 90,
-    "Enemy2Level": 2095946,
+    "Enemy2Level": 838373,
     "Enemy3Id": 84,
-    "Enemy3Level": 2317301
+    "Enemy3Level": 926915
   },
   {
     "Part": 2,
@@ -7535,11 +7535,11 @@
     "Gold": 9044000,
     "Ticket": 210000,
     "Enemy1Id": 83,
-    "Enemy1Level": 5189365,
+    "Enemy1Level": 2075741,
     "Enemy2Id": 83,
-    "Enemy2Level": 5189365,
+    "Enemy2Level": 2075741,
     "Enemy3Id": 83,
-    "Enemy3Level": 5189365
+    "Enemy3Level": 2075741
   },
   {
     "Part": 2,
@@ -7548,11 +7548,11 @@
     "Gold": 9065000,
     "Ticket": 215000,
     "Enemy1Id": 99,
-    "Enemy1Level": 4394773,
+    "Enemy1Level": 1757904,
     "Enemy2Id": 105,
-    "Enemy2Level": 2962042,
+    "Enemy2Level": 1184811,
     "Enemy3Id": 102,
-    "Enemy3Level": 10107990
+    "Enemy3Level": 4043191
   },
   {
     "Part": 2,
@@ -7561,11 +7561,11 @@
     "Gold": 9086000,
     "Ticket": 220000,
     "Enemy1Id": 114,
-    "Enemy1Level": 2265326,
+    "Enemy1Level": 906125,
     "Enemy2Id": 107,
-    "Enemy2Level": 2177636,
+    "Enemy2Level": 871049,
     "Enemy3Id": 89,
-    "Enemy3Level": 2410955
+    "Enemy3Level": 964376
   },
   {
     "Part": 2,
@@ -7574,11 +7574,11 @@
     "Gold": 9107000,
     "Ticket": 225000,
     "Enemy1Id": 105,
-    "Enemy1Level": 7423314,
+    "Enemy1Level": 2969326,
     "Enemy2Id": 111,
-    "Enemy2Level": 2019699,
+    "Enemy2Level": 807879,
     "Enemy3Id": 112,
-    "Enemy3Level": 2232299
+    "Enemy3Level": 892920
   },
   {
     "Part": 2,
@@ -7587,11 +7587,11 @@
     "Gold": 9128000,
     "Ticket": 230000,
     "Enemy1Id": 81,
-    "Enemy1Level": 3116657,
+    "Enemy1Level": 1246657,
     "Enemy2Id": 88,
-    "Enemy2Level": 1806754,
+    "Enemy2Level": 722696,
     "Enemy3Id": 81,
-    "Enemy3Level": 3116657
+    "Enemy3Level": 1246657
   },
   {
     "Part": 2,
@@ -7600,11 +7600,11 @@
     "Gold": 9149000,
     "Ticket": 235000,
     "Enemy1Id": 103,
-    "Enemy1Level": 4384225,
+    "Enemy1Level": 1753684,
     "Enemy2Id": 104,
-    "Enemy2Level": 1544911,
+    "Enemy2Level": 617959,
     "Enemy3Id": 110,
-    "Enemy3Level": 4634753
+    "Enemy3Level": 1853895
   },
   {
     "Part": 2,
@@ -7613,11 +7613,11 @@
     "Gold": 9170000,
     "Ticket": 240000,
     "Enemy1Id": 102,
-    "Enemy1Level": 11666759,
+    "Enemy1Level": 4666698,
     "Enemy2Id": 83,
-    "Enemy2Level": 6481528,
+    "Enemy2Level": 2592696,
     "Enemy3Id": 82,
-    "Enemy3Level": 4685440
+    "Enemy3Level": 1874170
   },
   {
     "Part": 2,
@@ -7626,11 +7626,11 @@
     "Gold": 9191000,
     "Ticket": 243000,
     "Enemy1Id": 51,
-    "Enemy1Level": 15567841,
+    "Enemy1Level": 7783916,
     "Enemy2Id": 105,
-    "Enemy2Level": 2440665,
+    "Enemy2Level": 1220328,
     "Enemy3Id": 51,
-    "Enemy3Level": 15567841
+    "Enemy3Level": 7783916
   },
   {
     "Part": 2,
@@ -7639,11 +7639,11 @@
     "Gold": 9212000,
     "Ticket": 246000,
     "Enemy1Id": 48,
-    "Enemy1Level": 23207604,
+    "Enemy1Level": 11603799,
     "Enemy2Id": 91,
-    "Enemy2Level": 2463813,
+    "Enemy2Level": 1231902,
     "Enemy3Id": 48,
-    "Enemy3Level": 23207604
+    "Enemy3Level": 11603799
   },
   {
     "Part": 2,
@@ -7652,11 +7652,11 @@
     "Gold": 9233000,
     "Ticket": 249000,
     "Enemy1Id": 38,
-    "Enemy1Level": 63236096,
+    "Enemy1Level": 31628048,
     "Enemy2Id": 104,
-    "Enemy2Level": 1445387,
+    "Enemy2Level": 722689,
     "Enemy3Id": 38,
-    "Enemy3Level": 63236096
+    "Enemy3Level": 31628048
   },
   {
     "Part": 2,
@@ -7665,11 +7665,11 @@
     "Gold": 9254000,
     "Ticket": 252000,
     "Enemy1Id": 89,
-    "Enemy1Level": 2148753,
+    "Enemy1Level": 1074372,
     "Enemy2Id": 90,
-    "Enemy2Level": 2244966,
+    "Enemy2Level": 1122478,
     "Enemy3Id": 84,
-    "Enemy3Level": 2482059
+    "Enemy3Level": 1241025
   },
   {
     "Part": 2,
@@ -7678,11 +7678,11 @@
     "Gold": 9275000,
     "Ticket": 255000,
     "Enemy1Id": 83,
-    "Enemy1Level": 5558324,
+    "Enemy1Level": 2779157,
     "Enemy2Id": 83,
-    "Enemy2Level": 5558324,
+    "Enemy2Level": 2779157,
     "Enemy3Id": 83,
-    "Enemy3Level": 5558324
+    "Enemy3Level": 2779157
   },
   {
     "Part": 2,
@@ -7691,11 +7691,11 @@
     "Gold": 9296000,
     "Ticket": 258000,
     "Enemy1Id": 107,
-    "Enemy1Level": 2279561,
+    "Enemy1Level": 1139776,
     "Enemy2Id": 90,
-    "Enemy2Level": 2636807,
+    "Enemy2Level": 1318399,
     "Enemy3Id": 102,
-    "Enemy3Level": 8833325
+    "Enemy3Level": 4416658
   },
   {
     "Part": 2,
@@ -7704,9 +7704,9 @@
     "Gold": 9317000,
     "Ticket": 261000,
     "Enemy1Id": 90,
-    "Enemy1Level": 6391781,
+    "Enemy1Level": 3195886,
     "Enemy2Id": 82,
-    "Enemy2Level": 8599389
+    "Enemy2Level": 4299690
   },
   {
     "Part": 2,
@@ -7715,11 +7715,11 @@
     "Gold": 9338000,
     "Ticket": 264000,
     "Enemy1Id": 79,
-    "Enemy1Level": 5326451,
+    "Enemy1Level": 2663221,
     "Enemy2Id": 91,
-    "Enemy2Level": 3538803,
+    "Enemy2Level": 1769397,
     "Enemy3Id": 85,
-    "Enemy3Level": 5218846
+    "Enemy3Level": 2609418
   },
   {
     "Part": 2,
@@ -7728,11 +7728,11 @@
     "Gold": 9359000,
     "Ticket": 267000,
     "Enemy1Id": 111,
-    "Enemy1Level": 2997324,
+    "Enemy1Level": 1498657,
     "Enemy2Id": 87,
-    "Enemy2Level": 2439227,
+    "Enemy2Level": 1219609,
     "Enemy3Id": 105,
-    "Enemy3Level": 2744801
+    "Enemy3Level": 1372396
   },
   {
     "Part": 2,
@@ -7741,9 +7741,9 @@
     "Gold": 9380000,
     "Ticket": 270000,
     "Enemy1Id": 104,
-    "Enemy1Level": 3235464,
+    "Enemy1Level": 1617732,
     "Enemy2Id": 85,
-    "Enemy2Level": 13726250
+    "Enemy2Level": 6863125
   },
   {
     "Part": 2,
@@ -7752,11 +7752,11 @@
     "Gold": 9401000,
     "Ticket": 273000,
     "Enemy1Id": 98,
-    "Enemy1Level": 2442881,
+    "Enemy1Level": 1710014,
     "Enemy2Id": 85,
-    "Enemy2Level": 3528610,
+    "Enemy2Level": 2470024,
     "Enemy3Id": 86,
-    "Enemy3Level": 2442881
+    "Enemy3Level": 1710014
   },
   {
     "Part": 2,
@@ -7765,11 +7765,11 @@
     "Gold": 9422000,
     "Ticket": 276000,
     "Enemy1Id": 92,
-    "Enemy1Level": 3122623,
+    "Enemy1Level": 2185833,
     "Enemy2Id": 121,
-    "Enemy2Level": 3531538,
+    "Enemy2Level": 2472074,
     "Enemy3Id": 84,
-    "Enemy3Level": 2447598
+    "Enemy3Level": 1713316
   },
   {
     "Part": 2,
@@ -7778,11 +7778,11 @@
     "Gold": 9443000,
     "Ticket": 279000,
     "Enemy1Id": 99,
-    "Enemy1Level": 4896730,
+    "Enemy1Level": 3427708,
     "Enemy2Id": 79,
-    "Enemy2Level": 4644321,
+    "Enemy2Level": 3251021,
     "Enemy3Id": 105,
-    "Enemy3Level": 3300357
+    "Enemy3Level": 2310247
   },
   {
     "Part": 2,
@@ -7791,11 +7791,11 @@
     "Gold": 9464000,
     "Ticket": 282000,
     "Enemy1Id": 82,
-    "Enemy1Level": 5433391,
+    "Enemy1Level": 3803371,
     "Enemy2Id": 111,
-    "Enemy2Level": 4329324,
+    "Enemy2Level": 3030524,
     "Enemy3Id": 85,
-    "Enemy3Level": 5466321
+    "Enemy3Level": 3826422
   },
   {
     "Part": 2,
@@ -7804,11 +7804,11 @@
     "Gold": 9485000,
     "Ticket": 285000,
     "Enemy1Id": 99,
-    "Enemy1Level": 5019918,
+    "Enemy1Level": 3513940,
     "Enemy2Id": 103,
-    "Enemy2Level": 3120486,
+    "Enemy2Level": 2184338,
     "Enemy3Id": 107,
-    "Enemy3Level": 2979561
+    "Enemy3Level": 2085689
   },
   {
     "Part": 2,
@@ -7817,11 +7817,11 @@
     "Gold": 9506000,
     "Ticket": 288000,
     "Enemy1Id": 84,
-    "Enemy1Level": 2879528,
+    "Enemy1Level": 2015667,
     "Enemy2Id": 92,
-    "Enemy2Level": 3673675,
+    "Enemy2Level": 2571569,
     "Enemy3Id": 121,
-    "Enemy3Level": 4154753
+    "Enemy3Level": 2908324
   },
   {
     "Part": 2,
@@ -7830,11 +7830,11 @@
     "Gold": 9527000,
     "Ticket": 291000,
     "Enemy1Id": 98,
-    "Enemy1Level": 2983673,
+    "Enemy1Level": 2088569,
     "Enemy2Id": 91,
-    "Enemy2Level": 2922365,
+    "Enemy2Level": 2045653,
     "Enemy3Id": 86,
-    "Enemy3Level": 2983673
+    "Enemy3Level": 2088569
   },
   {
     "Part": 2,
@@ -7843,11 +7843,11 @@
     "Gold": 9548000,
     "Ticket": 294000,
     "Enemy1Id": 79,
-    "Enemy1Level": 5463908,
+    "Enemy1Level": 3824733,
     "Enemy2Id": 99,
-    "Enemy2Level": 5760860,
+    "Enemy2Level": 4032599,
     "Enemy3Id": 105,
-    "Enemy3Level": 3882774
+    "Enemy3Level": 2717939
   },
   {
     "Part": 2,
@@ -7856,11 +7856,11 @@
     "Gold": 9569000,
     "Ticket": 297000,
     "Enemy1Id": 85,
-    "Enemy1Level": 6430968,
+    "Enemy1Level": 4501674,
     "Enemy2Id": 82,
-    "Enemy2Level": 6392226,
+    "Enemy2Level": 4474555,
     "Enemy3Id": 111,
-    "Enemy3Level": 5093324
+    "Enemy3Level": 3565324
   },
   {
     "Part": 2,
@@ -7869,11 +7869,11 @@
     "Gold": 9590000,
     "Ticket": 300000,
     "Enemy1Id": 103,
-    "Enemy1Level": 3671162,
+    "Enemy1Level": 2569810,
     "Enemy2Id": 107,
-    "Enemy2Level": 3505367,
+    "Enemy2Level": 2453754,
     "Enemy3Id": 99,
-    "Enemy3Level": 5905788
+    "Enemy3Level": 4134048
   },
   {
     "Part": 2,
@@ -7882,11 +7882,11 @@
     "Gold": 9611000,
     "Ticket": 303000,
     "Enemy1Id": 105,
-    "Enemy1Level": 7980063,
+    "Enemy1Level": 6384051,
     "Enemy2Id": 111,
-    "Enemy2Level": 2171177,
+    "Enemy2Level": 1736942,
     "Enemy3Id": 112,
-    "Enemy3Level": 2399722
+    "Enemy3Level": 1919778
   },
   {
     "Part": 2,
@@ -7895,11 +7895,11 @@
     "Gold": 9632000,
     "Ticket": 306000,
     "Enemy1Id": 114,
-    "Enemy1Level": 2435227,
+    "Enemy1Level": 1948179,
     "Enemy2Id": 107,
-    "Enemy2Level": 2340959,
+    "Enemy2Level": 1872765,
     "Enemy3Id": 89,
-    "Enemy3Level": 2591777
+    "Enemy3Level": 2073420
   },
   {
     "Part": 2,
@@ -7908,11 +7908,11 @@
     "Gold": 9653000,
     "Ticket": 309000,
     "Enemy1Id": 99,
-    "Enemy1Level": 4724382,
+    "Enemy1Level": 3779504,
     "Enemy2Id": 105,
-    "Enemy2Level": 3184196,
+    "Enemy2Level": 2547355,
     "Enemy3Id": 102,
-    "Enemy3Level": 10866091
+    "Enemy3Level": 8692872
   },
   {
     "Part": 2,
@@ -7921,11 +7921,11 @@
     "Gold": 9674000,
     "Ticket": 312000,
     "Enemy1Id": 83,
-    "Enemy1Level": 5578569,
+    "Enemy1Level": 4462854,
     "Enemy2Id": 83,
-    "Enemy2Level": 5578569,
+    "Enemy2Level": 4462854,
     "Enemy3Id": 83,
-    "Enemy3Level": 5578569
+    "Enemy3Level": 4462854
   },
   {
     "Part": 2,
@@ -7934,11 +7934,11 @@
     "Gold": 9695000,
     "Ticket": 315000,
     "Enemy1Id": 85,
-    "Enemy1Level": 2327220,
+    "Enemy1Level": 1861776,
     "Enemy2Id": 86,
-    "Enemy2Level": 3295228,
+    "Enemy2Level": 2636182,
     "Enemy3Id": 88,
-    "Enemy3Level": 1285579
+    "Enemy3Level": 1028463
   },
   {
     "Part": 2,
@@ -7947,11 +7947,11 @@
     "Gold": 9716000,
     "Ticket": 318000,
     "Enemy1Id": 110,
-    "Enemy1Level": 1470947,
+    "Enemy1Level": 1176757,
     "Enemy2Id": 92,
-    "Enemy2Level": 1813796,
+    "Enemy2Level": 1451037,
     "Enemy3Id": 99,
-    "Enemy3Level": 20651251
+    "Enemy3Level": 16521002
   },
   {
     "Part": 2,
@@ -7960,11 +7960,11 @@
     "Gold": 9737000,
     "Ticket": 321000,
     "Enemy1Id": 113,
-    "Enemy1Level": 4234385,
+    "Enemy1Level": 3387508,
     "Enemy2Id": 89,
-    "Enemy2Level": 6623796,
+    "Enemy2Level": 5299037,
     "Enemy3Id": 84,
-    "Enemy3Level": 7651252
+    "Enemy3Level": 6121002
   },
   {
     "Part": 2,
@@ -7973,11 +7973,11 @@
     "Gold": 9758000,
     "Ticket": 324000,
     "Enemy1Id": 86,
-    "Enemy1Level": 3206284,
+    "Enemy1Level": 2565026,
     "Enemy2Id": 91,
-    "Enemy2Level": 3140401,
+    "Enemy2Level": 2512319,
     "Enemy3Id": 98,
-    "Enemy3Level": 3206284
+    "Enemy3Level": 2565026
   },
   {
     "Part": 2,
@@ -7986,11 +7986,11 @@
     "Gold": 9779000,
     "Ticket": 327000,
     "Enemy1Id": 103,
-    "Enemy1Level": 4038279,
+    "Enemy1Level": 3230622,
     "Enemy2Id": 107,
-    "Enemy2Level": 3855905,
+    "Enemy2Level": 3084722,
     "Enemy3Id": 99,
-    "Enemy3Level": 6496368
+    "Enemy3Level": 5197093
   },
   {
     "Part": 2,
@@ -7999,150 +7999,150 @@
     "Gold": 9800000,
     "Ticket": 330000,
     "Enemy1Id": 85,
-    "Enemy1Level": 6646455,
+    "Enemy1Level": 5317162,
     "Enemy2Id": 82,
-    "Enemy2Level": 6606416,
+    "Enemy2Level": 5285131,
     "Enemy3Id": 111,
-    "Enemy3Level": 5263991
+    "Enemy3Level": 4211190
   },
   {
     "Part": 2,
     "Grade": 20,
     "Stage": 1,
     "Gold": 9821000,
-    "Ticket": 335000,
+    "Ticket": 340000,
     "Enemy1Id": 111,
-    "Enemy1Level": 2323160,
+    "Enemy1Level": 2090844,
     "Enemy2Id": 105,
-    "Enemy2Level": 8538668,
+    "Enemy2Level": 7684802,
     "Enemy3Id": 112,
-    "Enemy3Level": 2567703
+    "Enemy3Level": 2310932
   },
   {
     "Part": 2,
     "Grade": 20,
     "Stage": 2,
     "Gold": 9842000,
-    "Ticket": 340000,
+    "Ticket": 350000,
     "Enemy1Id": 89,
-    "Enemy1Level": 2773202,
+    "Enemy1Level": 2495881,
     "Enemy2Id": 107,
-    "Enemy2Level": 2504827,
+    "Enemy2Level": 2254343,
     "Enemy3Id": 114,
-    "Enemy3Level": 2605693
+    "Enemy3Level": 2345123
   },
   {
     "Part": 2,
     "Grade": 20,
     "Stage": 3,
     "Gold": 9863000,
-    "Ticket": 345000,
+    "Ticket": 360000,
     "Enemy1Id": 102,
-    "Enemy1Level": 11626719,
+    "Enemy1Level": 10464045,
     "Enemy2Id": 105,
-    "Enemy2Level": 3407090,
+    "Enemy2Level": 3066380,
     "Enemy3Id": 99,
-    "Enemy3Level": 5055090
+    "Enemy3Level": 4549580
   },
   {
     "Part": 2,
     "Grade": 20,
     "Stage": 4,
     "Gold": 9884000,
-    "Ticket": 350000,
+    "Ticket": 370000,
     "Enemy1Id": 83,
-    "Enemy1Level": 5969070,
+    "Enemy1Level": 5372162,
     "Enemy2Id": 83,
-    "Enemy2Level": 5969070,
+    "Enemy2Level": 5372162,
     "Enemy3Id": 83,
-    "Enemy3Level": 5969070
+    "Enemy3Level": 5372162
   },
   {
     "Part": 2,
     "Grade": 20,
     "Stage": 5,
     "Gold": 9905000,
-    "Ticket": 355000,
+    "Ticket": 380000,
     "Enemy1Id": 86,
-    "Enemy1Level": 3525894,
+    "Enemy1Level": 3173304,
     "Enemy2Id": 85,
-    "Enemy2Level": 2490125,
+    "Enemy2Level": 2241113,
     "Enemy3Id": 88,
-    "Enemy3Level": 1375569
+    "Enemy3Level": 1238012
   },
   {
     "Part": 2,
     "Grade": 20,
     "Stage": 6,
     "Gold": 9926000,
-    "Ticket": 360000,
+    "Ticket": 390000,
     "Enemy1Id": 110,
-    "Enemy1Level": 1573913,
+    "Enemy1Level": 1416522,
     "Enemy2Id": 99,
-    "Enemy2Level": 22096840,
+    "Enemy2Level": 19887156,
     "Enemy3Id": 92,
-    "Enemy3Level": 1940762
+    "Enemy3Level": 1746686
   },
   {
     "Part": 2,
     "Grade": 20,
     "Stage": 7,
     "Gold": 9947000,
-    "Ticket": 365000,
+    "Ticket": 400000,
     "Enemy1Id": 89,
-    "Enemy1Level": 7087462,
+    "Enemy1Level": 6378715,
     "Enemy2Id": 113,
-    "Enemy2Level": 4530793,
+    "Enemy2Level": 4077713,
     "Enemy3Id": 84,
-    "Enemy3Level": 8186840
+    "Enemy3Level": 7368156
   },
   {
     "Part": 2,
     "Grade": 20,
     "Stage": 8,
     "Gold": 9968000,
-    "Ticket": 370000,
+    "Ticket": 410000,
     "Enemy1Id": 91,
-    "Enemy1Level": 4449306,
+    "Enemy1Level": 4004374,
     "Enemy2Id": 110,
-    "Enemy2Level": 4639991,
+    "Enemy2Level": 4175991,
     "Enemy3Id": 113,
-    "Enemy3Level": 2966201
+    "Enemy3Level": 2669580
   },
   {
     "Part": 2,
     "Grade": 20,
     "Stage": 9,
     "Gold": 9989000,
-    "Ticket": 375000,
+    "Ticket": 420000,
     "Enemy1Id": 110,
-    "Enemy1Level": 6058562,
+    "Enemy1Level": 5452706,
     "Enemy2Id": 105,
-    "Enemy2Level": 6263225,
+    "Enemy2Level": 5636902,
     "Enemy3Id": 83,
-    "Enemy3Level": 11874052
+    "Enemy3Level": 10686647
   },
   {
     "Part": 2,
     "Grade": 20,
     "Stage": 10,
     "Gold": 10010000,
-    "Ticket": 380000,
+    "Ticket": 430000,
     "Enemy1Id": 113,
-    "Enemy1Level": 6122596,
+    "Enemy1Level": 5510336,
     "Enemy2Id": 85,
-    "Enemy2Level": 5325819,
+    "Enemy2Level": 4793237,
     "Enemy3Id": 110,
-    "Enemy3Level": 3195488
+    "Enemy3Level": 2875939
   },
   {
     "Part": 2,
     "Grade": 21,
     "Stage": 1,
     "Gold": 10031000,
-    "Ticket": 385000,
+    "Ticket": 440000,
     "Enemy1Id": 105,
-    "Enemy1Level": 9097272,
+    "Enemy1Level": 9097273,
     "Enemy2Id": 111,
     "Enemy2Level": 2475142,
     "Enemy3Id": 112,
@@ -8153,7 +8153,7 @@
     "Grade": 21,
     "Stage": 2,
     "Gold": 10052000,
-    "Ticket": 390000,
+    "Ticket": 450000,
     "Enemy1Id": 114,
     "Enemy1Level": 3609010,
     "Enemy2Id": 107,
@@ -8166,20 +8166,20 @@
     "Grade": 21,
     "Stage": 3,
     "Gold": 10073000,
-    "Ticket": 395000,
+    "Ticket": 460000,
     "Enemy1Id": 99,
-    "Enemy1Level": 5385796,
+    "Enemy1Level": 5385797,
     "Enemy2Id": 105,
-    "Enemy2Level": 3629984,
+    "Enemy2Level": 3629985,
     "Enemy3Id": 102,
-    "Enemy3Level": 12387345
+    "Enemy3Level": 12387346
   },
   {
     "Part": 2,
     "Grade": 21,
     "Stage": 4,
     "Gold": 10094000,
-    "Ticket": 400000,
+    "Ticket": 470000,
     "Enemy1Id": 83,
     "Enemy1Level": 6389570,
     "Enemy2Id": 83,
@@ -8192,7 +8192,7 @@
     "Grade": 21,
     "Stage": 5,
     "Gold": 10115000,
-    "Ticket": 405000,
+    "Ticket": 480000,
     "Enemy1Id": 85,
     "Enemy1Level": 2653030,
     "Enemy2Id": 86,
@@ -8205,37 +8205,37 @@
     "Grade": 21,
     "Stage": 6,
     "Gold": 10136000,
-    "Ticket": 410000,
+    "Ticket": 490000,
     "Enemy1Id": 110,
-    "Enemy1Level": 1676879,
+    "Enemy1Level": 1676880,
     "Enemy2Id": 92,
     "Enemy2Level": 2067727,
     "Enemy3Id": 99,
-    "Enemy3Level": 23201681
+    "Enemy3Level": 23201680
   },
   {
     "Part": 2,
     "Grade": 21,
     "Stage": 7,
     "Gold": 10157000,
-    "Ticket": 415000,
+    "Ticket": 500000,
     "Enemy1Id": 113,
-    "Enemy1Level": 4827199,
+    "Enemy1Level": 4827200,
     "Enemy2Id": 89,
     "Enemy2Level": 7551127,
     "Enemy3Id": 84,
-    "Enemy3Level": 8722427
+    "Enemy3Level": 8722428
   },
   {
     "Part": 2,
     "Grade": 21,
     "Stage": 8,
     "Gold": 10178000,
-    "Ticket": 420000,
+    "Ticket": 510000,
     "Enemy1Id": 85,
     "Enemy1Level": 5645368,
     "Enemy2Id": 113,
-    "Enemy2Level": 6489951,
+    "Enemy2Level": 6489952,
     "Enemy3Id": 110,
     "Enemy3Level": 3387217
   },
@@ -8244,7 +8244,7 @@
     "Grade": 21,
     "Stage": 9,
     "Gold": 10199000,
-    "Ticket": 425000,
+    "Ticket": 520000,
     "Enemy1Id": 89,
     "Enemy1Level": 7296860,
     "Enemy2Id": 138,
@@ -8257,7 +8257,7 @@
     "Grade": 21,
     "Stage": 10,
     "Gold": 10220000,
-    "Ticket": 430000,
+    "Ticket": 530000,
     "Enemy1Id": 99,
     "Enemy1Level": 13807605,
     "Enemy2Id": 90,
@@ -8268,7 +8268,7 @@
     "Grade": 22,
     "Stage": 1,
     "Gold": 10241000,
-    "Ticket": 435000,
+    "Ticket": 540000,
     "Enemy1Id": 81,
     "Enemy1Level": 8695523,
     "Enemy2Id": 93,
@@ -8281,7 +8281,7 @@
     "Grade": 22,
     "Stage": 2,
     "Gold": 10262000,
-    "Ticket": 440000,
+    "Ticket": 550000,
     "Enemy1Id": 114,
     "Enemy1Level": 4212008,
     "Enemy2Id": 143,
@@ -8294,7 +8294,7 @@
     "Grade": 22,
     "Stage": 3,
     "Gold": 10283000,
-    "Ticket": 445000,
+    "Ticket": 560000,
     "Enemy1Id": 55,
     "Enemy1Level": 19381124,
     "Enemy2Id": 86,
@@ -8307,7 +8307,7 @@
     "Grade": 22,
     "Stage": 4,
     "Gold": 10304000,
-    "Ticket": 450000,
+    "Ticket": 570000,
     "Enemy1Id": 102,
     "Enemy1Level": 35666000,
     "Enemy2Id": 83,
@@ -8320,7 +8320,7 @@
     "Grade": 22,
     "Stage": 5,
     "Gold": 10325000,
-    "Ticket": 455000,
+    "Ticket": 580000,
     "Enemy1Id": 79,
     "Enemy1Level": 9558900,
     "Enemy2Id": 85,
@@ -8333,7 +8333,7 @@
     "Grade": 22,
     "Stage": 6,
     "Gold": 10346000,
-    "Ticket": 460000,
+    "Ticket": 590000,
     "Enemy1Id": 92,
     "Enemy1Level": 4054728,
     "Enemy2Id": 87,
@@ -8346,7 +8346,7 @@
     "Grade": 22,
     "Stage": 7,
     "Gold": 10367000,
-    "Ticket": 465000,
+    "Ticket": 600000,
     "Enemy1Id": 79,
     "Enemy1Level": 5588847,
     "Enemy2Id": 55,
@@ -8359,7 +8359,7 @@
     "Grade": 22,
     "Stage": 8,
     "Gold": 10388000,
-    "Ticket": 470000,
+    "Ticket": 610000,
     "Enemy1Id": 93,
     "Enemy1Level": 8106051,
     "Enemy2Id": 81,
@@ -8372,7 +8372,7 @@
     "Grade": 22,
     "Stage": 9,
     "Gold": 10409000,
-    "Ticket": 475000,
+    "Ticket": 620000,
     "Enemy1Id": 114,
     "Enemy1Level": 4500214,
     "Enemy2Id": 107,
@@ -8385,7 +8385,7 @@
     "Grade": 22,
     "Stage": 10,
     "Gold": 10430000,
-    "Ticket": 480000,
+    "Ticket": 630000,
     "Enemy1Id": 109,
     "Enemy1Level": 6861280,
     "Enemy2Id": 111,
@@ -8398,7 +8398,7 @@
     "Grade": 23,
     "Stage": 1,
     "Gold": 10451000,
-    "Ticket": 485000,
+    "Ticket": 640000,
     "Enemy1Id": 85,
     "Enemy1Level": 3163739,
     "Enemy2Id": 86,
@@ -8411,7 +8411,7 @@
     "Grade": 23,
     "Stage": 2,
     "Gold": 10472000,
-    "Ticket": 490000,
+    "Ticket": 650000,
     "Enemy1Id": 113,
     "Enemy1Level": 5430600,
     "Enemy2Id": 89,
@@ -8424,7 +8424,7 @@
     "Grade": 23,
     "Stage": 3,
     "Gold": 10493000,
-    "Ticket": 495000,
+    "Ticket": 660000,
     "Enemy1Id": 99,
     "Enemy1Level": 15533556,
     "Enemy2Id": 90,
@@ -8435,7 +8435,7 @@
     "Grade": 23,
     "Stage": 4,
     "Gold": 10514000,
-    "Ticket": 500000,
+    "Ticket": 670000,
     "Enemy1Id": 102,
     "Enemy1Level": 37763160,
     "Enemy2Id": 83,
@@ -8448,7 +8448,7 @@
     "Grade": 23,
     "Stage": 5,
     "Gold": 10535000,
-    "Ticket": 505000,
+    "Ticket": 680000,
     "Enemy1Id": 107,
     "Enemy1Level": 13687439,
     "Enemy2Id": 107,
@@ -8459,7 +8459,7 @@
     "Grade": 23,
     "Stage": 6,
     "Gold": 10556000,
-    "Ticket": 510000,
+    "Ticket": 690000,
     "Enemy1Id": 98,
     "Enemy1Level": 3782788,
     "Enemy2Id": 55,
@@ -8472,7 +8472,7 @@
     "Grade": 23,
     "Stage": 7,
     "Gold": 10577000,
-    "Ticket": 515000,
+    "Ticket": 700000,
     "Enemy1Id": 88,
     "Enemy1Level": 4135257,
     "Enemy2Id": 93,
@@ -8485,7 +8485,7 @@
     "Grade": 23,
     "Stage": 8,
     "Gold": 10598000,
-    "Ticket": 520000,
+    "Ticket": 710000,
     "Enemy1Id": 114,
     "Enemy1Level": 7476876,
     "Enemy2Id": 138,
@@ -8498,7 +8498,7 @@
     "Grade": 23,
     "Stage": 9,
     "Gold": 10619000,
-    "Ticket": 525000,
+    "Ticket": 720000,
     "Enemy1Id": 109,
     "Enemy1Level": 4763100,
     "Enemy2Id": 111,
@@ -8511,7 +8511,7 @@
     "Grade": 23,
     "Stage": 10,
     "Gold": 10640000,
-    "Ticket": 530000,
+    "Ticket": 730000,
     "Enemy1Id": 87,
     "Enemy1Level": 3651104,
     "Enemy2Id": 99,
@@ -8524,7 +8524,7 @@
     "Grade": 24,
     "Stage": 1,
     "Gold": 10661000,
-    "Ticket": 535000,
+    "Ticket": 740000,
     "Enemy1Id": 107,
     "Enemy1Level": 13687439,
     "Enemy3Id": 107,
@@ -8535,7 +8535,7 @@
     "Grade": 24,
     "Stage": 2,
     "Gold": 10682000,
-    "Ticket": 540000,
+    "Ticket": 750000,
     "Enemy1Id": 86,
     "Enemy1Level": 3782788,
     "Enemy2Id": 55,
@@ -8548,7 +8548,7 @@
     "Grade": 24,
     "Stage": 3,
     "Gold": 10703000,
-    "Ticket": 545000,
+    "Ticket": 760000,
     "Enemy1Id": 93,
     "Enemy1Level": 6484840,
     "Enemy2Id": 88,
@@ -8561,7 +8561,7 @@
     "Grade": 24,
     "Stage": 4,
     "Gold": 10724000,
-    "Ticket": 550000,
+    "Ticket": 770000,
     "Enemy1Id": 114,
     "Enemy1Level": 7476876,
     "Enemy2Id": 138,
@@ -8574,7 +8574,7 @@
     "Grade": 24,
     "Stage": 5,
     "Gold": 10745000,
-    "Ticket": 555000,
+    "Ticket": 780000,
     "Enemy1Id": 87,
     "Enemy1Level": 3651104,
     "Enemy2Id": 98,
@@ -8587,7 +8587,7 @@
     "Grade": 24,
     "Stage": 6,
     "Gold": 10766000,
-    "Ticket": 560000,
+    "Ticket": 790000,
     "Enemy1Id": 88,
     "Enemy1Level": 15506000,
     "Enemy2Id": 105,
@@ -8598,7 +8598,7 @@
     "Grade": 24,
     "Stage": 7,
     "Gold": 10787000,
-    "Ticket": 565000,
+    "Ticket": 800000,
     "Enemy1Id": 138,
     "Enemy1Level": 7495050,
     "Enemy2Id": 65,
@@ -8611,7 +8611,7 @@
     "Grade": 24,
     "Stage": 8,
     "Gold": 10808000,
-    "Ticket": 570000,
+    "Ticket": 810000,
     "Enemy1Id": 102,
     "Enemy1Level": 51357604,
     "Enemy2Id": 84,
@@ -8622,7 +8622,7 @@
     "Grade": 24,
     "Stage": 9,
     "Gold": 10829000,
-    "Ticket": 575000,
+    "Ticket": 820000,
     "Enemy1Id": 87,
     "Enemy1Level": 5712120,
     "Enemy2Id": 99,
@@ -8635,7 +8635,7 @@
     "Grade": 24,
     "Stage": 10,
     "Gold": 10850000,
-    "Ticket": 580000,
+    "Ticket": 830000,
     "Enemy1Id": 138,
     "Enemy1Level": 14214750,
     "Enemy2Id": 83,
@@ -8648,7 +8648,7 @@
     "Grade": 25,
     "Stage": 1,
     "Gold": 10871000,
-    "Ticket": 585000,
+    "Ticket": 850000,
     "Enemy1Id": 138,
     "Enemy1Level": 2388012,
     "Enemy2Id": 114,
@@ -8662,7 +8662,7 @@
     "Grade": 25,
     "Stage": 2,
     "Gold": 10892000,
-    "Ticket": 590000,
+    "Ticket": 870000,
     "Enemy1Id": 99,
     "Enemy1Level": 3150376,
     "Enemy2Id": 98,
@@ -8676,7 +8676,7 @@
     "Grade": 25,
     "Stage": 3,
     "Gold": 10913000,
-    "Ticket": 595000,
+    "Ticket": 890000,
     "Enemy1Id": 88,
     "Enemy1Level": 6345055,
     "Enemy3Id": 105,
@@ -8688,7 +8688,7 @@
     "Grade": 25,
     "Stage": 4,
     "Gold": 10934000,
-    "Ticket": 600000,
+    "Ticket": 910000,
     "Enemy1Id": 65,
     "Enemy1Level": 7757442,
     "Enemy2Id": 138,
@@ -8702,7 +8702,7 @@
     "Grade": 25,
     "Stage": 5,
     "Gold": 10955000,
-    "Ticket": 605000,
+    "Ticket": 930000,
     "Enemy1Id": 84,
     "Enemy1Level": 9564208,
     "Enemy2Id": 102,
@@ -8714,7 +8714,7 @@
     "Grade": 25,
     "Stage": 6,
     "Gold": 10976000,
-    "Ticket": 610000,
+    "Ticket": 950000,
     "Enemy1Id": 88,
     "Enemy1Level": 2098097,
     "Enemy2Id": 87,
@@ -8728,7 +8728,7 @@
     "Grade": 25,
     "Stage": 7,
     "Gold": 10997000,
-    "Ticket": 615000,
+    "Ticket": 970000,
     "Enemy1Id": 102,
     "Enemy1Level": 13711794,
     "Enemy2Id": 102,
@@ -8742,7 +8742,7 @@
     "Grade": 25,
     "Stage": 8,
     "Gold": 11018000,
-    "Ticket": 620000,
+    "Ticket": 990000,
     "Enemy1Id": 90,
     "Enemy1Level": 1651304,
     "Enemy2Id": 143,
@@ -8756,7 +8756,7 @@
     "Grade": 25,
     "Stage": 9,
     "Gold": 11039000,
-    "Ticket": 625000,
+    "Ticket": 1010000,
     "Enemy1Id": 102,
     "Enemy1Level": 13711794,
     "Enemy2Id": 102,
@@ -8770,7 +8770,7 @@
     "Grade": 25,
     "Stage": 10,
     "Gold": 11060000,
-    "Ticket": 630000,
+    "Ticket": 1030000,
     "Enemy1Id": 99,
     "Enemy1Level": 2295063,
     "Enemy2Id": 91,
@@ -8784,7 +8784,7 @@
     "Grade": 26,
     "Stage": 1,
     "Gold": 11081000,
-    "Ticket": 635000,
+    "Ticket": 1050000,
     "Enemy1Id": 107,
     "Enemy1Level": 3508104,
     "Enemy2Id": 107,
@@ -8798,7 +8798,7 @@
     "Grade": 26,
     "Stage": 2,
     "Gold": 11102000,
-    "Ticket": 640000,
+    "Ticket": 1070000,
     "Enemy1Id": 107,
     "Enemy1Level": 1169397,
     "Enemy2Id": 90,
@@ -8812,7 +8812,7 @@
     "Grade": 26,
     "Stage": 3,
     "Gold": 11123000,
-    "Ticket": 645000,
+    "Ticket": 1090000,
     "Enemy1Id": 86,
     "Enemy1Level": 1495591,
     "Enemy2Id": 109,
@@ -8826,7 +8826,7 @@
     "Grade": 26,
     "Stage": 4,
     "Gold": 11144000,
-    "Ticket": 650000,
+    "Ticket": 1110000,
     "Enemy1Id": 114,
     "Enemy1Level": 2517899,
     "Enemy2Id": 83,
@@ -8840,7 +8840,7 @@
     "Grade": 26,
     "Stage": 5,
     "Gold": 11165000,
-    "Ticket": 655000,
+    "Ticket": 1130000,
     "Enemy1Id": 107,
     "Enemy1Level": 4537148,
     "Enemy2Id": 105,
@@ -8854,7 +8854,7 @@
     "Grade": 26,
     "Stage": 6,
     "Gold": 11186000,
-    "Ticket": 660000,
+    "Ticket": 1150000,
     "Enemy1Id": 107,
     "Enemy1Level": 1799612,
     "Enemy2Id": 107,
@@ -8868,7 +8868,7 @@
     "Grade": 26,
     "Stage": 7,
     "Gold": 11207000,
-    "Ticket": 665000,
+    "Ticket": 1170000,
     "Enemy1Id": 107,
     "Enemy1Level": 571785,
     "Enemy2Id": 90,
@@ -8882,7 +8882,7 @@
     "Grade": 26,
     "Stage": 8,
     "Gold": 11228000,
-    "Ticket": 670000,
+    "Ticket": 1190000,
     "Enemy1Id": 86,
     "Enemy1Level": 582698,
     "Enemy2Id": 109,
@@ -8896,7 +8896,7 @@
     "Grade": 26,
     "Stage": 9,
     "Gold": 11249000,
-    "Ticket": 675000,
+    "Ticket": 1210000,
     "Enemy1Id": 114,
     "Enemy1Level": 1386479,
     "Enemy2Id": 83,
@@ -8910,7 +8910,7 @@
     "Grade": 26,
     "Stage": 10,
     "Gold": 11270000,
-    "Ticket": 680000,
+    "Ticket": 1230000,
     "Enemy1Id": 107,
     "Enemy1Level": 2610333,
     "Enemy2Id": 105,
@@ -8924,7 +8924,7 @@
     "Grade": 27,
     "Stage": 1,
     "Gold": 11291000,
-    "Ticket": 685000,
+    "Ticket": 1250000,
     "Enemy1Id": 99,
     "Enemy1Level": 1087347,
     "Enemy2Id": 98,
@@ -8938,7 +8938,7 @@
     "Grade": 27,
     "Stage": 2,
     "Gold": 11312000,
-    "Ticket": 690000,
+    "Ticket": 1270000,
     "Enemy1Id": 88,
     "Enemy1Level": 673220,
     "Enemy2Id": 87,
@@ -8952,7 +8952,7 @@
     "Grade": 27,
     "Stage": 3,
     "Gold": 11333000,
-    "Ticket": 695000,
+    "Ticket": 1290000,
     "Enemy1Id": 107,
     "Enemy1Level": 1898590,
     "Enemy2Id": 107,
@@ -8966,7 +8966,7 @@
     "Grade": 27,
     "Stage": 4,
     "Gold": 11354000,
-    "Ticket": 700000,
+    "Ticket": 1310000,
     "Enemy1Id": 107,
     "Enemy1Level": 603233,
     "Enemy2Id": 90,
@@ -8980,7 +8980,7 @@
     "Grade": 27,
     "Stage": 5,
     "Gold": 11375000,
-    "Ticket": 705000,
+    "Ticket": 1330000,
     "Enemy1Id": 86,
     "Enemy1Level": 727613,
     "Enemy2Id": 109,
@@ -8994,7 +8994,7 @@
     "Grade": 27,
     "Stage": 6,
     "Gold": 11396000,
-    "Ticket": 710000,
+    "Ticket": 1350000,
     "Enemy1Id": 114,
     "Enemy1Level": 1462736,
     "Enemy2Id": 83,
@@ -9008,7 +9008,7 @@
     "Grade": 27,
     "Stage": 7,
     "Gold": 11417000,
-    "Ticket": 715000,
+    "Ticket": 1370000,
     "Enemy1Id": 107,
     "Enemy1Level": 2753902,
     "Enemy2Id": 105,
@@ -9022,7 +9022,7 @@
     "Grade": 27,
     "Stage": 8,
     "Gold": 11438000,
-    "Ticket": 720000,
+    "Ticket": 1390000,
     "Enemy1Id": 83,
     "Enemy1Level": 5679760,
     "Enemy2Id": 90,
@@ -9036,7 +9036,7 @@
     "Grade": 27,
     "Stage": 9,
     "Gold": 11459000,
-    "Ticket": 725000,
+    "Ticket": 1410000,
     "Enemy1Id": 85,
     "Enemy1Level": 5948258,
     "Enemy2Id": 98,
@@ -9050,7 +9050,7 @@
     "Grade": 27,
     "Stage": 10,
     "Gold": 11480000,
-    "Ticket": 730000,
+    "Ticket": 1430000,
     "Enemy1Id": 81,
     "Enemy1Level": 7374693,
     "Enemy2Id": 87,
@@ -9064,7 +9064,7 @@
     "Grade": 28,
     "Stage": 1,
     "Gold": 11501000,
-    "Ticket": 735000,
+    "Ticket": 1450000,
     "Enemy1Id": 99,
     "Enemy1Level": 3149174,
     "Enemy2Id": 91,
@@ -9078,7 +9078,7 @@
     "Grade": 28,
     "Stage": 2,
     "Gold": 11522000,
-    "Ticket": 740000,
+    "Ticket": 1470000,
     "Enemy1Id": 98,
     "Enemy1Level": 4118022,
     "Enemy2Id": 85,
@@ -9092,7 +9092,7 @@
     "Grade": 28,
     "Stage": 3,
     "Gold": 11543000,
-    "Ticket": 745000,
+    "Ticket": 1490000,
     "Enemy1Id": 83,
     "Enemy1Level": 5679760,
     "Enemy2Id": 90,
@@ -9106,7 +9106,7 @@
     "Grade": 28,
     "Stage": 4,
     "Gold": 11564000,
-    "Ticket": 750000,
+    "Ticket": 1510000,
     "Enemy1Id": 81,
     "Enemy1Level": 8849633,
     "Enemy2Id": 81,
@@ -9120,7 +9120,7 @@
     "Grade": 28,
     "Stage": 5,
     "Gold": 11585000,
-    "Ticket": 755000,
+    "Ticket": 1530000,
     "Enemy1Id": 102,
     "Enemy1Level": 11549991,
     "Enemy2Id": 107,
@@ -9134,7 +9134,7 @@
     "Grade": 28,
     "Stage": 6,
     "Gold": 11606000,
-    "Ticket": 760000,
+    "Ticket": 1550000,
     "Enemy1Id": 105,
     "Enemy1Level": 2564093,
     "Enemy2Id": 91,
@@ -9148,7 +9148,7 @@
     "Grade": 28,
     "Stage": 7,
     "Gold": 11627000,
-    "Ticket": 765000,
+    "Ticket": 1570000,
     "Enemy1Id": 109,
     "Enemy1Level": 3056953,
     "Enemy2Id": 91,
@@ -9162,7 +9162,7 @@
     "Grade": 28,
     "Stage": 8,
     "Gold": 11648000,
-    "Ticket": 770000,
+    "Ticket": 1590000,
     "Enemy1Id": 86,
     "Enemy1Level": 2826034,
     "Enemy2Id": 145,
@@ -9176,7 +9176,7 @@
     "Grade": 28,
     "Stage": 9,
     "Gold": 11669000,
-    "Ticket": 775000,
+    "Ticket": 1610000,
     "Enemy1Id": 91,
     "Enemy1Level": 3432867,
     "Enemy2Id": 91,
@@ -9190,7 +9190,7 @@
     "Grade": 28,
     "Stage": 10,
     "Gold": 11690000,
-    "Ticket": 780000,
+    "Ticket": 1630000,
     "Enemy1Id": 81,
     "Enemy1Level": 4593741,
     "Enemy2Id": 81,
