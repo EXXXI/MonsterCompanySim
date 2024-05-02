@@ -888,19 +888,19 @@ namespace MonsterCompanySimModel.Service
                     }
                     break;
                 case SkillType.敵用重複不可タイプ強化:
-                    if (skill.Range != Models.Range.右 && self.Employee.Element == skill.Element &&
+                    if (skill.Range != Models.Range.右 && self.Employee.Type == skill.Type &&
                         self.IsUniqueBuffed == false)
                     {
                         self.Modifier *= skill.Modifier;
                         self.IsUniqueBuffed = true;
                     }
-                    if (right != null && skill.Range != Models.Range.自分 && right.Employee.Element == skill.Element &&
+                    if (right != null && skill.Range != Models.Range.自分 && right.Employee.Type == skill.Type &&
                         right.IsUniqueBuffed == false)
                     {
                         right.Modifier *= skill.Modifier;
                         right.IsUniqueBuffed = true;
                     }
-                    if (left != null && skill.Range == Models.Range.全体 && left.Employee.Element == skill.Element &&
+                    if (left != null && skill.Range == Models.Range.全体 && left.Employee.Type == skill.Type &&
                         left.IsUniqueBuffed == false)
                     {
                         left.Modifier *= skill.Modifier;
