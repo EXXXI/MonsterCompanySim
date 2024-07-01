@@ -3913,8 +3913,13 @@
       },
       {
         "SkillType": "属性別タイプキラー",
-        "Modifier": 2,
+        "Modifier": 2.5,
         "Type": "悪魔"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "スピード"
       }
     ],
     "Element": "木",
@@ -3922,8 +3927,8 @@
     "Rarity": "LXVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1470,
-    "Dex": 4450,
+    "Atk": 1690,
+    "Dex": 5120,
     "Eng": 2600
   },
   {
