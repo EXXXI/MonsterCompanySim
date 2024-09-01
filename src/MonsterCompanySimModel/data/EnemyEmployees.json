@@ -373,14 +373,6 @@
   {
     "Id": 138,
     "Name": "アサインバイト",
-    "Skills": [
-      {
-        "SkillType": "特定社員強化",
-        "Range": "全体",
-        "Modifier": 13,
-        "Buddys": [ 82, 92 ]
-      }
-    ],
     "Element": "木",
     "Type": "飛翔",
     "Rarity": "LHV",
