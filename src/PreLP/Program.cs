@@ -1,18 +1,24 @@
 ﻿using LPModel;
 using MonsterCompanySimModel.Models;
 using MonsterCompanySimModel.Service;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System;
-using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace PreLP
 {
+    /// <summary>
+    /// 解法をリストアップしてJsonとして保存
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// デフォルトの最大レベル
+        /// </summary>
         const int DefMax = 99999;
+
+        /// <summary>
+        /// 凸1回のレベル上限上昇値
+        /// </summary>
         const int OneBreakLevel = 10000;
 
         /// <summary>
@@ -20,6 +26,10 @@ namespace PreLP
         /// </summary>
         private static readonly Simulator Sim = new();
 
+        /// <summary>
+        /// エントリポイント
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             // シミュ起動
@@ -68,6 +78,8 @@ namespace PreLP
             CalcGradeData(part, grade, maxBreak, results);
 
             // 1部46
+            // 2-23が8凸ほぼ必須なため、ここまで2-23,25の5体が使用不可だった
+            // 正確には7凸も可能だが、余計な凸が必要で、1-45への影響がもないので今回は考慮しない
             grade = 46;
             maxBreak = 8;
             Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 146).First()); // うさこ
@@ -78,6 +90,7 @@ namespace PreLP
             CalcGradeData(part, grade, maxBreak, results);
 
             // 1部47
+            // 2-27が9凸必須なため、ここまで2-27の3体が使用不可だった
             grade = 47;
             maxBreak = 9;
             Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 160).First()); // リピド
@@ -86,6 +99,7 @@ namespace PreLP
             CalcGradeData(part, grade, maxBreak, results);
 
             // 1部48
+            // 2-29が10凸必須なため、ここまで2-29の2体が使用不可だった
             grade = 48;
             maxBreak = 10;
             Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
@@ -120,6 +134,7 @@ namespace PreLP
             CalcGradeData(part, grade, maxBreak, results);
 
             // 2部26
+            // 1-46で覚醒岬が必須だったため、ここまで8凸制限だった
             grade = 26;
             maxBreak = 9;
             Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 158).First()); // 覚醒奈々
@@ -131,6 +146,7 @@ namespace PreLP
             CalcGradeData(part, grade, maxBreak, results);
 
             // 2部28
+            // 1-47でタナトスが必須だったため、ここまで9凸制限だった
             grade = 28;
             maxBreak = 11;
             Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 160).First()); // リピド
@@ -148,18 +164,25 @@ namespace PreLP
             Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
             CalcGradeData(part, grade, maxBreak, results);
 
+            // 結果をJsonに書き出し
             JsonSerializerOptions options = new();
             options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
             options.Converters.Add(new JsonStringEnumConverter());
-
             string json = JsonSerializer.Serialize(results);
             File.WriteAllText("RequiredBreakData.json", json);
 
-
+            // 終了時に一度停止
             Console.WriteLine("Hello World!");
             Console.ReadKey(true);
         }
 
+        /// <summary>
+        /// 指定したグレードの各ステージについて、解法の凸パターンを調べる
+        /// </summary>
+        /// <param name="part"></param>
+        /// <param name="grade"></param>
+        /// <param name="maxBreak"></param>
+        /// <param name="results"></param>
         private static void CalcGradeData(int part, int grade, int maxBreak, List<RequiredBreakData> results)
         {
             var stages = Masters.StageDatas.Where(s => (s.Part == part) && (s.Grade == grade));
@@ -173,6 +196,12 @@ namespace PreLP
             }
         }
 
+        /// <summary>
+        /// 各ステージの解法の凸パターンを調べる
+        /// </summary>
+        /// <param name="stage"></param>
+        /// <param name="maxBreak"></param>
+        /// <returns></returns>
         private static RequiredBreakData? CalcBreakData(StageData stage, int maxBreak)
         {
             Console.WriteLine($"{stage.Part}-{stage.Grade}-{stage.Stage} CalcStart");

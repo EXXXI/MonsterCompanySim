@@ -1,24 +1,31 @@
-﻿using LPModel;
+﻿using Google.OrTools.LinearSolver;
+using LPModel;
 using MonsterCompanySimModel.Models;
 using MonsterCompanySimModel.Service;
-using System.Text.Json.Serialization;
 using System.Text.Json;
-using Google.OrTools.LinearSolver;
-using Google.Protobuf.Collections;
-using System.Security.AccessControl;
-using System.Xml.Linq;
+using System.Text.Json.Serialization;
 
 namespace LP
 {
     internal class Program
     {
+        /// <summary>
+        /// 秘伝の書の使用可能数
+        /// </summary>
         const int ScrollCount = 0;
+
+        /// <summary>
+        /// 最大凸数
+        /// </summary>
         const int MaxBreak = 11;
+
+        // 変数名プレフィックス
         const string EmpVarPrefix = "emp";
         const string ReqVarPrefix = "req";
         const string ScrollTierVarPrefix = "scrolltier";
         const string ScrollNormalVarPrefix = "scrollnormal";
 
+        // 制約式名プレフィックス
         const string StageConPrefix = "stage";
         const string ReqConPrefix = "req";
         const string BreakConPrefix = "break";
@@ -62,6 +69,7 @@ namespace LP
                 throw new FileFormatException("RequiredBreakData.json");
             }
 
+            // ソルバ定義
             BreakSolver = Solver.CreateSolver("SCIP");
 
             // 変数・目的関数設定
@@ -75,8 +83,6 @@ namespace LP
 
             // 結果まとめ
             MakeResult(breakDatas);
-
-            Console.WriteLine("Hello, World!");
         }
 
         /// <summary>
@@ -147,6 +153,11 @@ namespace LP
             }
         }
 
+        /// <summary>
+        /// Tier以外の社員の必要チケット計算
+        /// </summary>
+        /// <param name="breakCount"></param>
+        /// <returns></returns>
         private static double ScoreNormal(int breakCount)
         {
             return breakCount switch
@@ -166,6 +177,11 @@ namespace LP
             };
         }
 
+        /// <summary>
+        /// Tierの社員の必要チケット計算
+        /// </summary>
+        /// <param name="breakCount"></param>
+        /// <returns></returns>
         private static double ScoreTire(int breakCount)
         {
             return breakCount switch
@@ -190,14 +206,17 @@ namespace LP
         /// </summary>
         private static void SetConstraints(List<RequiredBreakData> breakDatas)
         {
+            // 秘伝の書の数
             string scrollCountKey = $"{ScrollCountConPrefix}";
             Constraints.Add(scrollCountKey, BreakSolver.MakeConstraint(0, ScrollCount, scrollCountKey));
 
             for (int breakCount = 1; breakCount <= MaxBreak; breakCount++)
             {
+                // 秘伝の書の数
                 Constraints[scrollCountKey].SetCoefficient(Variables[$"{ScrollNormalVarPrefix}_{breakCount}"], 1);
                 Constraints[scrollCountKey].SetCoefficient(Variables[$"{ScrollTierVarPrefix}_{breakCount}"], 1);
 
+                // 存在しない凸に秘伝の書は使えない
                 string tireCheckKey = $"{ScrollTierCheckConPrefix}_{breakCount}";
                 string normalCheckKey = $"{ScrollNormalCheckConPrefix}_{breakCount}";
                 Constraints.Add(tireCheckKey, BreakSolver.MakeConstraint(0, double.PositiveInfinity, tireCheckKey));
@@ -218,6 +237,7 @@ namespace LP
                 }
                 for (int breakCount = 1; breakCount <= MaxBreak; breakCount++)
                 {
+                    // 存在しない凸に秘伝の書は使えない
                     if (emp.Rarity < EmployeeRarity.Tier1)
                     {
                         string normalCheckKey = $"{ScrollNormalCheckConPrefix}_{breakCount}";
@@ -229,6 +249,7 @@ namespace LP
                         Constraints[tireCheckKey].SetCoefficient(Variables[$"{EmpVarPrefix}_{emp.Id}_{breakCount}"], 1);
                     }
 
+                    // 凸はそれ以前の凸が終わっていないとできない
                     if (breakCount > 1)
                     {
                         string key = $"{BreakConPrefix}_{emp.Id}_{breakCount}";
@@ -282,6 +303,7 @@ namespace LP
         /// </summary>
         private static void MakeResult(List<RequiredBreakData> breakDatas)
         {
+            // 社員の凸情報
             foreach (var emp in Masters.Employees)
             {
                 if (emp.EvolState != 0)
@@ -300,6 +322,7 @@ namespace LP
                 }
             }
 
+            // 要求チケット数
             Console.WriteLine($"要求チケ:{BreakSolver.Objective().Value()}");
 
             // ステージ要求凸情報
@@ -333,6 +356,7 @@ namespace LP
                 }
             }
 
+            // 秘伝の書使用箇所
             for (int breakCount = 1; breakCount <= MaxBreak; breakCount++)
             {
                 Variable normal = Variables[$"{ScrollNormalVarPrefix}_{breakCount}"];

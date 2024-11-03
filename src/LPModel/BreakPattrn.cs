@@ -1,26 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive.Joins;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LPModel
+﻿namespace LPModel
 {
+    /// <summary>
+    /// ステージの解法(凸のパターン)
+    /// </summary>
     public class BreakPattrn
     { 
+        /// <summary>
+        /// 社員1の凸情報
+        /// </summary>
         public BreakData? Ally1Break { get; set; }
+
+        /// <summary>
+        /// 社員2の凸情報
+        /// </summary>
         public BreakData? Ally2Break { get; set; }
+
+        /// <summary>
+        /// 社員3の凸情報
+        /// </summary>
         public BreakData? Ally3Break { get; set; }
 
+        /// <summary>
+        /// パターンの文字列表現
+        /// </summary>
         public string PatternStr 
         {
             get => 
                 $"{Ally1Break?.Id ?? 0}.{Ally1Break?.Break ?? 0}_{Ally2Break?.Id ?? 0}.{Ally2Break?.Break ?? 0}_{Ally3Break?.Id ?? 0}.{Ally3Break?.Break ?? 0}";
         }
 
+        /// <summary>
+        /// 社員追加
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="breakCount"></param>
+        /// <exception cref="InvalidOperationException"></exception>
         public void AddAlly(int id, int breakCount)
         {
+            // 異常チェック
             if (id <= 0)
             {
                 return;
@@ -29,6 +46,9 @@ namespace LPModel
             {
                 throw new InvalidOperationException("4体以上の編成");
             }
+
+            // 新しい社員情報を追加
+            // 社員はID順で並べる
             BreakData newData = new(id, breakCount);
             if (Ally2Break != null)
             {
@@ -54,7 +74,6 @@ namespace LPModel
                     Ally2Break = Ally1Break;
                 }
             }
-
             Ally1Break = newData;
         }
 
