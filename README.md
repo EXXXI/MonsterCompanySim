@@ -102,3 +102,9 @@ MIT License
 プロジェクト：<https://github.com/runceel/ReactiveProperty>
 
 ライセンス：<https://github.com/runceel/ReactiveProperty/blob/main/LICENSE.txt>
+
+### Google OR-Tools
+
+プロジェクト：<https://github.com/google/or-tools>
+
+ライセンス：<https://github.com/google/or-tools/blob/stable/LICENSE>
