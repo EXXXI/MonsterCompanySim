@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace MonsterCompanySimModel.Models
@@ -8,6 +9,8 @@ namespace MonsterCompanySimModel.Models
     /// </summary>
     public class BattleResult
     {
+        const double eps = 0.0000000001;
+
         /// <summary>
         /// 味方の発生し得るダメージ
         /// </summary>
@@ -48,13 +51,23 @@ namespace MonsterCompanySimModel.Models
             get
             {
                 double minDamageValue = 42949672960000;
+                double maxProb = 1;
                 Damage? minDamage = null;
                 foreach (var damage in EnemyDamages)
                 {
-                    if (minDamageValue >= damage.Value)
+                    if (Math.Abs(minDamageValue - damage.Value) < eps)
+                    {
+                        if (maxProb < damage.Probability)
+                        {
+                            minDamage = damage;
+                            maxProb = damage.Probability;
+                        }
+                    }
+                    else if (minDamageValue > damage.Value)
                     {
                         minDamage = damage;
                         minDamageValue = minDamage.Value;
+                        maxProb = minDamage.Probability;
                     }
                 }
                 return minDamage;
@@ -69,13 +82,23 @@ namespace MonsterCompanySimModel.Models
             get
             {
                 double maxDamageValue = 0;
+                double maxProb = 0;
                 Damage? maxDamage = null;
                 foreach (var damage in AllyDamages)
                 {
-                    if (maxDamageValue <= damage.Value)
+                    if (Math.Abs(maxDamageValue - damage.Value) < eps)
+                    {
+                        if (maxProb < damage.Probability)
+                        {
+                            maxDamage = damage;
+                            maxProb = damage.Probability;
+                        }
+                    }
+                    else if (maxDamageValue < damage.Value)
                     {
                         maxDamage = damage;
                         maxDamageValue = maxDamage.Value;
+                        maxProb = maxDamage.Probability;
                     }
                 }
                 return maxDamage;
