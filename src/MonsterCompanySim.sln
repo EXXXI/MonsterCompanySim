@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPModel", "LPModel\LPModel.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP", "LP\LP.csproj", "{6400D4E2-1B1D-42DC-86E2-84B1C3B70229}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecialSearch", "SpecialSearch\SpecialSearch.csproj", "{3D78EF3E-3F94-42AC-8017-3B9969E819EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,12 @@ Global
 		{6400D4E2-1B1D-42DC-86E2-84B1C3B70229}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6400D4E2-1B1D-42DC-86E2-84B1C3B70229}.ReleaseWithSymbol|Any CPU.ActiveCfg = Release|Any CPU
 		{6400D4E2-1B1D-42DC-86E2-84B1C3B70229}.ReleaseWithSymbol|Any CPU.Build.0 = Release|Any CPU
+		{3D78EF3E-3F94-42AC-8017-3B9969E819EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D78EF3E-3F94-42AC-8017-3B9969E819EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D78EF3E-3F94-42AC-8017-3B9969E819EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D78EF3E-3F94-42AC-8017-3B9969E819EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D78EF3E-3F94-42AC-8017-3B9969E819EF}.ReleaseWithSymbol|Any CPU.ActiveCfg = Release|Any CPU
+		{3D78EF3E-3F94-42AC-8017-3B9969E819EF}.ReleaseWithSymbol|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
