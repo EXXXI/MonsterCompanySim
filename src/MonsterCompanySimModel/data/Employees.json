@@ -3947,6 +3947,11 @@
         "Type": "スピード"
       },
       {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "飛翔"
+      },
+      {
         "SkillType": "CT回避",
         "Range": "自分"
       }
@@ -3956,8 +3961,8 @@
     "Rarity": "Tier1",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1430,
-    "Dex": 2840,
+    "Atk": 1570,
+    "Dex": 3120,
     "Eng": 12600
   },
   {
@@ -3977,6 +3982,11 @@
         "Type": "スピード"
       },
       {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "飛翔"
+      },
+      {
         "SkillType": "CT回避",
         "Range": "自分"
       }
@@ -3986,8 +3996,8 @@
     "Rarity": "Tier1",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1490,
-    "Dex": 2940,
+    "Atk": 1640,
+    "Dex": 3230,
     "Eng": 12600
   },
   {
