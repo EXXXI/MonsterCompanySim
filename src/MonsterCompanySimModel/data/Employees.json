@@ -2494,7 +2494,7 @@
       {
         "SkillType": "特定社員強化",
         "Range": "全体",
-        "Modifier": 6,
+        "Modifier": 10,
         "Buddys": [ 79 ]
       }
     ],
@@ -2504,7 +2504,7 @@
     "Part": 2,
     "GuerrillaModifier": 0.1,
     "Atk": 1400,
-    "Dex": 5380,
+    "Dex": 6190,
     "Eng": 7700
   },
   {
@@ -3947,11 +3947,6 @@
         "Type": "スピード"
       },
       {
-        "SkillType": "属性別タイプキラー",
-        "Modifier": 2.5,
-        "Type": "飛翔"
-      },
-      {
         "SkillType": "CT回避",
         "Range": "自分"
       }
@@ -4027,8 +4022,8 @@
     "Rarity": "Tier1",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1620,
-    "Dex": 6280,
+    "Atk": 1780,
+    "Dex": 6600,
     "Eng": 77700
   },
   {
