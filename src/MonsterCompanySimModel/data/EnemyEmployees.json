@@ -239,6 +239,32 @@
     "Eng": 8800
   },
   {
+    "Id": 90,
+    "Name": "忍魔隊キコ",
+    "Skills": [
+      {
+        "SkillType": "敵用重複不可属性強化",
+        "Element": "木",
+        "Range": "全体",
+        "Modifier": 1.5
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 1.5,
+        "Type": "スピード"
+      }
+    ],
+    "Element": "木",
+    "Type": "スピード",
+    "Rarity": "HVplus",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1340,
+    "Dex": 1380,
+    "Eng": 8200
+  },
+  {
     "Id": 98,
     "Name": "ラビリンス",
     "Skills": [
