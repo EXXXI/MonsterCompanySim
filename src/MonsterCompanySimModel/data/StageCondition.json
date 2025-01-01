@@ -37,5 +37,20 @@
     "Name": "Only2",
     "Description": "編成2体制限",
     "AllyMaxCount": 2
+  },
+  {
+    "Name": "Ally10Water0",
+    "Description": "攻撃1/10 水属性攻撃0",
+    "AllyAtkModifier": 0.1,
+    "WaterAtkModifier": 0,
+    "EnemyDexModifier": 2.5
+  },
+  {
+    "Name": "Ally10FireWater0",
+    "Description": "攻撃1/10 火&水攻撃0",
+    "AllyAtkModifier": 0.1,
+    "FireAtkModifier": 0,
+    "WaterAtkModifier": 0,
+    "EnemyDexModifier": 2.5
   }
 ]
