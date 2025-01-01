@@ -549,25 +549,25 @@ namespace MonsterCompanySimModel.Service
                 {
                     battler.Modifier *= condition.AllyAtkModifier;
                     battler.DexModifier *= condition.AllyDexModifier;
+                    switch (battler.Employee.Element)
+                    {
+                        case Element.火:
+                            battler.Modifier *= condition.FireAtkModifier;
+                            break;
+                        case Element.水:
+                            battler.Modifier *= condition.WaterAtkModifier;
+                            break;
+                        case Element.木:
+                            battler.Modifier *= condition.WoodAtkModifier;
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 else
                 {
                     battler.Modifier *= condition.EnemyAtkModifier;
                     battler.DexModifier *= condition.EnemyDexModifier;
-                }
-                switch (battler.Employee.Element)
-                {
-                    case Element.火:
-                        battler.Modifier *= condition.FireAtkModifier;
-                        break;
-                    case Element.水:
-                        battler.Modifier *= condition.WaterAtkModifier;
-                        break;
-                    case Element.木:
-                        battler.Modifier *= condition.WoodAtkModifier;
-                        break;
-                    default:
-                        break;
                 }
             }
         }
