@@ -16,7 +16,7 @@ namespace SpecialSearch
         /// <summary>
         /// 最大話数
         /// </summary>
-        const int MaxGrade = 30;
+        const int MaxGrade = 31;
 
         /// <summary>
         /// 最小話数

@@ -60,6 +60,8 @@ namespace PreLP
             Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 162).First()); // こあCh
             Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
             Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
+            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
+            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
             CalcGradeData(part, grade, maxBreak, results);
 
             // 1部43
@@ -120,6 +122,8 @@ namespace PreLP
             Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 162).First()); // こあCh
             Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
             Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
+            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
+            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
             CalcGradeData(part, grade, maxBreak, results);
 
             // 2部24
@@ -162,6 +166,10 @@ namespace PreLP
             grade = 30;
             Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
             Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
+            CalcGradeData(part, grade, maxBreak, results);
+
+            // 2部31
+            grade = 31;
             CalcGradeData(part, grade, maxBreak, results);
 
             // 結果をJsonに書き出し
