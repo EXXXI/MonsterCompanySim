@@ -4193,8 +4193,8 @@
     "Rarity": "Tier2",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1725,
-    "Dex": 885,
+    "Atk": 1980,
+    "Dex": 1020,
     "Eng": 47000
   },
   {
@@ -4391,5 +4391,34 @@
     "Atk": 1540,
     "Dex": 2900,
     "Eng": 9600
+  },
+  {
+    "Id": 177,
+    "Name": "ますきゃっとAB",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "自分",
+        "Modifier": 3
+      },
+      {
+        "SkillType": "CT確定",
+        "Range": "自分"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "ブラック"
+      }
+    ],
+    "Element": "水",
+    "Type": "けもみみ",
+    "Rarity": "Tier4",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 2100,
+    "Dex": 960,
+    "Eng": 124000
   }
 ]
