@@ -1926,6 +1926,11 @@
         "SkillType": "一色編成強化",
         "Modifier": 3,
         "Element": "火"
+      },
+      {
+        "SkillType": "タイプキラー",
+        "Modifier": 2,
+        "Type": "変革"
       }
     ],
     "Element": "火",
@@ -1933,8 +1938,8 @@
     "Rarity": "HXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 950,
-    "Dex": 1770,
+    "Atk": 1090,
+    "Dex": 2040,
     "Eng": 31500
   },
   {
