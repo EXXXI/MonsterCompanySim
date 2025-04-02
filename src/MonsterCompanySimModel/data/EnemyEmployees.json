@@ -265,6 +265,25 @@
     "Eng": 8200
   },
   {
+    "Id": 92,
+    "Name": "シャインバイト",
+    "Skills": [
+      {
+        "SkillType": "一色編成強化",
+        "Modifier": 3,
+        "Element": "火"
+      }
+    ],
+    "Element": "火",
+    "Type": "飛翔",
+    "Rarity": "HXV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1090,
+    "Dex": 2040,
+    "Eng": 31500
+  },
+  {
     "Id": 98,
     "Name": "ラビリンス",
     "Skills": [
