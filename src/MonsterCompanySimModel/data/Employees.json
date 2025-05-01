@@ -4295,6 +4295,25 @@
     "Eng": 12200
   },
   {
+    "Id": 170,
+    "Name": "あんどん",
+    "Skills": [
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 8,
+        "Type": "スピード"
+      }
+    ],
+    "Element": "火",
+    "Type": "支援",
+    "Rarity": "Tier3",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 2120,
+    "Dex": 1950,
+    "Eng": 17200
+  },
+  {
     "Id": 171,
     "Name": "Nano x up",
     "Skills": [
@@ -4425,5 +4444,47 @@
     "Atk": 2100,
     "Dex": 960,
     "Eng": 124000
+  },
+  {
+    "Id": 179,
+    "Name": "へびこ",
+    "Skills": [
+
+      {
+        "SkillType": "CT回避",
+        "Range": "全体"
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "木",
+        "Range": "全体",
+        "Modifier": 2
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 3,
+        "Type": "スピード"
+      }
+    ],
+    "Element": "木",
+    "Type": "スピード",
+    "Rarity": "Tier4",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1870,
+    "Dex": 2550,
+    "Eng": 21900
   }
 ]
