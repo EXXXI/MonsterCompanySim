@@ -45,6 +45,18 @@ namespace SpecialSearch
             Employee core = Masters.Employees.Where(emp => emp.Id == 168).First();
             Employee thief = Masters.Employees.Where(emp => emp.Id == 133).First();
 
+            //// ああああ
+            //part = 2;
+            //isBoost = false;
+            //Console.WriteLine("ああああ");
+            //for (int grade = MaxGrade; grade >= MinGrade; grade--)
+            //{
+            //    for (int stage = 10; stage > 0; stage--)
+            //    {
+            //        CheckStage(part, grade, stage, isBoost, 0.25, 1500000000);
+            //    }
+            //}
+
             // アルカコア
             part = 2;
             isBoost = false;
@@ -113,6 +125,33 @@ namespace SpecialSearch
             // 存在チェック
             List<SearchResult> defResults = Sim.Search(enemy1, enemy2, enemy3, isBoost, MaxLevel, part, stageData.StageCondition, null);
             if (defResults.Count > 0)
+            {
+                Console.WriteLine($"{part}-{grade}-{stage}");
+            }
+        }
+
+        /// <summary>
+        /// 特定のステージが条件付きでクリア可能か調べる
+        /// </summary>
+        /// <param name="part">部</param>
+        /// <param name="grade">グレード</param>
+        /// <param name="stage">ステージ</param>
+        /// <param name="isBoost">ブースト有無</param>
+        private static void CheckStage(int part, int grade, int stage, bool isBoost, double rate, double maxEng)
+        {
+            var stageData = Masters.StageDatas.Where(s => (s.Part == part) && (s.Grade == grade) && (s.Stage == stage)).First();
+            // 敵社員取得
+            Employee? emp1 = Masters.GetEnemyEmployee(stageData.Enemy1Id, stageData.Enemy1EvolState);
+            Battler? enemy1 = (emp1 == null) ? null : new(emp1) { Level = stageData.Enemy1Level };
+            Employee? emp2 = Masters.GetEnemyEmployee(stageData.Enemy2Id, stageData.Enemy3EvolState);
+            Battler? enemy2 = (emp2 == null) ? null : new(emp2) { Level = stageData.Enemy2Level };
+            Employee? emp3 = Masters.GetEnemyEmployee(stageData.Enemy3Id, stageData.Enemy2EvolState);
+            Battler? enemy3 = (emp3 == null) ? null : new(emp3) { Level = stageData.Enemy3Level };
+
+            // 存在チェック
+            List<SearchResult> defResults = Sim.Search(enemy1, enemy2, enemy3, isBoost, MaxLevel, part, stageData.StageCondition, null);
+            if ((defResults.Count > 0) &&
+                (defResults.Where(result => result.WinRate > rate).Where(result => result.SumEng < maxEng).Any()))
             {
                 Console.WriteLine($"{part}-{grade}-{stage}");
             }
