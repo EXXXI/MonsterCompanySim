@@ -62,11 +62,11 @@ namespace MonsterCompanySim.ViewModels.Controls
         {
             if (isTarget)
             {
-                Masters.AddTarget(Employee.Value);
+                Masters.IncludeTarget(Employee.Value);
             }
             else
             {
-                Masters.DeleteTarget(Employee.Value);
+                Masters.ExcludeTarget(Employee.Value);
                 IsRequired.Value = false;
             }
         }
