@@ -25,9 +25,9 @@ namespace MonsterCompanySimModel.Models
         static public List<Employee> EnemyEmployees { get; set; } = new List<Employee>();
 
         /// <summary>
-        /// 検索対象社員リスト(ファイル入出力用)
+        /// 検索除外対象社員リスト(ファイル入出力用)
         /// </summary>
-        static private List<SimpleEmployee> IncludeEmployees { get; set; } = new List<SimpleEmployee>();
+        static private List<SimpleEmployee> ExcludeEmployees { get; set; } = new List<SimpleEmployee>();
 
         /// <summary>
         /// 固定対象社員リスト(内部管理用、保存はしない)
@@ -74,7 +74,7 @@ namespace MonsterCompanySimModel.Models
         static public void LoadDatas()
         {
             LoadEmployee();
-            LoadIncludeEmployees();
+            LoadExcludeEmployees();
             LoadEnemyEmployee();
             LoadStageCondition();
             LoadStageDatas();
@@ -138,70 +138,85 @@ namespace MonsterCompanySimModel.Models
         }
 
         /// <summary>
-        /// 検索対象社員情報取得
+        /// 検索除外対象社員情報取得
         /// </summary>
         /// <exception cref="FileFormatException"></exception>
-        static private void LoadIncludeEmployees()
+        static private void LoadExcludeEmployees()
         {
             JsonSerializerOptions options = new();
             options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
             options.Converters.Add(new JsonStringEnumConverter());
-
-            string json = File.ReadAllText("data/Includes.json");
-            List<SimpleEmployee>? includeEmployees = JsonSerializer.Deserialize<List<SimpleEmployee>>(json, options);
-            if (includeEmployees == null)
+            if (File.Exists("data/Excludes.json"))
             {
-                throw new FileFormatException("data/Includes.json");
+                string json = File.ReadAllText("data/Excludes.json");
+                List<SimpleEmployee>? excludeEmployees = JsonSerializer.Deserialize<List<SimpleEmployee>>(json, options);
+                if (excludeEmployees == null)
+                {
+                    throw new FileFormatException("data/Excludes.json");
+                }
+                ExcludeEmployees = excludeEmployees;
             }
-            IncludeEmployees = includeEmployees;
+            else
+            {
+                // 旧Include.jsonしか存在しない場合はエラー落ちさせないように固定のオススメリストを初期状態として作成
+                int[] includes = new[] { 33, 41, 62, 63, 65 };
+                List<SimpleEmployee> excludeEmployees = new();
+                for (int i = 1; i < 72; i++)
+                {
+                    if (!includes.Contains(i))
+                    {
+                        excludeEmployees.Add(new SimpleEmployee() { Id = i, EvolState = 0 });
+                    }
+                }
+                ExcludeEmployees = excludeEmployees;
+            }
         }
 
         /// <summary>
         /// 検索対象社員情報保存
         /// </summary>
-        static public void SaveIncludeEmployees()
+        static public void SaveExcludeEmployees()
         {
             JsonSerializerOptions options = new();
             options.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
             options.Converters.Add(new JsonStringEnumConverter());
 
-            string json = JsonSerializer.Serialize(IncludeEmployees);
-            File.WriteAllText("data/Includes.json",json);
+            string json = JsonSerializer.Serialize(ExcludeEmployees);
+            File.WriteAllText("data/Excludes.json",json);
         }
 
         /// <summary>
         /// 検索対象社員追加
         /// </summary>
         /// <param name="emp">追加社員</param>
-        static public void AddTarget(Employee emp)
+        static public void IncludeTarget(Employee emp)
         {
-            foreach (var target in IncludeEmployees)
+            foreach (var target in ExcludeEmployees)
             {
                 if (emp.Id == target.Id && emp.EvolState == target.EvolState)
                 {
+                    ExcludeEmployees.Remove(target);
+                    SaveExcludeEmployees();
                     return;
                 }
             }
-            IncludeEmployees.Add(new SimpleEmployee() { Id = emp.Id, EvolState = emp.EvolState });
-            SaveIncludeEmployees();
         }
 
         /// <summary>
         /// 検索対象社員情報削除
         /// </summary>
         /// <param name="emp">削除社員</param>
-        static public void DeleteTarget(Employee emp)
+        static public void ExcludeTarget(Employee emp)
         {
-            foreach (var target in IncludeEmployees)
+            foreach (var target in ExcludeEmployees)
             {
                 if (emp.Id == target.Id && emp.EvolState == target.EvolState)
                 {
-
-                    IncludeEmployees.Remove(target);
-                    SaveIncludeEmployees();
                     return;
                 }
             }
+            ExcludeEmployees.Add(new SimpleEmployee() { Id = emp.Id, EvolState = emp.EvolState });
+            SaveExcludeEmployees();
         }
 
         /// <summary>
@@ -211,14 +226,14 @@ namespace MonsterCompanySimModel.Models
         /// <returns>検索対象の場合true</returns>
         public static bool IsTarget(Employee emp)
         {
-            foreach (var target in IncludeEmployees)
+            foreach (var target in ExcludeEmployees)
             {
                 if (emp.Id == target.Id && emp.EvolState == target.EvolState)
                 {
-                    return true;
+                    return false;
                 }
             }
-            return false;
+            return true;
         }
 
         /// <summary>
@@ -255,10 +270,10 @@ namespace MonsterCompanySimModel.Models
         }
 
         /// <summary>
-        /// 検索対象か否かを取得
+        /// 固定検索対象か否かを取得
         /// </summary>
         /// <param name="emp">社員</param>
-        /// <returns>検索対象の場合true</returns>
+        /// <returns>固定検索対象の場合true</returns>
         public static bool IsRequired(Employee emp)
         {
             foreach (var target in RequiredEmployees)
@@ -301,6 +316,7 @@ namespace MonsterCompanySimModel.Models
         
         /// <summary>
         /// 設定ファイルの情報を取得
+        /// (ステージデータを先に読み込むこと)
         /// </summary>
         /// <exception cref="FileFormatException"></exception>
         static private void LoadConfig()
@@ -315,6 +331,12 @@ namespace MonsterCompanySimModel.Models
             {
                 throw new FileFormatException("data/Config.json");
             }
+            // 最大レベルが指定されていない場合、1部の最大グレードから算出
+            if (config.MaxLevel == 0)
+            {
+                config.MaxLevel = (StageDatas.Where(s => s.Part == 1).Max(s => s.Grade) - 27) * 10000 - 1;
+            }
+
             ConfigData = config;
         }
 
