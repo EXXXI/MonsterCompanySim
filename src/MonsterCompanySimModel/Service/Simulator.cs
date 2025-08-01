@@ -1395,7 +1395,7 @@ namespace MonsterCompanySimModel.Service
             }
             if (rate < 0.8 * 5)
             {
-                return 0.92;
+                return 0.94;
             }
             return 1;
         }
