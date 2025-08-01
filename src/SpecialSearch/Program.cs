@@ -11,12 +11,12 @@ namespace SpecialSearch
         /// <summary>
         /// 最大レベル
         /// </summary>
-        const int MaxLevel = 209999;
+        const int MaxLevel = 219999;
 
         /// <summary>
         /// 最大話数
         /// </summary>
-        const int MaxGrade = 31;
+        const int MaxGrade = 32;
 
         /// <summary>
         /// 最小話数
@@ -172,11 +172,11 @@ namespace SpecialSearch
                     emp.Id == 65 ||
                     emp.Id == 72)
                 {
-                    Masters.AddTarget(emp);
+                    Masters.IncludeTarget(emp);
                 }
                 else
                 {
-                    Masters.DeleteTarget(emp);
+                    Masters.ExcludeTarget(emp);
                 }
             }
         }

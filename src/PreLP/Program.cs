@@ -50,18 +50,18 @@ namespace PreLP
             part = 1;
             grade = 42;
             maxBreak = 4;
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 146).First()); // うさこ
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 145).First()); // ころね
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 150).First()); // 九龍
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 158).First()); // 覚醒奈々
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 159).First()); // 覚醒岬
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 160).First()); // リピド
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 161).First()); // タナトス
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 162).First()); // こあCh
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 146).First()); // うさこ
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 145).First()); // ころね
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 150).First()); // 九龍
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 158).First()); // 覚醒奈々
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 159).First()); // 覚醒岬
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 160).First()); // リピド
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 161).First()); // タナトス
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 162).First()); // こあCh
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
             CalcGradeData(part, grade, maxBreak, results);
 
             // 1部43
@@ -84,53 +84,61 @@ namespace PreLP
             // 正確には7凸も可能だが、余計な凸が必要で、1-45への影響がもないので今回は考慮しない
             grade = 46;
             maxBreak = 8;
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 146).First()); // うさこ
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 145).First()); // ころね
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 150).First()); // 九龍
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 158).First()); // 覚醒奈々
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 159).First()); // 覚醒岬
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 146).First()); // うさこ
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 145).First()); // ころね
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 150).First()); // 九龍
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 158).First()); // 覚醒奈々
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 159).First()); // 覚醒岬
             CalcGradeData(part, grade, maxBreak, results);
 
             // 1部47
             // 2-27が9凸必須なため、ここまで2-27の3体が使用不可だった
             grade = 47;
             maxBreak = 9;
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 160).First()); // リピド
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 161).First()); // タナトス
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 162).First()); // こあCh
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 160).First()); // リピド
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 161).First()); // タナトス
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 162).First()); // こあCh
             CalcGradeData(part, grade, maxBreak, results);
 
             // 1部48
             // 2-29が10凸必須なため、ここまで2-29の2体が使用不可だった
             grade = 48;
             maxBreak = 10;
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
+            CalcGradeData(part, grade, maxBreak, results);
+
+            // 1部49
+            // 2-31が11凸必須なため、ここまで2-31の2体が使用不可だった
+            grade = 49;
+            maxBreak = 11;
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
             CalcGradeData(part, grade, maxBreak, results);
 
             // 2部23
             part = 2;
             grade = 23;
             maxBreak = 8;
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 146).First()); // うさこ
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 145).First()); // ころね
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 150).First()); // 九龍
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 158).First()); // 覚醒奈々
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 159).First()); // 覚醒岬
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 160).First()); // リピド
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 161).First()); // タナトス
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 162).First()); // こあCh
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
-            Masters.DeleteTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 146).First()); // うさこ
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 145).First()); // ころね
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 150).First()); // 九龍
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 158).First()); // 覚醒奈々
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 159).First()); // 覚醒岬
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 160).First()); // リピド
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 161).First()); // タナトス
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 162).First()); // こあCh
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
             CalcGradeData(part, grade, maxBreak, results);
 
             // 2部24
             grade = 24;
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 146).First()); // うさこ
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 145).First()); // ころね
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 150).First()); // 九龍
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 146).First()); // うさこ
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 145).First()); // ころね
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 150).First()); // 九龍
             CalcGradeData(part, grade, maxBreak, results);
 
             // 2部25
@@ -141,8 +149,8 @@ namespace PreLP
             // 1-46で覚醒岬が必須だったため、ここまで8凸制限だった
             grade = 26;
             maxBreak = 9;
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 158).First()); // 覚醒奈々
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 159).First()); // 覚醒岬
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 158).First()); // 覚醒奈々
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 159).First()); // 覚醒岬
             CalcGradeData(part, grade, maxBreak, results);
 
             // 2部27
@@ -153,9 +161,9 @@ namespace PreLP
             // 1-47でタナトスが必須だったため、ここまで9凸制限だった
             grade = 28;
             maxBreak = 11;
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 160).First()); // リピド
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 161).First()); // タナトス
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 162).First()); // こあCh
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 160).First()); // リピド
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 161).First()); // タナトス
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 162).First()); // こあCh
             CalcGradeData(part, grade, maxBreak, results);
 
             // 2部29
@@ -164,12 +172,20 @@ namespace PreLP
 
             // 2部30
             grade = 30;
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
-            Masters.AddTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 163).First()); // なの
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
             CalcGradeData(part, grade, maxBreak, results);
 
             // 2部31
             grade = 31;
+            CalcGradeData(part, grade, maxBreak, results);
+
+            // 2部32
+            // 1-49でひかりが必須だったため、ここまで11凸制限だった
+            grade = 32;
+            maxBreak = 12;
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
             CalcGradeData(part, grade, maxBreak, results);
 
             // 結果をJsonに書き出し
@@ -294,11 +310,11 @@ namespace PreLP
                     emp.Id == 65 ||
                     emp.Id == 72)
                 {
-                    Masters.AddTarget(emp);
+                    Masters.IncludeTarget(emp);
                 }
                 else
                 {
-                    Masters.DeleteTarget(emp);
+                    Masters.ExcludeTarget(emp);
                 }
             }
         }
