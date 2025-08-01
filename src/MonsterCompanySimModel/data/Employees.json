@@ -4283,6 +4283,12 @@
         "Range": "全体",
         "Modifier": 2.5,
         "Type": "飛翔"
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 2.5,
+        "Type": "変革"
       }
     ],
     "Element": "火",
@@ -4290,8 +4296,8 @@
     "Rarity": "Tier3",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1420,
-    "Dex": 2350,
+    "Atk": 1570,
+    "Dex": 2590,
     "Eng": 12200
   },
   {
