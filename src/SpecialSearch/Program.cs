@@ -24,6 +24,11 @@ namespace SpecialSearch
         const int MinGrade = 20;
 
         /// <summary>
+        /// 勝率100%で終了する場合true
+        /// </summary>
+        const bool End100Flag = true;
+
+        /// <summary>
         /// シミュ本体
         /// </summary>
         private static readonly Simulator Sim = new();
@@ -66,7 +71,12 @@ namespace SpecialSearch
             {
                 for (int stage = 10; stage > 0; stage--)
                 {
-                    CheckStage(part, grade, stage, isBoost);
+                    bool is100 = CheckStage(part, grade, stage, isBoost);
+                    if (is100 && End100Flag)
+                    {
+                        stage = 0;
+                        grade = 0;
+                    }
                 }
             }
             Masters.DeleteRequired(core);
@@ -80,7 +90,12 @@ namespace SpecialSearch
             {
                 for (int stage = 10; stage > 0; stage--)
                 {
-                    CheckStage(part, grade, stage, isBoost);
+                    bool is100 = CheckStage(part, grade, stage, isBoost);
+                    if (is100 && End100Flag)
+                    {
+                        stage = 0;
+                        grade = 0;
+                    }
                 }
             }
             Masters.DeleteRequired(thief);
@@ -94,7 +109,12 @@ namespace SpecialSearch
             {
                 for (int stage = 10; stage > 0; stage--)
                 {
-                    CheckStage(part, grade, stage, isBoost);
+                    bool is100 = CheckStage(part, grade, stage, isBoost);
+                    if (is100 && End100Flag)
+                    {
+                        stage = 0;
+                        grade = 0;
+                    }
                 }
             }
             Masters.DeleteRequired(thief);
@@ -111,7 +131,7 @@ namespace SpecialSearch
         /// <param name="grade">グレード</param>
         /// <param name="stage">ステージ</param>
         /// <param name="isBoost">ブースト有無</param>
-        private static void CheckStage(int part, int grade, int stage, bool isBoost)
+        private static bool CheckStage(int part, int grade, int stage, bool isBoost)
         {
             var stageData = Masters.StageDatas.Where(s => (s.Part == part) && (s.Grade == grade) && (s.Stage == stage)).First();
             // 敵社員取得
@@ -126,8 +146,14 @@ namespace SpecialSearch
             List<SearchResult> defResults = Sim.Search(enemy1, enemy2, enemy3, isBoost, MaxLevel, part, stageData.StageCondition, null);
             if (defResults.Count > 0)
             {
-                Console.WriteLine($"{part}-{grade}-{stage}");
+                double maxRate = defResults.Max(r => r.WinRate);
+                Console.WriteLine($"{part}-{grade}-{stage} {maxRate:0.000}");
+                if (maxRate >= 0.999)
+                {
+                    return true;
+                }
             }
+            return false;
         }
 
         /// <summary>
