@@ -6,9 +6,9 @@
 
 ## 更新状況
 
-対応モンカニVer.：Ver.7.22.0対応
+対応モンカニVer.：Ver.7.23.0対応
 
-最終の更新：2025/8/1 Ver.7.22.0対応(2.5部8話追加、ひだね強化、敵パーニー調整)
+最終の更新：2025/9/1 Ver.7.23.0対応(とらこ強化)
 
 詳細や履歴は[リリースノート](ReleaseNotes.md)を参照
 
@@ -102,9 +102,3 @@ MIT License
 プロジェクト：<https://github.com/runceel/ReactiveProperty>
 
 ライセンス：<https://github.com/runceel/ReactiveProperty/blob/main/LICENSE.txt>
-
-### Google OR-Tools
-
-プロジェクト：<https://github.com/google/or-tools>
-
-ライセンス：<https://github.com/google/or-tools/blob/stable/LICENSE>
