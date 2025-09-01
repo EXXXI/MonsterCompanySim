@@ -3311,6 +3311,11 @@
         "Range": "全体",
         "Modifier": 3,
         "Type": "けもみみ"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "支援"
       }
     ],
     "Element": "木",
@@ -3318,8 +3323,8 @@
     "Rarity": "LHV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1420,
-    "Dex": 1280,
+    "Atk": 1560,
+    "Dex": 1410,
     "Eng": 7100
   },
   {
