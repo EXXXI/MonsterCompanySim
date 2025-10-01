@@ -3902,6 +3902,16 @@
       {
         "SkillType": "正面引き付け",
         "Range": "全体"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "神"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "飛翔"
       }
     ],
     "Element": "木",
@@ -3909,8 +3919,8 @@
     "Rarity": "LXVplus",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1440,
-    "Dex": 1220,
+    "Atk": 1655,
+    "Dex": 1400,
     "Eng": 18100
   },
   {
