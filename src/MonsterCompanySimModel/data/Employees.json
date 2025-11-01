@@ -4169,6 +4169,11 @@
         "Range": "全体",
         "Modifier": 3,
         "Type": "飛翔"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "悪魔"
       }
     ],
     "Element": "火",
@@ -4176,8 +4181,8 @@
     "Rarity": "Tier2",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1940,
-    "Dex": 2220,
+    "Atk": 2230,
+    "Dex": 2550,
     "Eng": 23400
   },
   {
