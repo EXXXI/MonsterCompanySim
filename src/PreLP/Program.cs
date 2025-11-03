@@ -116,6 +116,11 @@ namespace PreLP
             Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
             CalcGradeData(part, grade, maxBreak, results);
 
+            // 1部50
+            grade = 50;
+            maxBreak = 12;
+            CalcGradeData(part, grade, maxBreak, results);
+
             // 2部23
             part = 2;
             grade = 23;
@@ -183,7 +188,7 @@ namespace PreLP
             // 2部32
             // 1-49でひかりが必須だったため、ここまで11凸制限だった
             grade = 32;
-            maxBreak = 12;
+            maxBreak = 13;
             Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
             Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
             CalcGradeData(part, grade, maxBreak, results);
