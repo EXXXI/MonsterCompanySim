@@ -17,7 +17,7 @@ namespace LP
         /// <summary>
         /// 最大凸数
         /// </summary>
-        const int MaxBreak = 12;
+        const int MaxBreak = 13;
 
         // 変数名プレフィックス
         const string EmpVarPrefix = "emp";
