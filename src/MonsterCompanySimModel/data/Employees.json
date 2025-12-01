@@ -4405,6 +4405,12 @@
         "Range": "全体",
         "Modifier": 2.5,
         "Type": "けもみみ"
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 2.5,
+        "Type": "悪魔"
       }
     ],
     "Element": "木",
@@ -4412,8 +4418,8 @@
     "Rarity": "Tier3",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1660,
-    "Dex": 1150,
+    "Atk": 1910,
+    "Dex": 1320,
     "Eng": 5600
   },
   {
