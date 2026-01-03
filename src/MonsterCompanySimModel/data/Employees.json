@@ -2862,6 +2862,11 @@
         "Range": "全体",
         "Modifier": 3,
         "Type": "変革"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "神"
       }
     ],
     "Element": "水",
@@ -2869,8 +2874,8 @@
     "Rarity": "UHV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1430,
-    "Dex": 1080,
+    "Atk": 1650,
+    "Dex": 1240,
     "Eng": 13200
   },
   {
@@ -4405,6 +4410,12 @@
         "Range": "全体",
         "Modifier": 2.5,
         "Type": "けもみみ"
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 2.5,
+        "Type": "悪魔"
       }
     ],
     "Element": "木",
@@ -4412,8 +4423,8 @@
     "Rarity": "Tier3",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1660,
-    "Dex": 1150,
+    "Atk": 1910,
+    "Dex": 1320,
     "Eng": 5600
   },
   {
