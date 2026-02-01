@@ -4454,6 +4454,34 @@
     "Eng": 9600
   },
   {
+    "Id": 175,
+    "Name": "猫原いおり",
+    "Skills": [
+      {
+        "SkillType": "三色編成強化",
+        "Modifier": 2.5
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "飛翔"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "神"
+      }
+    ],
+    "Element": "火",
+    "Type": "けもみみ",
+    "Rarity": "Tier4",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1760,
+    "Dex": 1820,
+    "Eng": 3100
+  },
+  {
     "Id": 177,
     "Name": "ますきゃっとAB",
     "Skills": [
@@ -4481,6 +4509,31 @@
     "Atk": 2100,
     "Dex": 960,
     "Eng": 124000
+  },
+  {
+    "Id": 178,
+    "Name": "彼方ソラ",
+    "Skills": [
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 3,
+        "Type": "飛翔"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "変革"
+      }
+    ],
+    "Element": "水",
+    "Type": "飛翔",
+    "Rarity": "Tier4",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1550,
+    "Dex": 1720,
+    "Eng": 2400
   },
   {
     "Id": 179,
@@ -4523,5 +4576,46 @@
     "Atk": 1870,
     "Dex": 2550,
     "Eng": 21900
+  },
+  {
+    "Id": 180,
+    "Name": "朱桃れん",
+    "Skills": [
+
+      {
+        "SkillType": "CT回避",
+        "Range": "全体"
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "木",
+        "Range": "全体",
+        "Modifier": 2.5
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 2.5
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "悪魔"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2.5,
+        "Type": "スピード"
+      }
+    ],
+    "Element": "木",
+    "Type": "支援",
+    "Rarity": "Tier4",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1420,
+    "Dex": 1570,
+    "Eng": 6700
   }
 ]
