@@ -3699,31 +3699,6 @@
     "Skills": [
       {
         "SkillType": "属性別タイプキラー",
-        "Modifier": 4,
-        "Type": "悪魔"
-      },
-      {
-        "SkillType": "属性軽減",
-        "Modifier": 0.25,
-        "Element": "火"
-      }
-    ],
-    "Element": "木",
-    "Type": "けもみみ",
-    "Rarity": "LXV",
-    "Part": 2,
-    "GuerrillaModifier": 0.1,
-    "Atk": 1450,
-    "Dex": 1530,
-    "Eng": 10700
-  },
-  {
-    "Id": 149,
-    "EvolState": 1,
-    "Name": "覚醒花園セレナ",
-    "Skills": [
-      {
-        "SkillType": "属性別タイプキラー",
         "Modifier": 5,
         "Type": "悪魔"
       },
@@ -3738,8 +3713,33 @@
     "Rarity": "LXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1510,
-    "Dex": 1630,
+    "Atk": 1595,
+    "Dex": 1680,
+    "Eng": 10700
+  },
+  {
+    "Id": 149,
+    "EvolState": 1,
+    "Name": "覚醒花園セレナ",
+    "Skills": [
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 6,
+        "Type": "悪魔"
+      },
+      {
+        "SkillType": "属性軽減",
+        "Modifier": 0.25,
+        "Element": "火"
+      }
+    ],
+    "Element": "木",
+    "Type": "けもみみ",
+    "Rarity": "LXV",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1660,
+    "Dex": 1795,
     "Eng": 10700
   },
   {
