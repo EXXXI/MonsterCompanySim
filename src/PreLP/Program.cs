@@ -294,6 +294,12 @@ namespace PreLP
 
             Console.WriteLine($"{stage.Part}-{stage.Grade}-{stage.Stage} CalcEnd:{breakData.Pattrns.Count}");
 
+            // オマケ 最大勝率が1%以下の場合警告
+            if (results.Max(r => r.WinRate) < 0.01)
+            {
+                Console.WriteLine($"{stage.Part}-{stage.Grade}-{stage.Stage} win rate is low: {results.Max(r => r.WinRate)}");
+            }
+
             // 返却
             return breakData;
         }
