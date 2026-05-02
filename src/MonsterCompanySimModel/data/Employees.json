@@ -4482,6 +4482,32 @@
     "Eng": 3100
   },
   {
+    "Id": 176,
+    "Name": "うまこ",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "火",
+        "Range": "全体",
+        "Modifier": 1.5
+      },
+      {
+        "SkillType": "タイプ強化",
+        "Range": "全体",
+        "Modifier": 3,
+        "Type": "けもみみ"
+      }
+    ],
+    "Element": "火",
+    "Type": "けもみみ",
+    "Rarity": "Tier4",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1870,
+    "Dex": 2550,
+    "Eng": 21900
+  },
+  {
     "Id": 177,
     "Name": "ますきゃっとAB",
     "Skills": [
@@ -4581,11 +4607,6 @@
     "Id": 180,
     "Name": "朱桃れん",
     "Skills": [
-
-      {
-        "SkillType": "CT回避",
-        "Range": "全体"
-      },
       {
         "SkillType": "属性強化",
         "Element": "木",
@@ -4617,5 +4638,44 @@
     "Atk": 1420,
     "Dex": 1570,
     "Eng": 6700
+  },
+  {
+    "Id": 185,
+    "Name": "藤堂総一",
+    "Skills": [
+      {
+        "SkillType": "属性強化",
+        "Element": "水",
+        "Range": "全体",
+        "Modifier": 3
+      },
+      {
+        "SkillType": "属性強化",
+        "Element": "木",
+        "Range": "全体",
+        "Modifier": 3
+      },
+      {
+        "SkillType": "CT確定",
+        "Range": "自分"
+      },
+      {
+        "SkillType": "CT回避",
+        "Range": "自分"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "ブラック"
+      }
+    ],
+    "Element": "木",
+    "Type": "支援",
+    "Rarity": "Tier5",
+    "Part": 2,
+    "GuerrillaModifier": 0.1,
+    "Atk": 1600,
+    "Dex": 2180,
+    "Eng": 91000
   }
 ]
