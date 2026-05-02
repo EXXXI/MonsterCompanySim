@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <DebugType Condition="'$(Configuration)' == 'Debug'">portable</DebugType>
+	  <DebugType Condition="'$(Configuration)' == 'Release'">none</DebugType>
+	  <DebugType Condition="'$(Configuration)'=='ReleaseWithSymbol'">none</DebugType>
+	  <Configurations>Debug;Release;ReleaseWithSymbol</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithSymbol|AnyCPU'">
+	  <Optimize>True</Optimize>
+	  <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MonsterCompanySimModel\MonsterCompanySimModel.csproj" />
+  </ItemGroup>
+
+</Project>
