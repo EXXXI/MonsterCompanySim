@@ -547,18 +547,18 @@ namespace MonsterCompanySimModel.Service
             {
                 if (isAlly)
                 {
-                    battler.Modifier *= condition.AllyAtkModifier;
+                    battler.StageModifier *= condition.AllyAtkModifier;
                     battler.DexModifier *= condition.AllyDexModifier;
                     switch (battler.Employee.Element)
                     {
                         case Element.火:
-                            battler.Modifier *= condition.FireAtkModifier;
+                            battler.StageModifier *= condition.FireAtkModifier;
                             break;
                         case Element.水:
-                            battler.Modifier *= condition.WaterAtkModifier;
+                            battler.StageModifier *= condition.WaterAtkModifier;
                             break;
                         case Element.木:
-                            battler.Modifier *= condition.WoodAtkModifier;
+                            battler.StageModifier *= condition.WoodAtkModifier;
                             break;
                         default:
                             break;
@@ -566,7 +566,7 @@ namespace MonsterCompanySimModel.Service
                 }
                 else
                 {
-                    battler.Modifier *= condition.EnemyAtkModifier;
+                    battler.StageModifier *= condition.EnemyAtkModifier;
                     battler.DexModifier *= condition.EnemyDexModifier;
                 }
             }
@@ -1408,7 +1408,7 @@ namespace MonsterCompanySimModel.Service
         private double CalcDamage(Battler attacker)
         {
             double atkAtk = attacker.Atk * (attacker.IsBoost ? 1.3 : 1.0);
-            return atkAtk * attacker.Modifier;
+            return atkAtk * attacker.Modifier * attacker.StageModifier;
         }
     }
 }
