@@ -62,6 +62,8 @@ namespace PreLP
             Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
             Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
             Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 176).First()); // うまこ
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 185).First()); // 藤堂
             CalcGradeData(part, grade, maxBreak, results);
 
             // 1部43
@@ -119,6 +121,9 @@ namespace PreLP
             maxBreak = 12;
             CalcGradeData(part, grade, maxBreak, results);
 
+            // 1部51 
+            // 2-23が13凸必須なため、ここまで2-23の2体が使用不可
+
             // 2部23
             part = 2;
             grade = 23;
@@ -135,6 +140,8 @@ namespace PreLP
             Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 167).First()); // シルフィ
             Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
             Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 176).First()); // うまこ
+            Masters.ExcludeTarget(Masters.Employees.Where(emp => emp.Id == 185).First()); // 藤堂
             CalcGradeData(part, grade, maxBreak, results);
 
             // 2部24
@@ -189,6 +196,10 @@ namespace PreLP
             maxBreak = 13;
             Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
             Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
+            CalcGradeData(part, grade, maxBreak, results);
+
+            // 2部33
+            grade = 33;
             CalcGradeData(part, grade, maxBreak, results);
 
             // 結果をJsonに書き出し
