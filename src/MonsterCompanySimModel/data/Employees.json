@@ -3604,6 +3604,11 @@
         "SkillType": "属性別タイプキラー",
         "Modifier": 3,
         "Type": "飛翔"
+      },
+      {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 3,
+        "Type": "変革"
       }
     ],
     "Element": "火",
@@ -3611,8 +3616,8 @@
     "Rarity": "LXV",
     "Part": 2,
     "GuerrillaModifier": 0.1,
-    "Atk": 1560,
-    "Dex": 2100,
+    "Atk": 1720,
+    "Dex": 2310,
     "Eng": 21700
   },
   {
