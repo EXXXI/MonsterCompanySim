@@ -123,6 +123,11 @@ namespace PreLP
 
             // 1部51 
             // 2-23が13凸必須なため、ここまで2-23の2体が使用不可
+            grade = 51;
+            maxBreak = 13;
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 176).First()); // うまこ
+            Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 185).First()); // 藤堂
+            CalcGradeData(part, grade, maxBreak, results);
 
             // 2部23
             part = 2;
@@ -193,7 +198,7 @@ namespace PreLP
             // 2部32
             // 1-49でひかりが必須だったため、ここまで11凸制限だった
             grade = 32;
-            maxBreak = 13;
+            maxBreak = 14;
             Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 172).First()); // ひかり
             Masters.IncludeTarget(Masters.Employees.Where(emp => emp.Id == 174).First()); // キュンシー
             CalcGradeData(part, grade, maxBreak, results);
