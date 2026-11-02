@@ -4370,6 +4370,11 @@
         "Type": "悪魔"
       },
       {
+        "SkillType": "属性別タイプキラー",
+        "Modifier": 2,
+        "Type": "神"
+      },
+      {
         "SkillType": "CT回避",
         "Range": "自分"
       }
